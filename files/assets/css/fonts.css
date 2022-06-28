@@ -1,0 +1,18 @@
+@font-face {
+	font-family: Gentona;
+	src: url(fonts/Gentona-Medium.ttf);
+}
+@font-face {
+	font-family: Acme-Regular;
+	src: url(fonts/Acme-Regular.ttf);
+}
+
+@font-face {
+	font-family: ExoRegular;
+	src: url(fonts/ExoRegular.ttf);
+}
+
+@font-face {
+	font-family: IndieFlower;
+	src: url(fonts/IndieFlower.ttf);
+}

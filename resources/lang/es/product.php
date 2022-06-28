@@ -1,0 +1,91 @@
+<?php
+
+return
+[
+
+	"latest_products" => "Nuevas llegadas",
+	"recently_viewed_products" => "Visto últimamente",
+	"sort" => "Ordenar",
+	"sort_by" => "ORDENAR POR",
+	"newest_first" => "Lo más nuevo primero",
+	"ascending_order" => "Órden ascendente",
+	"low_to_high" => "De bajo a alto",
+	"high_to_low" => "De alto a bajo",
+	"filter" => "Filtrar",
+	"min" => "Mín.",
+	"max" => "Máx.",
+	"search_by_brand_name" => "Buscar por nombre de la marca",
+	"select_brands" => "Seleccionar marcas",
+	"none_selected" => "Nada Seleccionado",
+	"selected" => "Seleccionado",
+	"apply" => "Aplicar",
+	"add" => "Añadir",
+	"off" => " descuento ",
+	"add_more" => "Añadir más",
+	"enter_quantity" => "Introduzca cantidad",
+	"quantity" => "Cantidad",
+	"reviews_and_ratings" => "Reseñas y calificaciones",
+	"similar" => "Similar",
+	"highlights" => "Lo más destacado",
+	"ratings_and_reviews" => "Reseñas y calificaciones",
+	"your_rating" => "Su calificación",
+	"rate_and_write_a_review" => "CALIFICAR Y ESCRIBIR UNA RESEÑA",
+	"enter_your_review" => "Escriba su reseña",
+	"add_review" => "AÑADIR RESEÑA",
+	"view_all_reviews" => "VER TODAS LAS RESEÑAS",
+	"all_reviews" => "Todas las reseñas",
+	"out_of_stock" => "EXISTENCIAS AGOTADAS",
+	"search" => "Buscar",
+	"products" => "productos",
+	"similar_products_of" => "Productos similares a",
+	"similar_products" => "productos similares",
+	"available_variations_for"=>"Permitir variaciones de",
+	"empty_category_product_title" => "Vacíe el título de la categoría del producto",
+	"empty_category_product_description" => "Por favor vacíe la descripción de la categoría del producto",
+	"no_more_products_available" => "No hay más productos disponibles ",
+	"max_viewed_products" => "Productos más vistos",
+
+	"shop_by_category" => "Comprar por categoría",
+	"all_categories" => "Todas las categorías ",
+	"buy_now" => "Comprar ahora",
+	"search_empty_title" => "Lo sentimos, no hay resultados",
+	"search_empty_description" => " Por favor, consulte con otra palabra clave de búsqueda ", 
+
+	"max_viewed" => "Lo más visto",
+	"featured_brands" => "Marcas destacadas",
+	"write_a_review"=>"ESCRIBIR UNA RESEÑA",
+	'review'=>'revisión',
+	'product_code'=>'Código de producto',
+
+	'availablity'=>'Disponibilidad',
+
+	'stock_in'=>'En stock',
+
+	'description'=>'Descripción',
+	'specifications'=>'Presupuesto',
+
+	'questions_and_answers'=>'Preguntas y respuestas',
+
+	'customer_reviews'=>'Opiniones de los usuarios',
+
+	'offers_block'=>'Bloque de oferta',
+
+	'image'=>'Imagen',
+
+	'stock'=>'Valores',
+	'thank_you'=>'Gracias',
+
+	'product_list'=>'Lista de productos',
+	'new'=>'Nouevo',
+	'description_not_available'=>'La descripción no está disponible para este producto',
+	'detail'=>'Detalle',
+	'popular_brands'=>'Marcas Populares',
+	'coming_soon'=>'próximamente',
+	'quantity_should_be_greater_than_zero'=>'La cantidad debe ser mayor que cero',
+	'quick_view'=>'Vista rápida',
+	'see_product_details'=>'Ver detalles del producto',
+	'view_more'=>'ver más',
+	'top_categories'=>'Top Categories',
+	'top_business'=>'Top Businesses',
+	'showing'=>'Showing',
+];
