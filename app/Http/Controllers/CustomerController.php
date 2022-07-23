@@ -27,8 +27,27 @@ use App\Vendor;
 class CustomerController extends Controller{
 
 
-	/*for vendors*/  
 
+/*user login from backend*/
+
+public function getUserLogin(Request $request){
+
+    $user_id=$request->id;
+    $user=User::where('id',$user_id)->first();
+	if($user!=""){
+	Auth::login($user);
+	$user=Auth::user();
+	return redirect("/");
+	}
+	else
+	{
+	return redirect()->back();
+	}
+}
+
+
+
+/*for vendors*/  
 public function postVendor(Request $request){
      
 

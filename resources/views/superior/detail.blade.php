@@ -15,6 +15,20 @@ input::-webkit-inner-spin-button {
 }
 
 
+img.mfp-img {
+    width:550px;
+    min-width:550px;
+    max-width:100%;
+    height:auto;
+    display: block;
+    line-height:0;
+    box-sizing:border-box;
+    padding:40px 0 40px; 
+    margin:0 auto;
+}
+
+
+
 .true-qauntity{
     border: solid 3px green;
 } 
@@ -403,6 +417,22 @@ input.back-imprint-input{
     border: 1px solid #68bee5;
     border-radius: 4px;
     padding: 8px 5px 8px 5px;
+    background-color: #68bee5;
+    color: #fff;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.017em;
+}
+
+.shipping-art-ship-button {
+    border: 1px solid #68bee5;
+    border-radius: 4px;
+    padding: 4px 7px 5px 5px;
     background-color: #68bee5;
     color: #fff;
     font-family: Roboto;
@@ -1176,8 +1206,11 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 
-table,thead,tr,tbody,td,th{
-    border: none!important;
+table, th, td{
+    /* border: 1px solid #68bee5; */
+}
+th, td{
+    padding: 9px;
 }
 .pricing_table_content>tr,td{
     width: 10px;
@@ -1200,7 +1233,7 @@ table,thead,tr,tbody,td,th{
 }
 
 tbody>tr{ 
-    border-bottom: 1px solid #A9DDF4 !important;
+    /* border-bottom: 1px solid #A9DDF4 !important; */
 }
 
 .warning-msg{
@@ -1533,7 +1566,7 @@ vertical-align: top;
 box-sizing: border-box;
 box-shadow: none;
 width: 100%;
-min-width: 310px;
+min-width: 152px;
 }
 
 /*.color-image {
@@ -1761,28 +1794,14 @@ max-width: 360px;
             <ol class="breadcrumb">
 
                 <li class="breadcrumb-item"><a href="{{$base_url}}/">Home</a></li>
-
-                @if($data['product_categorydata']->category_link->is_parent_category==1)
-                @if($data['parent_category']=="")
-                <li class="breadcrumb-item"><a href="{{$base_url}}/shop?page=&search=&cat_id=&category_id={{$data['product_categorydata']->category_id}}&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=">{{$data['product_categorydata']->category_link->category_translation->category_name}}</a></li>
-                @endif
-                @endif
-
-                @if($data['product_categorydata']->category_link->is_parent_category==1)
-                @if($data['parent_category']!="")
+                <!-- <li class="breadcrumb-item"><a href="{{$base_url}}/shop?page=&search=&cat_id=&category_id={{$data['product_categorydata']->category_id}}&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=">{{$data['product_categorydata']->category_link->category_translation->category_name}}</a></li> -->
+             
                 <li class="breadcrumb-item">
-                <a href="{{$base_url}}/shop?page=&search=&cat_id=&category_id={{$data['product_categorydata']->category_id}}&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=">{{$data['parent_category']->name}}</a></li>
-
-                @if($data['child_category']!="")
+                <a href="{{$base_url}}/shop/{{ $data['parent_category']->category_url }}">{{ str_replace('-',' ',$data['parent_category']->category_url)}}</a></li>
+                 @if($data['child_category'] !='')
                 <li class="breadcrumb-item">
-                <a href="{{$base_url}}/shop?page=&search=&cat_id=&category_id={{$data['product_categorydata']->category_id}}&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=">{{$data['child_category']->name}}</a></li>
+                <a href="{{$base_url}}/shop/{{ $data['parent_category']->category_url }}/{{ $data['child_category']->category_url }}">{{ str_replace('-',' ',$data['child_category']->category_url)}}</a></li>
                 @endif
-
-                @endif
-                @endif
-
-
-
                 @if($data['product_categorydata']->product_translation->product_name!=="")
                 <li class="breadcrumb-item"><a href="javascript:void(0);" class="currunt-dir"><?php echo $data['product_categorydata']->product_translation->product_name; ?></a></li>
                 @endif
@@ -2680,240 +2699,240 @@ margin-left:2rem!important;
 <!-- for order process guide -->
 
 
-            <div class="modal fade" id="order_process_guid">
-                <div class="modal-dialog modal-dialog-ord-process">
-                    <div class="modal-content modal-fullscreen-sm-down">
+<div class="modal fade" id="order_process_guid">
+    <div class="modal-dialog modal-dialog-ord-process">
+        <div class="modal-content modal-fullscreen-sm-down">
 
-                        <div class="modal-header">
-                            <h5 class="modal-title model-title">Order Proceed Guide</h5>
-                            <button type="button" class="close" data-dismiss="modal"><span class="close-modal-btn">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                          
-                         <div class="row pt-3">
-                             <div class="col-md-6">
-                              
-                              <div class="row d-flex align-items-center">
-                               <div class="col-md-2">
-                                <figure>
-                                <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
-                                <div class="caption-centered">1</div> 
-                                </figure>
-                               </div>
+            <div class="modal-header">
+                <h5 class="modal-title model-title">Order Proceed Guide</h5>
+                <button type="button" class="close" data-dismiss="modal"><span class="close-modal-btn">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row pt-3">
+                    <div class="col-md-6">
+                    
+                    <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                    <figure>
+                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <div class="caption-centered">1</div> 
+                    </figure>
+                    </div>
 
-                               <div class="col-md-3">
-                                <figure>
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-1.png"/> 
-                                </figure>
-                               </div>
-                               <div class="col-md-7 ">
-                                <p class="process-txt">
-                                      An order can be placed online or by calling our customer service department at 
-                                </p>
-                                <p class="no-process">
-                                   888-577-6667 
-                                </p>
-                               </div>
-                              </div>  
-
-
-                                <br>
-                                <hr class="short-divider short_divider with-imprints">
-                                <br>
+                    <div class="col-md-3">
+                    <figure>
+                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-1.png"/> 
+                    </figure>
+                    </div>
+                    <div class="col-md-7 ">
+                    <p class="process-txt">
+                            An order can be placed online or by calling our customer service department at 
+                    </p>
+                    <p class="no-process">
+                        888-577-6667 
+                    </p>
+                    </div>
+                    </div>  
 
 
-                              <div class="row d-flex align-items-center">
-                               <div class="col-md-2">
-                                <figure>
-                                <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
-                                <div class="caption-centered">2</div> 
-                                </figure>
-                               </div>
-
-                               <div class="col-md-3">
-                                <figure>
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-2.png"/> 
-                                </figure>
-                               </div>
-                               <div class="col-md-7 ">
-                                <p class="process-txt">
-                                Email your artwork/logo/text to:<a href="mailto:business_email" class="email-txt">art@superiorpromos.com </a> include your order # in the subject line.
-                                </p>
-                               </div>
-                              </div>
-
-                                <br>
-                                <hr class="short-divider short_divider with-imprints">
-                                <br>
+                    <br>
+                    <hr class="short-divider short_divider with-imprints">
+                    <br>
 
 
-                              <div class="row d-flex align-items-center">
-                               <div class="col-md-2">
-                                <figure>
-                                <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
-                                <div class="caption-centered">3</div> 
-                                </figure>
-                               </div>
+                    <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                    <figure>
+                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <div class="caption-centered">2</div> 
+                    </figure>
+                    </div>
 
-                               <div class="col-md-3">
-                                <figure>
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-3.png"/> 
-                                </figure>
-                               </div>
-                               <div class="col-md-7 ">
-                                <p class="process-txt">
-                                      We provide unlimited FREE digital proofs.
-                                      Art proof(s) will be available within 24-48 hours via email & also uploaded to you account for approval.
-                                </p>
-                               </div>
-                              </div>
+                    <div class="col-md-3">
+                    <figure>
+                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-2.png"/> 
+                    </figure>
+                    </div>
+                    <div class="col-md-7 ">
+                    <p class="process-txt">
+                    Email your artwork/logo/text to:<a href="mailto:business_email" class="email-txt">art@superiorpromos.com </a> include your order # in the subject line.
+                    </p>
+                    </div>
+                    </div>
 
-                                <br>
-                                <hr class="short-divider short_divider with-imprints">
-                                <br>
-
-
-                              <div class="row d-flex align-items-center">
-                               <div class="col-md-2">
-                                <figure>
-                                <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
-                                <div class="caption-centered">4</div> 
-                                </figure>
-                               </div>
-
-                               <div class="col-md-3">
-                                <figure>
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-4.png"/> 
-                                </figure>
-                               </div>
-                               <div class="col-md-7 ">
-                                <p class="process-txt">
-                                      Proof approval is required before an order moves to production. Approvals woll be accepted via email or in your online account.
-                                      For any questions contact the art department at 
-                                      <a href="mailto:business_email" class="email-txt">art@superiorpromos.com</a>
-                                </p>
-                               </div>
-                              </div>
-
-                                <br>
-                                <hr class="short-divider short_divider with-imprints">
-                                <br>
-
-                             </div>
+                    <br>
+                    <hr class="short-divider short_divider with-imprints">
+                    <br>
 
 
+                    <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                    <figure>
+                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <div class="caption-centered">3</div> 
+                    </figure>
+                    </div>
 
-                             <div class="col-md-6">
-                              
-                              <div class="row d-flex align-items-center">
-                               <div class="col-md-2">
-                                <figure>
-                                <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
-                                <div class="caption-centered">5</div> 
-                                </figure>
-                               </div>
+                    <div class="col-md-3">
+                    <figure>
+                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-3.png"/> 
+                    </figure>
+                    </div>
+                    <div class="col-md-7 ">
+                    <p class="process-txt">
+                            We provide unlimited FREE digital proofs.
+                            Art proof(s) will be available within 24-48 hours via email & also uploaded to you account for approval.
+                    </p>
+                    </div>
+                    </div>
 
-                               <div class="col-md-3">
-                                <figure>
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-5.png"/> 
-                                </figure>
-                               </div>
-                               <div class="col-md-7 ">
-                                <p class="process-txt">
-                                      After art approval is received, the order will move into production. Production time varies by product and is listed on the product page. If a rush option is choosen production time will be adjusted accordingly.
-                                </p>
-                               </div>
-                              </div>  
-
-
-                                <br>
-                                <hr class="short-divider short_divider with-imprints">
-                                <br>
+                    <br>
+                    <hr class="short-divider short_divider with-imprints">
+                    <br>
 
 
-                              <div class="row d-flex align-items-center">
-                               <div class="col-md-2">
-                                <figure>
-                                <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
-                                <div class="caption-centered">6</div> 
-                                </figure>
-                               </div>
+                    <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                    <figure>
+                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <div class="caption-centered">4</div> 
+                    </figure>
+                    </div>
 
-                               <div class="col-md-3">
-                                <figure>
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-6.png"/> 
-                                </figure>
-                               </div>
-                               <div class="col-md-7 ">
-                                <p class="process-txt">
-                                      An estimated ship date for your order will be set within 24-48 hours after the order is sent to production. If required, contact customer service for expedited shipping options.
-                                </p>
-                               </div>
-                              </div>
+                    <div class="col-md-3">
+                    <figure>
+                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-4.png"/> 
+                    </figure>
+                    </div>
+                    <div class="col-md-7 ">
+                    <p class="process-txt">
+                            Proof approval is required before an order moves to production. Approvals woll be accepted via email or in your online account.
+                            For any questions contact the art department at 
+                            <a href="mailto:business_email" class="email-txt">art@superiorpromos.com</a>
+                    </p>
+                    </div>
+                    </div>
 
-                                <br>
-                                <hr class="short-divider short_divider with-imprints">
-                                <br>
+                    <br>
+                    <hr class="short-divider short_divider with-imprints">
+                    <br>
 
-
-                              <div class="row d-flex align-items-center">
-                               <div class="col-md-2">
-                                <figure>
-                                <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
-                                <div class="caption-centered">7</div> 
-                                </figure>
-                               </div>
-
-                               <div class="col-md-3">
-                                <figure>
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-7.png"/> 
-                                </figure>
-                               </div>
-                               <div class="col-md-7 ">
-                                <p class="process-txt">
-                                After the order ships will emails full tracking information and cost of shipping(if applicable).
-                                </p>
-                               </div>
-                              </div>
-
-                                <br>
-                                <hr class="short-divider short_divider with-imprints">
-                                <br>
+                    </div>
 
 
-                              <div class="row d-flex align-items-center">
-                               <div class="col-md-2">
-                                <figure>
-                                <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
-                                <div class="caption-centered">8</div> 
-                                </figure>
-                               </div>
 
-                               <div class="col-md-3">
-                                <figure>
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-8.png"/> 
-                                </figure>
-                               </div>
-                               <div class="col-md-7 ">
-                                <p class="process-txt">
-                                Final Invoice(s) will be available within 48 hours after the order ships. Invoice(s) can be viewed in your online account or requested by emailing the Billing Department at 
-                                <a href="mailto:business_email" class="email-txt">art@superiorpromos.com</a>
-                                </p>
-                               </div>
-                              </div>
+                    <div class="col-md-6">
+                    
+                    <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                    <figure>
+                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <div class="caption-centered">5</div> 
+                    </figure>
+                    </div>
 
-                                <br>
-                                <hr class="short-divider short_divider with-imprints">
-                                <br>
-                                
-                             </div>
+                    <div class="col-md-3">
+                    <figure>
+                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-5.png"/> 
+                    </figure>
+                    </div>
+                    <div class="col-md-7 ">
+                    <p class="process-txt">
+                            After art approval is received, the order will move into production. Production time varies by product and is listed on the product page. If a rush option is choosen production time will be adjusted accordingly.
+                    </p>
+                    </div>
+                    </div>  
 
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-              </div>
+
+                    <br>
+                    <hr class="short-divider short_divider with-imprints">
+                    <br>
+
+
+                    <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                    <figure>
+                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <div class="caption-centered">6</div> 
+                    </figure>
+                    </div>
+
+                    <div class="col-md-3">
+                    <figure>
+                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-6.png"/> 
+                    </figure>
+                    </div>
+                    <div class="col-md-7 ">
+                    <p class="process-txt">
+                            An estimated ship date for your order will be set within 24-48 hours after the order is sent to production. If required, contact customer service for expedited shipping options.
+                    </p>
+                    </div>
+                    </div>
+
+                    <br>
+                    <hr class="short-divider short_divider with-imprints">
+                    <br>
+
+
+                    <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                    <figure>
+                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <div class="caption-centered">7</div> 
+                    </figure>
+                    </div>
+
+                    <div class="col-md-3">
+                    <figure>
+                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-7.png"/> 
+                    </figure>
+                    </div>
+                    <div class="col-md-7 ">
+                    <p class="process-txt">
+                    After the order ships will emails full tracking information and cost of shipping(if applicable).
+                    </p>
+                    </div>
+                    </div>
+
+                    <br>
+                    <hr class="short-divider short_divider with-imprints">
+                    <br>
+
+
+                    <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                    <figure>
+                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <div class="caption-centered">8</div> 
+                    </figure>
+                    </div>
+
+                    <div class="col-md-3">
+                    <figure>
+                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-8.png"/> 
+                    </figure>
+                    </div>
+                    <div class="col-md-7 ">
+                    <p class="process-txt">
+                    Final Invoice(s) will be available within 48 hours after the order ships. Invoice(s) can be viewed in your online account or requested by emailing the Billing Department at 
+                    <a href="mailto:business_email" class="email-txt">art@superiorpromos.com</a>
+                    </p>
+                    </div>
+                    </div>
+
+                    <br>
+                    <hr class="short-divider short_divider with-imprints">
+                    <br>
+                    
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 
 <!-- step 2 section -->
 
@@ -3003,18 +3022,21 @@ margin-left:2rem!important;
  <div class="form-group form-check">
     <input type="checkbox" class="form-check-input check-radio zip-checkbox" id="zip-checkbox" checked="">
     <div class="row">
-     <div class="col-md-6"> <label class="form-check-label p-time p-2 ml-zip" for="zip">Enter Zip Code to Get Shipping Cost</label></div>
-     <div class="col-md-6 p-0">
-    <input  type="number" class="date-input zipcode-input zipcode " id="zip" name="zipcode" value="" placeholder="">
-    </div>
+        <div class="col-md-6"> <label class="form-check-label p-time p-2 ml-zip" for="zip">Enter Zip Code to Get Shipping Cost</label></div>
+        <div class="col-md-6 p-0">
+           <input  type="number" class="date-input zipcode-input zipcode " id="zip" name="zipcode" value="" placeholder="">
+        </div>
     </div>
 
     <div class="col-md-12 zip-error text-center hidden"><span class="text-danger"><b>Please Enter Zip Code</b></span></div>
 
 </div>
+<div id="show_data">
+    
+</div>
 
 
-<div class="form-group form-check">
+<div class="form-group form-check" style="margin-top: 5%;">
     <input type="checkbox" class="form-check-input is-ship check-radio" id="shipperac">
     <label class="form-check-label file-txt p-time p-2" for="shipperac">Select if would like to Use Own Shipper Account</label>
 </div> 
@@ -4042,10 +4064,11 @@ In-hand date is determined by the item's production time, transit time and type 
         <div class="col-9">
             <h5><?php echo $review->review;?></h5>
             <p>
+                
                 @if($review->rating==1)
                 <i class="fa fa-star star-color-yellow"></i>
                 @endif
-
+                
                 @if($review->rating==2)
                 <i class="fa fa-star star-color-yellow"></i>
                 <i class="fa fa-star star-color-yellow"></i>
@@ -4071,6 +4094,8 @@ In-hand date is determined by the item's production time, transit time and type 
                 <i class="fa fa-star star-color-yellow"></i>
                 <i class="fa fa-star star-color-yellow"></i>
                 @endif
+
+
                 <span class="star-rating-user-count"><?php echo $review->rating;?>/5</span>
             </p>
             <p>
@@ -4706,7 +4731,7 @@ $(document).ready(function(){
     var color_status=$('input[name=address]:checked').is(':checked');
 
     var is_color=parseFloat($('#is_color').val());
-
+    
     if(is_color==1)
      {
      
@@ -4730,6 +4755,9 @@ $(document).ready(function(){
 
         if(location==true){
         $(".imprint-error").addClass("hidden");
+        $('#popular-content1').removeClass('fade show active');
+        $('#recent-content1').addClass('fade show active');
+
         $("#recent-tab1").trigger('click');
         $(window).scrollTop(210);
         }
@@ -4740,7 +4768,9 @@ $(document).ready(function(){
         }
 
         }else{
-
+        
+        $('#popular-content1').removeClass('fade show active');
+        $('#recent-content1').addClass('fade show active');
         $("#recent-tab1").trigger('click');
         $(window).scrollTop(210);
         }
@@ -4780,6 +4810,9 @@ $(document).ready(function(){
         var location=$("input[name='imprintcheck[]']").is(':checked');
 
         if(location==true){
+            
+        $('#popular-content1').removeClass('fade show active');
+        $('#recent-content1').addClass('fade show active');
         $(".imprint-error").addClass("hidden");
         $('.step-link1').text("2/");
         $("#recent-tab1").trigger('click');
@@ -4793,7 +4826,9 @@ $(document).ready(function(){
         }
 
         }else{
-     
+        
+        $('#popular-content1').removeClass('fade show active');
+        $('#recent-content1').addClass('fade show active');
         $("#recent-tab1").trigger('click');
         $('.step-link1').text("2/");
         $(window).scrollTop(210);
@@ -5561,6 +5596,27 @@ var search = $('.header_search_input').val();
 window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
 });
 });
+</script>
+
+<script>
+$(document).on('keyup','#zip',function(){
+    var zip = $(this).val();
+    var lenth = zip.length;
+ if(lenth == 5){
+    
+    $.ajax({
+        url: "{{ route('getshippchage') }}",
+        type: "GET",
+        data:{zip:zip},
+        success:function(res){
+            $('#show_data').html(res);
+        }
+    });
+  }else{
+    $('#show_data').html('');
+  }
+});
+
 </script>
 @endsection
 

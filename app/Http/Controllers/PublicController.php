@@ -133,12 +133,35 @@ use App\OurGuarantee;
 use App\CartitemProductSubOptions;
 use DB;
 use PDO;
+use DateTime;
 
 require 'vendor/autoload.php'; 
 use net\authorize\api\contract\v1 as AnetAPI;
 use net\authorize\api\controller as AnetController;
 
 class PublicController extends Controller{
+
+
+public function PostProductReview(Request $request){
+
+$user_id=$this->getLoginUserId();
+$rating=$request->rating;
+$date=Carbon::now();
+$product_id=$request->product_id;
+$description=$request->description;
+
+$product_review= new ProductReview();
+$product_review->review=$description;
+$product_review->rating=$rating;
+$product_review->date=$date;
+$product_review->user_id=$user_id;
+$product_review->product_id=$product_id;
+$product_review->save();
+return true;
+
+}
+
+
 
 public function PostSavedCartsSingle(Request $request){  
 
@@ -3145,7 +3168,6 @@ $Allcity=CityTranslation::all();
          }])->where('status_id',1)->orderBy('product_id','desc')->take(10)->get();
         
 
-     
 
                 $best_selling_products = [];
 
@@ -3314,8 +3336,7 @@ public function postAddWishlist(Request $request){
 
 
 
-public function getProductDetails(Request $request){
-
+public function getProductDetails(Request $request,$slug,$cat="",$pro=""){
 
 $product_id=$request->pid;
 $product_categorydata=CategoryProduct::where('product_id',$product_id)->with('product_translation')->with('category_link')->first();
@@ -3326,15 +3347,20 @@ $category_id;
 $child_category=CategoryHierarchy::where('child_category_id',$category_id)->first();
 
 if($child_category!=""){
-  $parent_category_id=$child_category->parent_category_id;
+   
+   $parent_category =Category::where('category_id',$child_category->parent_category_id)->first();
+   $child_category =Category::where('category_id',$child_category->child_category_id)->first();
+   
+//   $parent_category_id=$child_category->parent_category_id;
 
-  $parent_category=CategoryHierarchy::where('parent_category_id',$parent_category_id)->first();
+//   $parent_category=CategoryHierarchy::where('parent_category_id',$parent_category_id)->first();
 }else{
-    $child_category="";
-    $parent_category="";
+   $parent_category =Category::where('category_id',$category_id)->first();
+   $child_category ='';
+   //  $child_category="";
+   //  $parent_category="";
 }
  
-
 /*----------------------------------------------------------------------------------------*/
 
 $product_option=ProductOption::where('product_id',$product_id)->with('product_sub_option')->get();
@@ -3714,7 +3740,7 @@ return view('superior.detail')->with('data',$data);
    }
 
    $data=array("images"=>$images,"reviews"=>$reviews,"my_rating"=>$my_rating,'cart_count'=>$cart_count,'parent_variants'=>$parent_variants,'child_variants'=>$child_variants,'parent_variant_id'=>$parent_variant_id,'child_variant_id'=>$child_variant_id,'sku'=>$sku,'cart'=>$cart,"similar_products"=>$similar_products,"offer_blocks"=>$offer_blocks,'wishlist'=>$wishlist,"breadcum_category"=>$breadcum_category,'parent_category'=>$parent_category);
-
+   
 }
 
 
@@ -3747,7 +3773,7 @@ public function register(){
       $faq=Faq::with('default_faq_translation')->with(['faq_translation'=> function($query) use ($language_id){
          $query->where('language_id',$language_id);
       }])->first();
-
+     
       return view("superior.faq")->with('faq',$faq);
    }
 
@@ -3896,7 +3922,6 @@ public function getTermsConditions(Request $request){
 
 
 public function getshop(Request $request){
-
       //Filter Data
       $shop_cat_id = $request->shop_cat_id;
       $pagi_num = $request->pagi_num;
@@ -3904,6 +3929,7 @@ public function getshop(Request $request){
       $search = $request->search;
       $page=$request->page;
       $category_id = $request->category_id;
+     
       $color_id = $request->color_id;
       $category_ids=explode(',',$category_id);
       
@@ -4120,11 +4146,18 @@ public function getshop(Request $request){
          $products=$products->whereHas('product_prices',function($query) use($min_quantity){
             $query->where('count_from',">=",$min_quantity);
          });
+
         }
 
+ 
 
-	
-
+         if($min_quantity!=""&&$max_quantity!=""){
+         
+         $products=$products->whereHas('product_prices',function($query) use($min_quantity,$max_quantity){
+            $query->where('count_from',">=",$min_quantity)->where('count_from',"<=",$max_quantity)->orderBy('count_from','asc');
+            /*$query->whereBetween('count_from',[$min_quantity,$max_quantity])->orderBy('count_from','asc');*/
+         });
+        }
 
         // $min_value=$min_quantity;
         // $max_value=$max_product_price_count_from;
@@ -4193,7 +4226,7 @@ public function getshop(Request $request){
          if($orderby=="LowToHighPrice"){
 
             $product_ids = $products->pluck('product_id');
-            $product_ids_from_prices = ProductPrice::whereIn('product_id',$product_ids)->orderBy('per_item_price','asc')->select('product_id')->groupBy('product_id')->pluck('product_id');
+            $product_ids_from_prices = ProductPrice::whereIn('product_id',$product_ids)->orderBy('per_item_price','asc')->select('product_id')->pluck('product_id');
             $product_ids_from_prices=$product_ids_from_prices->toArray();
             $product_ids_ordered = implode(',', $product_ids_from_prices);
             $products = $products->whereIn('product_id', $product_ids_from_prices)->orderByRaw("FIELD(product_id, $product_ids_ordered)");
@@ -4203,7 +4236,7 @@ public function getshop(Request $request){
          if($orderby=="HighToLowPrice"){
             
             $product_ids = $products->pluck('product_id');
-            $product_ids_from_prices = ProductPrice::whereIn('product_id',$product_ids)->orderBy('per_item_price','desc')->select('product_id')->groupBy('product_id')->pluck('product_id');
+            $product_ids_from_prices = ProductPrice::whereIn('product_id',$product_ids)->orderBy('per_item_price','desc')->select('product_id')->pluck('product_id');
             $product_ids_from_prices=$product_ids_from_prices->toArray();
             $product_ids_ordered = implode(',', $product_ids_from_prices);
             $products = $products->whereIn('product_id', $product_ids_from_prices)->orderByRaw("FIELD(product_id, $product_ids_ordered)");
@@ -5330,8 +5363,8 @@ return $data="";
     
     if($usr==0){
     $cart=new Cart();
-    $cart->session=$user_id;
-    /*$cart->user_id=$user_id;*/
+   //  $cart->session=$user_id;
+    $cart->user_id=$user_id;
     $cart->discount_id=0;
     $cart->save();
     }
@@ -5636,6 +5669,164 @@ return $data="";
       return view('superior.rus-services');
    }
 
+   
+   public function getShippingCharge(Request $request){
+      $input = $request->all();
+     
+      $key = '2sEGbYevLMZDnNDe';
+		$password = 'ffhFP8Zpt3Vz8GsJahvmU4FU0';
+		$account_number = '283281329';
+		$meter_number = '255723625';
+		$pincode = $input['zip'];
+		$pincode2 = '10001';
+
+		$xml = '<?xml version="1.0" encoding="UTF-8"?>
+               <SOAP-ENV:Envelope
+                  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ns1="http://fedex.com/ws/rate/v13">
+                  <SOAP-ENV:Body>
+                     <ns1:RateRequest>
+                        <ns1:WebAuthenticationDetail>
+                           <ns1:UserCredential>
+                              <ns1:Key>'.$key.'</ns1:Key>
+                              <ns1:Password>'.$password.'</ns1:Password>
+                           </ns1:UserCredential>
+                        </ns1:WebAuthenticationDetail>
+                        <ns1:ClientDetail>
+                           <ns1:AccountNumber>'.$account_number.'</ns1:AccountNumber>
+                           <ns1:MeterNumber>'.$meter_number.'</ns1:MeterNumber>
+                        </ns1:ClientDetail>
+                        <ns1:TransactionDetail>
+                           <ns1:CustomerTransactionId> *** Rate Request v13 using PHP ***</ns1:CustomerTransactionId>
+                        </ns1:TransactionDetail>
+                        <ns1:Version>
+                           <ns1:ServiceId>crs</ns1:ServiceId>
+                           <ns1:Major>13</ns1:Major>
+                           <ns1:Intermediate>0</ns1:Intermediate>
+                           <ns1:Minor>0</ns1:Minor>
+                        </ns1:Version>
+                        <ns1:ReturnTransitAndCommit>true</ns1:ReturnTransitAndCommit>
+                        <ns1:RequestedShipment>
+                           <ns1:DropoffType>REGULAR_PICKUP</ns1:DropoffType>
+                           <ns1:ServiceType>FEDEX_EXPRESS_SAVER</ns1:ServiceType>
+                           <ns1:PackagingType>YOUR_PACKAGING</ns1:PackagingType>
+                           <ns1:TotalInsuredValue>
+                              <ns1:Currency>USD</ns1:Currency>
+                           </ns1:TotalInsuredValue>
+                           <ns1:Shipper>
+                              <ns1:Contact>
+                                 <ns1:PersonName>Sender Name</ns1:PersonName>
+                                 <ns1:CompanyName>Sender Company Name</ns1:CompanyName>
+                                 <ns1:PhoneNumber></ns1:PhoneNumber>
+                              </ns1:Contact>
+                              <ns1:Address>
+                                 <ns1:StreetLines></ns1:StreetLines>
+                                 <ns1:City></ns1:City>
+                                 <ns1:StateOrProvinceCode></ns1:StateOrProvinceCode>
+                                 <ns1:PostalCode>'.$pincode.'</ns1:PostalCode>
+                                 <ns1:CountryCode>US</ns1:CountryCode>
+                              </ns1:Address>
+                           </ns1:Shipper>
+                           <ns1:Recipient>
+                              <ns1:Contact>
+                                 <ns1:PersonName>Recipient Name</ns1:PersonName>
+                                 <ns1:CompanyName>Company Name</ns1:CompanyName>
+                                 <ns1:PhoneNumber></ns1:PhoneNumber>
+                              </ns1:Contact>
+                              <ns1:Address>
+                                 <ns1:StreetLines></ns1:StreetLines>
+                                 <ns1:City></ns1:City>
+                                 <ns1:StateOrProvinceCode></ns1:StateOrProvinceCode>
+                                 <ns1:PostalCode>'.$pincode2.'</ns1:PostalCode>
+                                 <ns1:CountryCode>US</ns1:CountryCode>
+                                 <ns1:Residential>false</ns1:Residential>
+                              </ns1:Address>
+                           </ns1:Recipient>
+                           <ns1:ShippingChargesPayment>
+                              <ns1:PaymentType>SENDER</ns1:PaymentType>
+                              <ns1:Payor>
+                                 <ns1:ResponsibleParty>
+                                    <ns1:AccountNumber>'.$account_number.'</ns1:AccountNumber>
+                                 </ns1:ResponsibleParty>
+                              </ns1:Payor>
+                           </ns1:ShippingChargesPayment>
+                           <ns1:RateRequestTypes>ACCOUNT</ns1:RateRequestTypes>
+                           <ns1:PackageCount>1</ns1:PackageCount>
+                           <ns1:RequestedPackageLineItems>
+                              <ns1:SequenceNumber>1</ns1:SequenceNumber>
+                              <ns1:GroupPackageCount>1</ns1:GroupPackageCount>
+                              <ns1:Weight>
+                                 <ns1:Units>LB</ns1:Units>
+                                 <ns1:Value>20</ns1:Value>
+                              </ns1:Weight>
+                              <ns1:Dimensions>
+                                 <ns1:Length>10</ns1:Length>
+                                 <ns1:Width>10</ns1:Width>
+                                 <ns1:Height>10</ns1:Height>
+                                 <ns1:Units>IN</ns1:Units>
+                              </ns1:Dimensions>
+                           </ns1:RequestedPackageLineItems>
+                        </ns1:RequestedShipment>
+                     </ns1:RateRequest>
+                  </SOAP-ENV:Body>
+               </SOAP-ENV:Envelope>';
+
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, 'https://ws.fedex.com:443/web-services');
+      curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
+      curl_setopt($ch, CURLOPT_VERBOSE, 1);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_POST, 1);
+      $result_xml = curl_exec($ch);
+
+      // remove colons and dashes to simplify the xml
+      $result_xml = str_replace(array(':','-'), '', $result_xml);
+         $result = @simplexml_load_string($result_xml);
+      // $array_data = json_decode(json_encode(simplexml_load_string($result_xml)), true);
+      // print_r($result); die();
+      //echo  $result->Amount;
+      //echo $array_data->SOAPENVBody;
+      // echo $array_data->Amount;
+      
+      $array_data = json_decode(json_encode((array)$result), TRUE);
+      // return $array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['RatedShipmentDetails'][0]['ShipmentRateDetail']['TotalBaseCharge'];
+      $show = '';
+
+      if (isset($array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['RatedShipmentDetails'])) {
+      
+      
+      $fdate = date('Y-m-d');
+      $tdate = date('Y-m-d',strtotime($array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['CommitDetails']['CommitTimestamp']));
+      $datetime1 = new DateTime($fdate);
+      $datetime2 = new DateTime($tdate);
+      $interval = $datetime1->diff($datetime2);
+      $days = $interval->format('%a');
+      $show .= '
+            <div style="padding-top: 20px;padding-bottom: 20px;" class="text-danger"><b>Please select shipping service</b></div>
+            <table>
+               <tr>
+                  <th style="width: 9%;">#</th>
+                  <th>Service</th>
+                  <th>Cost</th>
+                  <th>Time in Transit</th>
+               </tr>
+         ';
+      $show .= '
+               <tr>
+                  <td style="width: 9%; position: relative; top: -10px;"><input type="radio" name="shippcost" class="form-check-input check-radio zip-checkbox" ></td>
+                  <td>'.str_replace('_',' ', $array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['ServiceType']).'</td>
+                  <td>$'.$array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['RatedShipmentDetails'][0]['ShipmentRateDetail']['TotalBaseCharge']['Amount'].'</td>
+                  <td>'.$days.' business days</td>
+               </tr>
+               <div class="col-md-12 zip-error text-center hidden"><span class="text-danger"><b>Please Enter Zip Code</b></span></div>
+            </table>
+         ';
+         }
+      
+      return $show;
+   }
 
 
    // Mahesh data end 12jan2022------------------

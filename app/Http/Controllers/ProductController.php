@@ -53,7 +53,27 @@ use App\ProductApparel;
 use App\Vendor;
 
 class ProductController extends Controller{
-   
+
+/*for price grid update*/
+public function postPriceGridData(Request $request){
+
+	$product_price_id=$request->product_price_id;
+	$count_from= $request->price_count_from;
+	$setup_price=$request->price_setup_price;
+	$per_item_price=$request->price_per_item_price;
+	$per_item_sale_price=$request->price_per_item_sale_price;
+     
+	$product_price=ProductPrice::find($product_price_id);
+	$product_price->count_from=$count_from;
+	$product_price->setup_price=$setup_price;
+	$product_price->per_item_price=$per_item_price;
+	$product_price->per_item_sale_price=$per_item_sale_price;
+	$product_price->save();
+
+	return $product_price;
+
+}
+
    /*for apparel*/
 	public function getApparel(Request $request){
 
@@ -1242,7 +1262,7 @@ if($item_color_group_id!=""&& $item_color_group_name!=""){
 
 
 	public function	getProduct(Request $request){
-
+		die;
 		if(!$this->checkPermission(Config::get('permissions.PRODUCT_DETAILS'))){
 			return view('user.unauthorized');
 		}
@@ -1515,6 +1535,7 @@ if($item_color_group_id!=""&& $item_color_group_name!=""){
 		$imprint_colors = ImprintColor::where('imprint_id',$imprint_id)->get();
 		return $imprint_colors;
 	}
+
 	public function postEditImprintPriceData(Request $request){
 					$imprint_price_id = $request->imprint_price_id;
 					$imprint_count_from = $request->imprint_count_from;

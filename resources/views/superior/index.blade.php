@@ -1156,7 +1156,18 @@ if($product->product_translation!="")
  $product_translation=$product->default_product_translation;
 }
 $getproduct_id=$product->product_id;
+$product_categorydata=DB::table('category_products')->where('product_id',$getproduct_id)->first();
+$category_id = $product_categorydata->category_id;
+$child=DB::table('category_hierarchies')->where('child_category_id',$category_id)->first();
 
+if(empty($child)){
+  $prect_cat =DB::table('categories')->where('category_id',$category_id)->first()->category_url;
+  $url = $prect_cat.'/';
+}else{
+  $prect_cat =DB::table('categories')->where('category_id',$child->parent_category_id)->first()->category_url;
+  $child_cat =DB::table('categories')->where('category_id',$child->child_category_id)->first()->category_url;
+  $url = $prect_cat.'/'.$child_cat.'/';
+}
 @endphp
 <div class="product-default">
   
@@ -1174,7 +1185,7 @@ $getproduct_id=$product->product_id;
   
  <figure id="new_arrival">
      <div class="product-cell">
-   <a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product_translation->product_id}}">
+   <a href="{{$base_url}}/product/{{ $url }}{{$product->product_url}}?pid={{$product_translation->product_id}}">
     
     <img src="{{$base_url}}/storage/app/{{$product->product_image}}" onerror="this.src='{{$base_url}}/files/assets/images/product.png';" class="new-arrival" alt="product" style="height: 216px;">
   </a>
@@ -1198,7 +1209,7 @@ else
 
 <div class="product-details">
   <h3 class="product-title" style="color: #212121;">
-    <a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product_translation->product_id}}"><b>{{$result}}</b></a>
+    <a href="{{$base_url}}/product/{{ $url }}{{$product->product_url}}?pid={{$product_translation->product_id}}"><b>{{$result}}</b></a>
   </h3>
   <p class="item-txt">Item- <span class="brand-txt"><b>#{{$product->product_id}}</b></span></p>
   @php

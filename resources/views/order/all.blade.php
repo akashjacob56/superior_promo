@@ -469,7 +469,7 @@ textbox.text(filesCount + ' files selected');
                 
 
                 <!-- Production Stage Start--------------------------- -->
-                <!-- <div class="card-block">
+                <div class="card-block">
                   <h5>Production Stages</h5>
                   @foreach($production_stages as $product_stage)
                     <div class="row">
@@ -483,7 +483,7 @@ textbox.text(filesCount + ' files selected');
                       </div>
                     </div>
                   @endforeach
-                </div> -->
+                </div>
                 <!-- Production Stage Start--------------------------- -->
 
                 <style type="text/css">

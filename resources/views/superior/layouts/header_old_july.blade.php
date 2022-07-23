@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css"> 
 /*New cart changes 23feb22 start*/
-
 .cart-dropdown .dropdown-menu, .compare-dropdown .dropdown-menu {
 /*opacity: 1 !important;
 visibility: visible !important;*/
@@ -15,7 +14,6 @@ left:90px !important;
 padding-top: 15px !important;
 padding-bottom: 15px !important;
 }
-
 
 .scrollbar-cat{
 min-width:250px;
@@ -696,7 +694,7 @@ $imprint_price=$imprint_price+$imprint->setup_price;
 
 
 @if($cart!="")
-<div class="text-right price-value mb-1">${{$cart->quantity*$cart->price+$imprint_price}}</div>
+<div class="text-right price-value mb-1">$<?php echo number_format($cart->quantity*$cart->price+$imprint_price,2,);?></div>
 @endif
 <div class="text-right">
 <span><a href="javascript:void(0);" class="d-inline-block text-info">Edit</a></span>&nbsp;&nbsp;<span><a href="{{$base_url}}/cart_remove_header/{{$cart->id}}" class="d-lg-inline-block text-danger">Delete</a></span>
@@ -718,7 +716,7 @@ $imprint_price=$imprint_price+$imprint->setup_price;
 <div class="m-3">
 <span class="order-total-cart">Order Total</span>
 @if($total_cart_price_sum!="")
-<span class="cart-total-price float-right order-total-cart-value">${{$main_total_header}}</span>
+<span class="cart-total-price float-right order-total-cart-value">$<?php echo number_format($main_total_header,2,);?></span>
 @endif
 </div>
 </div>
@@ -1048,8 +1046,7 @@ display: contents;
 
 
 .header-bottom .menu-depart1{
-/*position: absolute;*/
-position: relative;
+position: absolute;
 z-index: 11111;
 }
 
@@ -1071,13 +1068,13 @@ border: none;
 
 .nav-side-menu {
     position: absolute;
-    /*z-index: 1111111111;*/
-    /*overflow-x: hidden;*/
-    /*overflow-y: auto;*/
-    /*height:500px;*/
-    /*width: auto;*/
+    z-index: 1111111111;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height:500px;
+    width: auto;
     background-color:#ffffff;
-    /*min-width: 200px;*/
+    min-width: 200px;
     padding:2px;
 }
 
@@ -1116,13 +1113,12 @@ cursor: pointer;
 .nav-side-menu ul :not(collapsed) .arrow:before,
 .nav-side-menu li :not(collapsed) .arrow:before {
   font-family: FontAwesome;
-  content: "\276F";
+  content: "\f078";
   display: inline-block;
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
   float: right;
-  font-size: 16px;
 }
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
@@ -1183,65 +1179,6 @@ cursor: pointer;
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-/*CHanges*/
-.menu-list{
-	position: relative;
-}
-.menu-list ul{
-	/*float: left;*/
-    /*position: relative;*/
-  width: 196px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  list-style: none;
-  height: 500px;
-  max-height:500px;
-}
-
-.menu-list ul > li .wrapper{
-	position: absolute;
-	z-index: 11;
-	background: white;
-	left: 197px;
-    top: -1px;
-    width: 198px
-}
-/*.main.collapse{
-	display: none;
-}
-
-.sub.collapse{
-	display: none;
-}*/
-
-.menu-list > ul > li{
-	position: static;
-}
-
-
-.menu-list  ul > li > ul{
-	/*position: absolute;*/
-  	/*z-index: 10;*/
-	/*position: absolute;*/
-    /*left: 197px;
-    top: -1px;*/
-    
-    width: 198px;
-    border-left: 1px solid #bfbcbc;
-    height: 503px;
-}
-
-/*.menu-list ul li .row:hover + ul{
-	display: block;
-}*/
-
-
-
-/*CHanges*/
-
-
-
-
 @media (max-width: 767px) {
   .nav-side-menu {
     position: relative;
@@ -1346,7 +1283,7 @@ $category_translation=$category->default_category_translation;
 <span class="arrow"></span>
 </div>
 </div>
-<div class="wrapper">
+
 <ul class="main collapse" id="service{{$category_translation->category_id}}">
 @foreach($category->child_categories as $child_category)
 
@@ -1373,7 +1310,7 @@ $child_category_translation=$child_category->category->default_category_translat
 </div>
 
 </div>
-<div class="wrapper">
+
 <ul class="sub collapse" id="new-sub{{$child_category_translation->category_id}}">
 @foreach($child_category->sub_child_categories as $sub_child_category)
 
@@ -1389,7 +1326,6 @@ $sub_child_category_translation=$sub_child_category->category->default_category_
 </li>
 @endforeach
 </ul>
-</div>
 </li>
 
 @else
@@ -1403,7 +1339,6 @@ $sub_child_category_translation=$sub_child_category->category->default_category_
 @endforeach
 
 </ul>
-</div>
 </li>
 @else
 
@@ -1597,109 +1532,17 @@ $(document).ready(function(){
 $('.menu-depart1').hide();
 
 $('.all_category').on('click',function(){
-	document.querySelectorAll(".menu-list ul.menu-content > li > .row").forEach(cat => {
-		cat.nextElementSibling.classList.remove('show')
-	})
 $('.menu-depart1').toggle();
 });
 
+$("#scroll-categories").mouseleave(function(){
+$('.menu-depart1').hide();
+});
 
 
-// $("#scroll-categories").mouseleave(function(){
-
-// 	if(!(document.querySelector('ul.main').style.display == "block")){
-// 		$('.menu-depart1').hide();
-// 	}
-
-
-// });
-
-
-
-
-document.querySelectorAll(".menu-list ul.menu-content > li > .row").forEach(cat => {
-
-	cat.addEventListener('mouseenter', ()=>{
-
-
-		cat.nextElementSibling.querySelector("ul").querySelectorAll(".sub .row").forEach(subCat => {
-			if(subCat && subCat.nextElementSibling.querySelector("ul")){
-				subCat.nextElementSibling.querySelector("ul").classList.remove('show')
-			}
-			
-		})
-
-
-
-		document.querySelectorAll(".menu-list ul.menu-content > li > .row").forEach(cats => {
-			cats.nextElementSibling.classList.remove('show')
-		})
-		cat.nextElementSibling.querySelector("ul").classList.add('show')
-
-		if(cat.nextElementSibling.querySelector("ul").classList.contains('show')){
-
-		var subCategory = cat.nextElementSibling.querySelector("ul")
-
-		subCategory.querySelectorAll(".row").forEach(cat => {
-
-		cat.addEventListener('mouseenter', ()=>{
-			subCategory.querySelectorAll(".row").forEach(cats => {
-				if(cats.nextElementSibling.querySelector("ul")){
-					cats.nextElementSibling.querySelector("ul").classList.remove('show')
-				}
-			})
-			cat.nextElementSibling.querySelector("ul").classList.add('show')
-		})
-	}
-	)
-	}
-
-	document.querySelectorAll(".nocat").forEach(noCat => {
-		noCat.addEventListener('mouseenter', ()=>{
-			if(noCat.previousElementSibling){
-				noCat.previousElementSibling.querySelectorAll("ul.sub").forEach(subCat => {
-			subCat.classList.remove('show')
-		})
-			}
-			
-		})
-		
-	})
-	})
-
-// 	$(function() {
-//   // whenever we hover over a menu item that has a submenu
-//   $('.menu-list ul.menu-content > li').on('mouseover', function() {
-//     var $menuItem = $(this),
-//         $submenuWrapper = $('> .wrapper', $menuItem);
-    
-//     // grab the menu item's position relative to its positioned parent
-//     var menuItemPos = $menuItem.position();
-    
-//     // place the submenu in the correct position relevant to the menu item
-//     $submenuWrapper.css({
-//       top: menuItemPos.top,
-//       left: menuItemPos.left + Math.round($menuItem.outerWidth() * 0.75)
-//     });
-//   });
-// });
-})
-
-
-// document.querySelectorAll(".menu-content > li > .row").forEach(cat => {
-//     cat.addEventListener("mouseenter", ()=>{
-//         submenuWrapper = cat.nextElementSibling,
-//         menuItemPosTop = (cat.offsetTop - document.querySelector("#scroll-categories ul").scrollTop) + "px",
-//         menuItemPosLeft = Math.round(cat.offsetWidth) + "px"
-
-//         console.log(cat.offsetTop, cat.offsetWidth)
-//         console.log(document.querySelector("#scroll-categories ul").scrollTop)
-      
-//     submenuWrapper.style.cssText = "top:" + menuItemPosTop + "; left:" + menuItemPosLeft;
-//     submenuWrapper.style.cssText = "top:" + '-1px' + "; left:" + '198px';
-//     })
-// })
-
+$(".home-top-container").mouseenter(function(){
+$('.menu-depart1').hide();
+});
 
 });
 

@@ -209,7 +209,8 @@ color: #0759A4;
   <label for="login-email">
         @lang("Email") Or @lang("Username")
     </label>
-    <input type="text" name="email" value="{{old('email')}}" class="form-input form-wide" placeholder="@lang("order.email")"" id="email" required="">
+    <!-- <input type="text" name="email" value="{{old('email')}}" class="form-input form-wide" placeholder="@lang("order.email")"" id="email" required=""> -->
+   <input type="text" id="email" name="email" value="{{old('email')}}" class="form-control" placeholder="@lang("order.email")"/>
 
         @if ($errors->has('email'))
         <span class="help-block">
@@ -222,7 +223,9 @@ color: #0759A4;
 <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
     <label>@lang("order.password")</label>
     <div class="input-group" id="show_hide_password">
-      <input class="form-input form-wide" id="password-field" name="password" type="password" placeholder="***********">
+      <!-- <input class="form-input form-wide" id="password-field" name="password" type="password" placeholder="***********"> -->
+      <input type="password" id="password-field" name="password" class="form-control" placeholder="@lang("order.password")" />
+                                            
       <div class="input-group-addon">
         <a href="" class="pss-eye"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
       </div>

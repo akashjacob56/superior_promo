@@ -53,7 +53,6 @@ select.select-width{
                   @if($my_permissions->contains('CUSTOMER_ADD'))
                   <a href="add" class="pull-right">
                     <button type="button" class="btn btn-primary waves-effect waves-light add pull-right">   Add customer
-
                     </button>
                   </a>
                   @endif
@@ -228,20 +227,17 @@ select.select-width{
                   <table id="footer-search" class="table nowrap">
                     <thead>
                       <tr>
-                         <th>ID</th>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Status</th>
-                       
                         <th>Contact no.</th>
-                       
                         <th>Email</th>
-                     
                         <th>Orders</th>
                         <th>Last order</th>
-                      
                         <th>Created At</th>
                         <th>Password</th>
                         <th>Action</th>
+                        <th>Login</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -251,20 +247,14 @@ select.select-width{
                         <th>ID</th>
                         <th>Name</th>
                         <th>Status</th>
-                       
                         <th>Contact no.</th>
-                        
-                       
-                        <th>Email</th>
-                       
-                       
-                       
+                        <th>Email</th>                     
                         <th>Orders</th>
-                        <th>Last order</th>
-                      
+                        <th>Last order</th>                  
                         <th>Created At</th>
                         <th>Password</th>
                         <th>Disabled</th>
+                        <th>Login</th>
                       </tr>
                     </tfoot>
                   </table>
@@ -277,6 +267,7 @@ select.select-width{
     </div>
   </div>
 </div>
+
 <script type="text/javascript">
     'use strict';
     function customer_function(id,contact_number,email,billing_phone,company_name,shipping_zip_code,user_name,from_date,to_date,frequency,activity){
@@ -363,6 +354,21 @@ select.select-width{
         @endif
       }
     },
+
+    {
+      "bSortable": false,
+      "ilter":false,
+      "mRender": function(data, type, row) { 
+        var button="";
+        @if($my_permissions->contains('CUSTOMER_DETAILS'))
+        return '<a href="login-back-an/'+row.id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Login</button></a> ' + button;
+        @else
+        return "-";
+        @endif
+      }
+    },
+
+
     ]
   }, dataTableDesign) );
   });

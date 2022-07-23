@@ -440,29 +440,28 @@ max-width: 450px;
 
                      <div class="col-md-9">
 
-                      <div class="row price-grid-append-container-scroll">
+                      <div class="row price-grid-append-container-scroll Added-price-grid">
 
                        @foreach($product->product_prices as $product_price)
-
                        <div class="col-md-2  price-grid-input-container">
 
                           <div class="col  {{ $errors->has('count_from') ? ' has-error' : '' }}">
-													<input id="count_from" type="number" name=""  class="form-control thresold-i grid-input-text" placeholder="Count From" value="{{$product_price->count_from}}" disabled="">   </div>																				                        
+													<input id="count_from" type="number" name=""  class="form-control thresold-i grid-input-text count_from-{{$product_price->product_price_id}}" placeholder="Count From" value="{{$product_price->count_from}}">   </div>																				                        
                          
 
                         <div class="col {{ $errors->has('setup_price') ? ' has-error':'' }}">
-                         <input id="setup_price" type="text" name=""  class="form-control thresold-i grid-input-text" placeholder="Setup Price" value="{{$product_price->setup_price}}" disabled="">
+                         <input id="setup_price" type="text" name=""  class="form-control thresold-i grid-input-text setup_price-{{$product_price->product_price_id}}" placeholder="Setup Price" value="{{$product_price->setup_price}}" >
                         </div>  
 
 
                         <div class="col  {{ $errors->has('per_item_price') ? ' has-error' : '' }}">
-                           <input id="per_item_price" type="text" name="" class="form-control thresold-i grid-input-text" placeholder="Per Item Price" value="{{$product_price->per_item_price}}" disabled="">
+                           <input id="per_item_price" type="text" name="" class="form-control thresold-i grid-input-text per_item_price-{{$product_price->product_price_id}}" placeholder="Per Item Price" value="{{$product_price->per_item_price}}" >
                         </div>  
 
 
 
                         <div class="col  {{ $errors->has('per_item_sale_price') ? ' has-error' : '' }}">
- 													<input id="per_item_sale_price" type="text" name=""  class="form-control thresold-i grid-input-text" placeholder="Per Item Sale Price" value="{{$product_price->per_item_sale_price}}" disabled="">                                 
+ 													<input id="per_item_sale_price" type="text" name=""  class="form-control thresold-i grid-input-text per_item_sale_price-{{$product_price->product_price_id}}" placeholder="Per Item Sale Price" value="{{$product_price->per_item_sale_price}}">                                 
                         </div>
 
 
@@ -471,6 +470,14 @@ max-width: 450px;
 		                        <button id="" type="button" class="form-control thresold-i grid-input-text"><i class="fa fa-trash"></i></button>
 		                      </a>
                         </div> 
+
+
+                        <div class="col save-grid-col-parent">
+                          <a href="javascript:void(0);" class="save-grid-col  save-grid-col-{{$product_price->product_price_id}}" value="{{$product_price->product_price_id}}">
+                            <button type="button" class="btn btn-info grid-input-text">save</button>
+                          </a>
+                        </div> 
+
 
                         <input type="hidden" class="is_sale_data" value="{{$product_price->is_sale}}" name="">                        
                       </div>
@@ -507,7 +514,7 @@ max-width: 450px;
 
                     <div class="row pl-4">
 
-                    <div class="col-md-3">
+                    <div class="col-md-3" style="min-width: 135px;">
                       <div class="row form-control-label pt-2 pb-2">Countfrom</div>
                       <div class="row form-control-label pt-2 pb-2">SetupPrice</div>
                       <div class="row form-control-label pt-2 pb-2">Per Item Price</div>
@@ -1785,6 +1792,43 @@ button.imprint_color_delete_button {
 
 		});
 	});
+
+
+
+
+/*for price grid single grid update*/
+var product_price_grid=<?php echo json_encode($product->product_prices);?>;
+
+$.each(product_price_grid,function(index,item){
+$('.save-grid-col-'+item.product_price_id).on('click',function(){
+
+console.log(item);
+
+product_price_id= item.product_price_id;
+price_count_from = $('.count_from-'+item.product_price_id).val();
+price_setup_price=$('.setup_price-'+item.product_price_id).val();
+price_per_item_price=$('.per_item_price-'+item.product_price_id).val();
+price_per_item_sale_price=$('.per_item_sale_price-'+item.product_price_id).val();
+
+
+// alert(imprint_additional_running_fee);
+
+$.ajax({
+type:'POST',
+url:"{{$base_url}}/admin/product/editPricGridData",
+data:{'product_price_id':product_price_id,'price_setup_price':price_setup_price,'price_count_from':price_count_from,'price_per_item_price':price_per_item_price,'price_per_item_sale_price':price_per_item_sale_price,"_token": "{{csrf_token()}}"},
+
+success:function(data) {
+alert("Prices Data Updated Successfully");
+}
+
+});
+});
+});
+//Imprint price data end
+
+
+
 
 </script>
 

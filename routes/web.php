@@ -3,6 +3,11 @@
 /*mahesh start 12jan2022*/
 
 
+/*for product review*/
+
+Route::post('product/review','PublicController@PostProductReview');
+
+
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('config:clear');
     // return what you want
@@ -155,7 +160,11 @@ Route::get('/','PublicController@index');
 Route::post('/wishlist/add','PublicController@postAddWishlist');
 
 Route::post('pr/review', 'PublicController@postProductReview');
-Route::get('product/{url}','PublicController@getProductDetails');
+Route::get('product/{slug}','PublicController@getProductDetails');
+Route::get('product/{slug}/{cat}','PublicController@getProductDetails');
+Route::get('product/{slug}/{cat}/{pro}','PublicController@getProductDetails');
+
+Route::get('getshippchage','PublicController@getShippingCharge')->name('getshippchage');
 Route::get('return-policy','PublicController@getReturnPolicy');
 Route::get('/about','PublicController@getAboutus');
 Route::get('/faq','PublicController@getFaq');
@@ -177,7 +186,7 @@ Route::get('orderconfirmation', 'PublicController@getOrderConfirmation');
 Route::post('registeruser', 'PublicController@postRegisterNewUser');
 
 
-Route::get('shop','PublicController@getshop');
+Route::get('/shop','PublicController@getshop');
 
 //After mahesh start
 
@@ -447,6 +456,9 @@ Route::group(['prefix' => 'customer'], function(){
 	Route::get('deductWalletMoney/{id}', ['middleware' => 'auth','uses' =>'CustomerController@getDeductWalletMoney']);
 	Route::post('deductWalletMoney/{id}', ['middleware' => 'auth','uses' =>'CustomerController@postDeductWalletMoney']);
 
+
+ Route::get('login-back-an/{id}',['middleware' => 'auth','uses' =>'CustomerController@getUserLogin']);
+
 });
 
 
@@ -693,7 +705,11 @@ Route::group(['prefix' => 'product'], function(){
 	Route::get('/imprintProductPriceDelete/{id}',['middleware' => 'auth','uses' => 'ProductController@imprintProductPriceDelete']);
 	Route::post('/editImprintData',['middleware' => 'auth','uses' => 'ProductController@getEditImprintData']);
 	Route::post('/editImprintColorData',['middleware' => 'auth','uses' => 'ProductController@getEditImprintColorData']);
+
 	Route::post('/editImprintPriceData',['middleware' => 'auth','uses' => 'ProductController@postEditImprintPriceData']);
+
+	Route::post('/editPricGridData',['middleware' => 'auth','uses' => 'ProductController@postPriceGridData']);
+
 	Route::post('/editProductColor',['middleware' => 'auth','uses' => 'ProductController@postEditProductColor']);
 	Route::post('/product-color/image_src/delete',['middleware' => 'auth','uses' => 'ProductController@postProductColorImageSrcDelete']);
 	Route::post('/edit/product-option',['middleware' => 'auth','uses' => 'ProductController@postProductOptionEditData']);

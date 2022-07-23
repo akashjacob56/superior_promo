@@ -2,7 +2,6 @@
 @section('content')
 <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
 <style type="text/css">
 .quantity_checkbox{
 width: 18px;
@@ -658,8 +657,8 @@ padding:5px;
 
 
 <div class="row pb-4 divided_by_list">
-
 @foreach($products as $product)
+
 <div class="col-sm-12 col-6 product-default product_default left-details product-list mb-2">
 <div class="wishlist_product_content_{{$product->product_id}}" style="z-index: 1;position: absolute;margin-left:80%;margin-top:0px;cursor:pointer;" id="">
 @if($user_wishlists!="[]" && in_array($product->product_id,$user_wishlists))
@@ -695,11 +694,29 @@ padding:5px;
 @endif
 </ul>
 </figure>
+@php
+$prect_cat= '';
+$child_cat= '';
+$product_id=$product->product_translation->product_id;
+$product_categorydata=DB::table('category_products')->where('product_id',$product_id)->first();
+$category_id = $product_categorydata->category_id;
+$child=DB::table('category_hierarchies')->where('child_category_id',$category_id)->first();
+
+if(empty($child)){
+  $prect_cat =DB::table('categories')->where('category_id',$category_id)->first()->category_url;
+  $url = $prect_cat.'/';
+}else{
+  $prect_cat =DB::table('categories')->where('category_id',$child->parent_category_id)->first()->category_url;
+  $child_cat =DB::table('categories')->where('category_id',$child->child_category_id)->first()->category_url;
+  $url = $prect_cat.'/'.$child_cat.'/';
+}
+@endphp
+
 <div class="product-details">
 <!-- <div class="category-list">
 <a href="category.html" class="product-category">category</a>
 </div> -->
-<h3 class="product-title product_title"> <a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">{{$product->default_product_translation->product_name}}</a>
+<h3 class="product-title product_title"> <a href="{{$base_url}}/product/{{ $url }}{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">{{$product->default_product_translation->product_name}}</a>
 </h3>
 
 <div class="item-details">
@@ -796,10 +813,26 @@ $min_setup_price = min($setup_price_all);
 <!-- <i class="fa fa-heart-o " style="font-size:20px;color: #68bee5;"></i> -->
 <!-- <i class="fa" style="font-size:20px;color: #68bee5;">&#xf004;</i> -->
 </div>
+@php
+$prect_cat= '';
+$child_cat= '';
+$product_id=$product->product_translation->product_id;
+$product_categorydata=DB::table('category_products')->where('product_id',$product_id)->first();
+$category_id = $product_categorydata->category_id;
+$child=DB::table('category_hierarchies')->where('child_category_id',$category_id)->first();
 
+if(empty($child)){
+  $prect_cat =DB::table('categories')->where('category_id',$category_id)->first()->category_url;
+  $url = $prect_cat.'/';
+}else{
+  $prect_cat =DB::table('categories')->where('category_id',$child->parent_category_id)->first()->category_url;
+  $child_cat =DB::table('categories')->where('category_id',$child->child_category_id)->first()->category_url;
+  $url = $prect_cat.'/'.$child_cat.'/';
+}
+@endphp
 <figure>
 
-<a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">
+<a href="{{$base_url}}/product/{{ $url }}{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">
 <img src="{{$base_url}}/storage/app/{{$product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
 </a>
 </figure>
@@ -829,9 +862,26 @@ $min_setup_price = min($setup_price_all);
 <li class="d-inline-block circle-rounded-li"><a href=""> <span class="dot text-white"></span></a></li>
 <li class="d-inline-block circle-rounded-li"><a href=""> <span class="dot text-gray"></span></a></li> -->
 </ul>
+@php
+$prect_cat= '';
+$child_cat= '';
+$product_id=$product->product_translation->product_id;
+$product_categorydata=DB::table('category_products')->where('product_id',$product_id)->first();
+$category_id = $product_categorydata->category_id;
+$child=DB::table('category_hierarchies')->where('child_category_id',$category_id)->first();
+
+if(empty($child)){
+  $prect_cat =DB::table('categories')->where('category_id',$category_id)->first()->category_url;
+  $url = $prect_cat.'/';
+}else{
+  $prect_cat =DB::table('categories')->where('category_id',$child->parent_category_id)->first()->category_url;
+  $child_cat =DB::table('categories')->where('category_id',$child->child_category_id)->first()->category_url;
+  $url = $prect_cat.'/'.$child_cat.'/';
+}
+@endphp
 
 <h3 class="product-title">
-<a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" class="text-uppercase">{{$product->default_product_translation->product_name}}</a>
+<a href="{{$base_url}}/product/{{ $url }}{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" class="text-uppercase">{{$product->default_product_translation->product_name}}</a>
 </h3>
 
 <div class="item-box">
@@ -1315,7 +1365,7 @@ $max_quantity = (int) $range['qty_max'];
 </li>
 
 @endif
-@endif
+@endif 
 
 @endforeach
 @else
@@ -1332,13 +1382,6 @@ $max_quantity = (int) $range['qty_max'];
 
 
 <!-- Quantity filter show end -->
-
-
-
-
-
-
-
 
 
 <li>
@@ -1366,8 +1409,12 @@ Clear Filters
 <div class="widget-body">
 <ul class="cat-list">
 @if($categories!="[]")
+@php
+$count=0;
+@endphp
 @foreach($categories as $category)
 @php
+$count++;
 $check="";
 if($category_ids!="" && in_array($category->category_id,$category_ids)){
 
@@ -1376,6 +1423,8 @@ $check="checked";
 @endphp
 
 <li class="category-li">
+@if($count<=5)
+<div>
 <a href="javascript:void(0);">
 <input type="checkbox" name="category_id" value="{{$category->category_id}}" id="{{$category->category_id}}" class="category-checkbox"  {{$check}}>
 <span class="product-category-span-text">&nbsp;
@@ -1389,6 +1438,24 @@ $check="checked";
 @endif
 </span>
 </a>
+</div>
+@else
+<div class="hidden-categoery hidden">
+<a href="javascript:void(0);">
+<input type="checkbox" name="category_id" value="{{$category->category_id}}" id="{{$category->category_id}}" class="category-checkbox"  {{$check}}>
+<span class="product-category-span-text">&nbsp;
+@if($category->category_translation!="")
+{{$category->category_translation->category_name}}
+@endif
+@if($category->product_count!="")
+({{$category->product_count->total_product}})
+@else
+(0)
+@endif
+</span>
+</a>
+</div>
+@endif
 </li>
 
 @endforeach
@@ -1433,7 +1500,7 @@ $check="checked";
 -->
 
 <li>
-<a style="font-family: Roboto;font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;align-items: center;text-decoration-line: underline;color: #68BEE5;" href="#widget-category-1">
+<a class="cat-less-more" style="font-family: Roboto;font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;align-items: center;text-decoration-line: underline;color: #68BEE5;" href="#widget-category-1">
 See More
 </a>
 </li>
@@ -1637,14 +1704,12 @@ $check="checked";
 
 <ul class="quantity-list">
 
-
 @php
-
 $qty_max=max($qty_ranges);
 $qty_max_value=$qty_max['qty_max'];
 $count_new=25;
+$old_qty_min=0;
 @endphp
-
 
 
 @foreach($qty_ranges as $key=>$range)
@@ -1661,20 +1726,20 @@ $check_qty="checked";
 
 
 <li class="product_quantity_li" >
-<input type="checkbox" name="quantity_range_values" class="quantity-checkbox" min="0" max="{{$count_new}}" {{$check_qty}}>&nbsp; {{$count_new}} </li>
-
+<input type="checkbox" name="quantity_range_values" class="quantity-checkbox" min="{{$old_qty_min}}" max="{{$count_new}}" {{$check_qty}}>  &nbsp; {{$old_qty_min}}-{{$count_new}} </li>
 
 @php
+$old_qty_min=$count_new;
 $count_new=$count_new+25;
-
 @endphp
+
 @endforeach
 <li class="product_quantity_li" >
-<input type="checkbox" name="quantity_range_values" class="quantity-checkbox" min="0" max="500" {{$check_qty}}>&nbsp; 500 </li>
+<input type="checkbox" name="quantity_range_values" class="quantity-checkbox" min="0" max="500" {{$check_qty}}>
+  &nbsp; 500</li>
 
 <li class="product_quantity_li" >
-<input type="checkbox" name="quantity_range_values" class="quantity-checkbox" min="1000" max="1000" {{$check_qty}}>&nbsp; 1000+ </li>
-
+<input type="checkbox" name="quantity_range_values" class="quantity-checkbox" min="1000" max="1000" {{$check_qty}}> &nbsp; 1000+</li>
 
 </ul>
 </div>
@@ -1726,6 +1791,18 @@ $count_new=$count_new+25;
 
 
 <script type="text/javascript">
+
+$(document).ready(function(){
+//$('.menu-depart1').hide();
+
+$('.cat-less-more').on('click',function(){
+$('.hidden-categoery').toggle();
+});
+
+});
+
+
+
 $(document).ready(function(){
 var products = <?php echo json_encode($menu_products); ?>;
 
