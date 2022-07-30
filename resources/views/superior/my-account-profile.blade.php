@@ -3080,7 +3080,7 @@ No Order Found
 
 
 <!-- order-placed-content-body start -->
-<div class="order-placed-content-body">
+<div    class="order-placed-content-body">
 
 <!-- order-history-content-main start  -->
 <div class="order-history-content-main">
@@ -3099,7 +3099,7 @@ No Order Found
 @endif
 
 </span></p>
-<p class="d-inline-block ml-5 item_content_para">Current Status : <span style="font-weight: 500;">waiting for admin approval</span></p>
+<p class="d-inline-block ml-5 item_content_para">Current Status :<span style="font-weight: 500;">waiting for admin approval</span></p>
 <div class="clearfix"></div>
 </div>
 

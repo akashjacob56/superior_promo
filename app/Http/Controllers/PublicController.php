@@ -2060,6 +2060,20 @@ if($request->payment_method==1){
 
     $msg_type = "success_msg";
     $is_status="Success";
+    
+    $c_name =  $user_data->fname.' '.$user_data->last_name;
+    $c_id = $user_data->id;
+    $c_email =  $user_data->email;
+    $client = new \GuzzleHttp\Client();
+    $response = $client->request('POST', 'https://api.bigmailer.io/v1/brands/ee82a5c9-fe7a-4d58-8d47-8bd6b01c7581/transactional-campaigns/abc0cf3a-8c7e-44cc-9757-227dd9f38d46/send', [
+       'body' => '{"variables":[{"name":"CUSTOMER_NAME","value":"'.$c_name.'"}],"email":"'.$c_email.'"}',
+       'headers' => [
+          'Accept' => 'application/json',
+          'Content-Type' => 'application/json',
+          'X-API-Key' => '9668aebe-5513-46ff-bf19-1924952dc6c1',
+       ],
+    ]);
+   $response->getBody(); 
 
     } else {
     // echo "Transaction Failed \n";
@@ -2164,6 +2178,7 @@ if($request->payment_method==1){
   
    if($cim_no==""){
    if($is_status=="Success"){
+      
     $paymentCreditCard = new AnetAPI\PaymentType();
     $paymentCreditCard->setCreditCard($creditCard);
     // Create the Bill To info for new payment type
@@ -3922,6 +3937,8 @@ public function getTermsConditions(Request $request){
 
 
 public function getshop(Request $request){
+   $client = new \GuzzleHttp\Client();
+  
       //Filter Data
       $shop_cat_id = $request->shop_cat_id;
       $pagi_num = $request->pagi_num;
@@ -4344,7 +4361,7 @@ public function getMyProfile(){
 //     $q->where('created_at', '>=', '2015-01-01 00:00:00');
 // })->get();
       
-	$my_account_profile = User::where('id',$user->id)->first();
+  $my_account_profile = User::where('id',$user->id)->first();
 
   $reorder_lists = Order::where('user_id',$user->id)->where('is_reorder',1)->with('orderitem')->orderBy('id','desc')->get();
   // echo $reorder_lists;die;
@@ -4783,7 +4800,7 @@ public function postMyAccShippAddressMakeDefault(Request $request){
         // $user_id=$this->getLoginUserId();
         $auth_user = Auth::user();
 
-	
+  
 
     if($auth_user->role_id==1){
        $user_id = $request->customer_id; 
@@ -5363,8 +5380,8 @@ return $data="";
     
     if($usr==0){
     $cart=new Cart();
-   //  $cart->session=$user_id;
-    $cart->user_id=$user_id;
+    $cart->session=$user_id;
+    /*$cart->user_id=$user_id;*/
     $cart->discount_id=0;
     $cart->save();
     }
@@ -5669,164 +5686,6 @@ return $data="";
       return view('superior.rus-services');
    }
 
-   
-   public function getShippingCharge(Request $request){
-      $input = $request->all();
-     
-      $key = '2sEGbYevLMZDnNDe';
-		$password = 'ffhFP8Zpt3Vz8GsJahvmU4FU0';
-		$account_number = '283281329';
-		$meter_number = '255723625';
-		$pincode = $input['zip'];
-		$pincode2 = '10001';
-
-		$xml = '<?xml version="1.0" encoding="UTF-8"?>
-               <SOAP-ENV:Envelope
-                  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:ns1="http://fedex.com/ws/rate/v13">
-                  <SOAP-ENV:Body>
-                     <ns1:RateRequest>
-                        <ns1:WebAuthenticationDetail>
-                           <ns1:UserCredential>
-                              <ns1:Key>'.$key.'</ns1:Key>
-                              <ns1:Password>'.$password.'</ns1:Password>
-                           </ns1:UserCredential>
-                        </ns1:WebAuthenticationDetail>
-                        <ns1:ClientDetail>
-                           <ns1:AccountNumber>'.$account_number.'</ns1:AccountNumber>
-                           <ns1:MeterNumber>'.$meter_number.'</ns1:MeterNumber>
-                        </ns1:ClientDetail>
-                        <ns1:TransactionDetail>
-                           <ns1:CustomerTransactionId> *** Rate Request v13 using PHP ***</ns1:CustomerTransactionId>
-                        </ns1:TransactionDetail>
-                        <ns1:Version>
-                           <ns1:ServiceId>crs</ns1:ServiceId>
-                           <ns1:Major>13</ns1:Major>
-                           <ns1:Intermediate>0</ns1:Intermediate>
-                           <ns1:Minor>0</ns1:Minor>
-                        </ns1:Version>
-                        <ns1:ReturnTransitAndCommit>true</ns1:ReturnTransitAndCommit>
-                        <ns1:RequestedShipment>
-                           <ns1:DropoffType>REGULAR_PICKUP</ns1:DropoffType>
-                           <ns1:ServiceType>FEDEX_EXPRESS_SAVER</ns1:ServiceType>
-                           <ns1:PackagingType>YOUR_PACKAGING</ns1:PackagingType>
-                           <ns1:TotalInsuredValue>
-                              <ns1:Currency>USD</ns1:Currency>
-                           </ns1:TotalInsuredValue>
-                           <ns1:Shipper>
-                              <ns1:Contact>
-                                 <ns1:PersonName>Sender Name</ns1:PersonName>
-                                 <ns1:CompanyName>Sender Company Name</ns1:CompanyName>
-                                 <ns1:PhoneNumber></ns1:PhoneNumber>
-                              </ns1:Contact>
-                              <ns1:Address>
-                                 <ns1:StreetLines></ns1:StreetLines>
-                                 <ns1:City></ns1:City>
-                                 <ns1:StateOrProvinceCode></ns1:StateOrProvinceCode>
-                                 <ns1:PostalCode>'.$pincode.'</ns1:PostalCode>
-                                 <ns1:CountryCode>US</ns1:CountryCode>
-                              </ns1:Address>
-                           </ns1:Shipper>
-                           <ns1:Recipient>
-                              <ns1:Contact>
-                                 <ns1:PersonName>Recipient Name</ns1:PersonName>
-                                 <ns1:CompanyName>Company Name</ns1:CompanyName>
-                                 <ns1:PhoneNumber></ns1:PhoneNumber>
-                              </ns1:Contact>
-                              <ns1:Address>
-                                 <ns1:StreetLines></ns1:StreetLines>
-                                 <ns1:City></ns1:City>
-                                 <ns1:StateOrProvinceCode></ns1:StateOrProvinceCode>
-                                 <ns1:PostalCode>'.$pincode2.'</ns1:PostalCode>
-                                 <ns1:CountryCode>US</ns1:CountryCode>
-                                 <ns1:Residential>false</ns1:Residential>
-                              </ns1:Address>
-                           </ns1:Recipient>
-                           <ns1:ShippingChargesPayment>
-                              <ns1:PaymentType>SENDER</ns1:PaymentType>
-                              <ns1:Payor>
-                                 <ns1:ResponsibleParty>
-                                    <ns1:AccountNumber>'.$account_number.'</ns1:AccountNumber>
-                                 </ns1:ResponsibleParty>
-                              </ns1:Payor>
-                           </ns1:ShippingChargesPayment>
-                           <ns1:RateRequestTypes>ACCOUNT</ns1:RateRequestTypes>
-                           <ns1:PackageCount>1</ns1:PackageCount>
-                           <ns1:RequestedPackageLineItems>
-                              <ns1:SequenceNumber>1</ns1:SequenceNumber>
-                              <ns1:GroupPackageCount>1</ns1:GroupPackageCount>
-                              <ns1:Weight>
-                                 <ns1:Units>LB</ns1:Units>
-                                 <ns1:Value>20</ns1:Value>
-                              </ns1:Weight>
-                              <ns1:Dimensions>
-                                 <ns1:Length>10</ns1:Length>
-                                 <ns1:Width>10</ns1:Width>
-                                 <ns1:Height>10</ns1:Height>
-                                 <ns1:Units>IN</ns1:Units>
-                              </ns1:Dimensions>
-                           </ns1:RequestedPackageLineItems>
-                        </ns1:RequestedShipment>
-                     </ns1:RateRequest>
-                  </SOAP-ENV:Body>
-               </SOAP-ENV:Envelope>';
-
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, 'https://ws.fedex.com:443/web-services');
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
-      curl_setopt($ch, CURLOPT_VERBOSE, 1);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-      curl_setopt($ch, CURLOPT_POST, 1);
-      $result_xml = curl_exec($ch);
-
-      // remove colons and dashes to simplify the xml
-      $result_xml = str_replace(array(':','-'), '', $result_xml);
-         $result = @simplexml_load_string($result_xml);
-      // $array_data = json_decode(json_encode(simplexml_load_string($result_xml)), true);
-      // print_r($result); die();
-      //echo  $result->Amount;
-      //echo $array_data->SOAPENVBody;
-      // echo $array_data->Amount;
-      
-      $array_data = json_decode(json_encode((array)$result), TRUE);
-      // return $array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['RatedShipmentDetails'][0]['ShipmentRateDetail']['TotalBaseCharge'];
-      $show = '';
-
-      if (isset($array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['RatedShipmentDetails'])) {
-      
-      
-      $fdate = date('Y-m-d');
-      $tdate = date('Y-m-d',strtotime($array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['CommitDetails']['CommitTimestamp']));
-      $datetime1 = new DateTime($fdate);
-      $datetime2 = new DateTime($tdate);
-      $interval = $datetime1->diff($datetime2);
-      $days = $interval->format('%a');
-      $show .= '
-            <div style="padding-top: 20px;padding-bottom: 20px;" class="text-danger"><b>Please select shipping service</b></div>
-            <table>
-               <tr>
-                  <th style="width: 9%;">#</th>
-                  <th>Service</th>
-                  <th>Cost</th>
-                  <th>Time in Transit</th>
-               </tr>
-         ';
-      $show .= '
-               <tr>
-                  <td style="width: 9%; position: relative; top: -10px;"><input type="radio" name="shippcost" class="form-check-input check-radio zip-checkbox" ></td>
-                  <td>'.str_replace('_',' ', $array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['ServiceType']).'</td>
-                  <td>$'.$array_data['SOAPENVBody']['RateReply']['RateReplyDetails']['RatedShipmentDetails'][0]['ShipmentRateDetail']['TotalBaseCharge']['Amount'].'</td>
-                  <td>'.$days.' business days</td>
-               </tr>
-               <div class="col-md-12 zip-error text-center hidden"><span class="text-danger"><b>Please Enter Zip Code</b></span></div>
-            </table>
-         ';
-         }
-      
-      return $show;
-   }
 
 
    // Mahesh data end 12jan2022------------------

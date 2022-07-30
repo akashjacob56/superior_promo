@@ -563,7 +563,7 @@ textbox.text(filesCount + ' files selected');
 
                         @if($order->orderitems!="[]")
                         @foreach($order->orderitems as $orderitem)
-
+                           
                           @php
                             if($orderitem->is_important==1){
                                 $is_important_color = "color_orange";
@@ -864,7 +864,9 @@ textbox.text(filesCount + ' files selected');
       <label for="check-notes">Not Paid</label>
  </div>
 </div>
-
+    @php 
+      $payment =  DB::table('payments')->where('order_item_id','=',$orderitem->id)->first();
+    @endphp
 
 <div class="col-md-12"><h6 class="modal-title">Extra billing</h6></div>
 <div class="col-md-12"><span>Sorry, this customer does not have any CIM account.</span></div>
@@ -892,6 +894,20 @@ textbox.text(filesCount + ' files selected');
     </tr>
   </thead>
   <tbody>
+    @if($payment  != '')
+    <tr>
+      <td>{{ $payment->id }}</td>
+      <td>{{ $payment->payment_profile_id }}</td>
+      <td>{{ $payment->status }}</td>
+      <td>{{ $payment->transaction_id }}</td>
+      <td>{{ $payment->created_at }}</td>
+      <td>{{ $payment->type }}</td>
+      <td>{{ $payment->tax }}</td>
+      <td>{{ $payment->price }}</td>
+      <td>{{ $payment->credit_amount }}</td>
+      <td>{{ $payment->over_fees }}</td>
+    </tr>
+    @else
     <tr>
       <td></td>
       <td></td>
@@ -904,6 +920,7 @@ textbox.text(filesCount + ' files selected');
       <td></td>
       <td></td>
     </tr>
+    @endif
   </tbody>
 </table> 
 

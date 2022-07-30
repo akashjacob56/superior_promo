@@ -632,7 +632,10 @@ textbox.text(filesCount + ' files selected');
                             <td></td>
                             <td>@if($orderitem->stage!="") {{$orderitem->stage->name}} @endif</td>
                             <td>
-                              <i class="fa fa-database modalnew" style="font-size:15px;" data-toggle="modal" data-target="#exampleModalLong{{$orderitem->id}}"></i>&nbsp;<i class="fa fa-folder-open" data-toggle="modal" data-target="#exampleModalLong-model-second-{{$orderitem->id}}"></i>&nbsp;<i class="fa fa-usd dollar_clickable" dollar_clickable" order_item_id="{{$orderitem->id}}" data-toggle="modal" data-target="#exampleModalLong-model-third-{{$orderitem->id}}" style="font-size:15px;"></i>&nbsp;<i class="fa fa-magic "  style="font-size:15px;" data-toggle="modal" data-target="#exampleModalLong-model-fourth-{{$orderitem->id}}"></i><!-- &nbsp;<i style="font-size:15px;" class="fa fa-file-text"data-toggle="modal" data-target="#exampleModalLong-model-fifth"></i> -->&nbsp;<i style="font-size:15px;" class="fa fa-exclamation exclamation_click_order" order_item_id="{{$orderitem->id}}"></i>
+                              <button id="{{$order->id}}" class="btn btn-success order_confirm">Confirm Order</button>
+                              <!-- <i class="fa fa-database modalnew" style="font-size:15px;" data-toggle="modal" data-target="#exampleModalLong{{$orderitem->id}}"></i>&nbsp;<i class="fa fa-folder-open" data-toggle="modal" data-target="#exampleModalLong-model-second-{{$orderitem->id}}"></i>&nbsp;<i class="fa fa-usd dollar_clickable" dollar_clickable" order_item_id="{{$orderitem->id}}" data-toggle="modal" data-target="#exampleModalLong-model-third-{{$orderitem->id}}" style="font-size:15px;"></i>&nbsp;<i class="fa fa-magic "  style="font-size:15px;" data-toggle="modal" data-target="#exampleModalLong-model-fourth-{{$orderitem->id}}"></i> -->
+                              <!-- &nbsp;<i style="font-size:15px;" class="fa fa-file-text"data-toggle="modal" data-target="#exampleModalLong-model-fifth"></i> -->&nbsp;
+                              <!-- <i style="font-size:15px;" class="fa fa-exclamation exclamation_click_order" order_item_id="{{$orderitem->id}}"></i> -->
 
                   <!-- ------------------------------------- Stage Management Start - --------------------------------->
                         <!-- model for first button  -->
@@ -2457,6 +2460,55 @@ $.ajax({
 
 
   });
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+$(document).on('click', '.order_confirm', function(){ 
+      var id = $(this).attr("id");  
+          swal({
+            title: "Are you sure?",
+            text: "Are you sure you want Confirm Order",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                $.ajax({
+                    type: "get",
+                    url: "{{ route('reorders.confirm') }}",
+                    data: {id:id},  
+                    success: function(data) {
+                         if(data == 'success')
+                            {
+                                table.ajax.reload(); 
+                                swal({
+                                      title: "Success",
+                                      text: "Source deleted Successfully",
+                                      icon: "success",
+                                      button: false,
+                                      timer: 3000
+                                    });   
+                            }  
+                             if(data == 'failed')
+                            {
+                                swal({
+                                      title: "Failed",
+                                      text: "Some Error Occured Please Try again.",
+                                      icon: "error",
+                                      button: false,
+                                      timer: 3000
+                                    });   
+                            }        
+                    }
+                });
+            } 
+          });
+       
+       event.preventDefault();
+    });
+
 </script>
 
 @endsection

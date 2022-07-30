@@ -694,31 +694,13 @@ padding:5px;
 @endif
 </ul>
 </figure>
-@php
-$prect_cat= '';
-$child_cat= '';
-$product_id=$product->product_translation->product_id;
-$product_categorydata=DB::table('category_products')->where('product_id',$product_id)->first();
-$category_id = $product_categorydata->category_id;
-$child=DB::table('category_hierarchies')->where('child_category_id',$category_id)->first();
-
-if(empty($child)){
-  $prect_cat =DB::table('categories')->where('category_id',$category_id)->first()->category_url;
-  $url = $prect_cat.'/';
-}else{
-  $prect_cat =DB::table('categories')->where('category_id',$child->parent_category_id)->first()->category_url;
-  $child_cat =DB::table('categories')->where('category_id',$child->child_category_id)->first()->category_url;
-  $url = $prect_cat.'/'.$child_cat.'/';
-}
-@endphp
-
 <div class="product-details">
 <!-- <div class="category-list">
 <a href="category.html" class="product-category">category</a>
 </div> -->
-<h3 class="product-title product_title"> <a href="{{$base_url}}/product/{{ $url }}{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">{{$product->default_product_translation->product_name}}</a>
-</h3>
 
+<h3 class="product-title product_title"> <a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">{{$product->default_product_translation->product_name}}</a>
+</h3>
 <div class="item-details">
 <span>Item - <b>#{{$product->product_id}}</b></span>
 </div>
@@ -813,26 +795,9 @@ $min_setup_price = min($setup_price_all);
 <!-- <i class="fa fa-heart-o " style="font-size:20px;color: #68bee5;"></i> -->
 <!-- <i class="fa" style="font-size:20px;color: #68bee5;">&#xf004;</i> -->
 </div>
-@php
-$prect_cat= '';
-$child_cat= '';
-$product_id=$product->product_translation->product_id;
-$product_categorydata=DB::table('category_products')->where('product_id',$product_id)->first();
-$category_id = $product_categorydata->category_id;
-$child=DB::table('category_hierarchies')->where('child_category_id',$category_id)->first();
-
-if(empty($child)){
-  $prect_cat =DB::table('categories')->where('category_id',$category_id)->first()->category_url;
-  $url = $prect_cat.'/';
-}else{
-  $prect_cat =DB::table('categories')->where('category_id',$child->parent_category_id)->first()->category_url;
-  $child_cat =DB::table('categories')->where('category_id',$child->child_category_id)->first()->category_url;
-  $url = $prect_cat.'/'.$child_cat.'/';
-}
-@endphp
 <figure>
 
-<a href="{{$base_url}}/product/{{ $url }}{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">
+<a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">
 <img src="{{$base_url}}/storage/app/{{$product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
 </a>
 </figure>
@@ -862,28 +827,9 @@ if(empty($child)){
 <li class="d-inline-block circle-rounded-li"><a href=""> <span class="dot text-white"></span></a></li>
 <li class="d-inline-block circle-rounded-li"><a href=""> <span class="dot text-gray"></span></a></li> -->
 </ul>
-@php
-$prect_cat= '';
-$child_cat= '';
-$product_id=$product->product_translation->product_id;
-$product_categorydata=DB::table('category_products')->where('product_id',$product_id)->first();
-$category_id = $product_categorydata->category_id;
-$child=DB::table('category_hierarchies')->where('child_category_id',$category_id)->first();
-
-if(empty($child)){
-  $prect_cat =DB::table('categories')->where('category_id',$category_id)->first()->category_url;
-  $url = $prect_cat.'/';
-}else{
-  $prect_cat =DB::table('categories')->where('category_id',$child->parent_category_id)->first()->category_url;
-  $child_cat =DB::table('categories')->where('category_id',$child->child_category_id)->first()->category_url;
-  $url = $prect_cat.'/'.$child_cat.'/';
-}
-@endphp
-
 <h3 class="product-title">
-<a href="{{$base_url}}/product/{{ $url }}{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" class="text-uppercase">{{$product->default_product_translation->product_name}}</a>
+<a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" class="text-uppercase">{{$product->default_product_translation->product_name}}</a>
 </h3>
-
 <div class="item-box">
 <span>Item - #{{$product->product_id}}</span>
 </div>

@@ -591,6 +591,7 @@ Route::group(['prefix' => 'order'], function(){
 	Route::get('all', ['middleware' => 'auth','uses' => 'OrderController@getAll']);
 
 	Route::get('all-reorder', ['middleware' => 'auth','uses' => 'OrderController@getAllReorder']);
+	Route::get('reorder-cofirm', ['middleware' => 'auth','uses' => 'OrderController@reorders_confirm'])->name('reorders.confirm');
 	
 	//Order edit page
 	Route::get('/edit/{id}', ['middleware' => 'auth','uses' => 'OrderController@getOrderDetail']);

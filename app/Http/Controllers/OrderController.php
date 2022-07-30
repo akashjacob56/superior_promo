@@ -1655,6 +1655,17 @@ return view('order.orderLog');
 
 }
 
+
+public function reorders_confirm(Request $request)
+{
+  $id = $request->id;
+  $result =  Order::where('id','52139')->update(
+    array('is_reorder'=>3,
+   ));
+
+  return $id;
+}
+
 public function getOrderLogData(Request $request){
 
     
