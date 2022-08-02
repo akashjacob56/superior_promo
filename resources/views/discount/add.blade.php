@@ -37,12 +37,12 @@
             <div class="col-md-12">
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="{{$base_url}}">
+                        <a href="">
                             <i class="feather icon-home"></i>
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="{{$base_url}}/admin/home">Admin</a>
+                        <a href="/admin/home">Admin</a>
                     </li>
                     <li class="breadcrumb-item"><a href="all">Discount code</a>
                     </li> 
@@ -102,7 +102,7 @@
                                     <div class=" form-group {{ $errors->has('image') ? ' has-error' : '' }}" >
                                       <label class="form-control-label" for="usr">Image *</label>
                                       <div class="slider_img">
-                                         <img   src="{{$base_url}}/files/assets/images/preview.png" id="image" alt="">
+                                         <img   src="/files/assets/images/preview.png" id="image" alt="">
                                      </div>
                                      <input type="file" class="form-control" name="image" value="{{old('image')}}" accept="image/*"  onchange="document.getElementById('image').src = window.URL.createObjectURL(this.files[0])">
 
@@ -621,7 +621,7 @@ $('#category_id').keyup(function(){
                 var categories=result.data.data;
                 $("#applies_to_data").empty();
                 $.each(categories, function(index, item){
-                    var category_item='<tr><td><div class="d-inline-block align-middle"><img src="{{$base_url}}/storage/app/'+item.category_image+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; width=60 height=60></td><td>'+item.default_category_translation.category_name+'</td><td class=""><button type="button" id="'+item.category_id+'" class="applies_to_add_button btn btn-success waves-effect waves-light add ">Apply</button></td></tr>';
+                    var category_item='<tr><td><div class="d-inline-block align-middle"><img src="/storage/app/'+item.category_image+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="/files/assets/images/product.png"; width=60 height=60></td><td>'+item.default_category_translation.category_name+'</td><td class=""><button type="button" id="'+item.category_id+'" class="applies_to_add_button btn btn-success waves-effect waves-light add ">Apply</button></td></tr>';
                     $("#applies_to_data").append($(category_item));
                 });
             }else{
@@ -642,7 +642,7 @@ $("#applies_to_data").on("click",".applies_to_add_button",function(){
 
     ids.push(category_id);
 
-    $("#applies_to_table").append('<tr><td>ID</td><td><div class="d-inline-block align-middle"><img src="'+img+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; width=60 height=60></td><td>'+name+'</td><td><button type="button" class="delete_applies_to_item btn btn-danger"><i class="fa fa-trash-o"></i></button></td></tr>');
+    $("#applies_to_table").append('<tr><td>ID</td><td><div class="d-inline-block align-middle"><img src="'+img+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="/files/assets/images/product.png"; width=60 height=60></td><td>'+name+'</td><td><button type="button" class="delete_applies_to_item btn btn-danger"><i class="fa fa-trash-o"></i></button></td></tr>');
 });
 $('#product_id').keyup(function(){
 
@@ -657,7 +657,7 @@ $('#product_id').keyup(function(){
                 var products=result.data.data;
                 $("#applies_to_data2").empty();
                 $.each(products, function(index, item){
-                    var product_item='<tr><td><div class="d-inline-block align-middle"><img src="{{$base_url}}/storage/app/'+item.product_image+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; width=60 height=60></td><td>'+item.default_product_translation.product_name+'</td><td class="text-right"><button type="button" id="'+item.product_id+'" class="applies_to_add_button2 btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
+                    var product_item='<tr><td><div class="d-inline-block align-middle"><img src="/storage/app/'+item.product_image+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="/files/assets/images/product.png"; width=60 height=60></td><td>'+item.default_product_translation.product_name+'</td><td class="text-right"><button type="button" id="'+item.product_id+'" class="applies_to_add_button2 btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
                     $("#applies_to_data2").append($(product_item));
                 });
 
@@ -677,7 +677,7 @@ $("#applies_to_data2").on("click",".applies_to_add_button2",function(){
     var img=$(this).parent().parent().find("td:nth-child(1)").find(".d-inline-block img").attr('src');
     var name=$(this).parent().parent().find("td:nth-child(2)").text();
 
-    $("#applies_to_table").append('<tr><td>ID</td><td><div class="d-inline-block align-middle"><img src="'+img+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; width=60 height=60></td><td>'+name+'</td><td><button type="button" class="m-b-10 delete_applies_to_item btn btn-danger"><i class="fa fa-trash-o"></i></button></td></tr>' );
+    $("#applies_to_table").append('<tr><td>ID</td><td><div class="d-inline-block align-middle"><img src="'+img+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="/files/assets/images/product.png"; width=60 height=60></td><td>'+name+'</td><td><button type="button" class="m-b-10 delete_applies_to_item btn btn-danger"><i class="fa fa-trash-o"></i></button></td></tr>' );
 
     
 });
@@ -695,7 +695,7 @@ $('#customer_id').keyup(function(){
                 var customers=result.data.data;
                 $("#customer_eligibility_data").empty();
                 $.each(customers, function(index, item){
-                    var customers_item='<tr><td><div class="d-inline-block align-middle"><img src="{{$base_url}}/files/assets/images/user.png" class="img-radius img-40 align-top m-r-15" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; width=60 height=60></td><td>'+item.name+'</td><td class="text-right"><button type="button" id="'+item.id+'" class="customer_eligibility_add_button btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
+                    var customers_item='<tr><td><div class="d-inline-block align-middle"><img src="/files/assets/images/user.png" class="img-radius img-40 align-top m-r-15" onerror=this.src="/files/assets/images/product.png"; width=60 height=60></td><td>'+item.name+'</td><td class="text-right"><button type="button" id="'+item.id+'" class="customer_eligibility_add_button btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
                     $("#customer_eligibility_data").append($(customers_item));
                 });
             }else{
@@ -724,7 +724,7 @@ $("#customer_eligibility_data").on("click",".customer_eligibility_add_button",fu
         var name=$(this).parent().parent().find("td:nth-child(2)").text();
 
 
-        $("#customer_eligibility_table").append('<tr><td>Customer</td><td><div class="d-inline-block align-middle"><img src="'+img+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; width=60 height=60></td><td>'+name+'</td><td><button type="button" class="m-b-10 delete_applies_to_item btn btn-danger"><i class="fa fa-trash-o"></i></button></td></tr>' );
+        $("#customer_eligibility_table").append('<tr><td>Customer</td><td><div class="d-inline-block align-middle"><img src="'+img+'" class="img-radius img-40 align-top m-r-15" onerror=this.src="/files/assets/images/product.png"; width=60 height=60></td><td>'+name+'</td><td><button type="button" class="m-b-10 delete_applies_to_item btn btn-danger"><i class="fa fa-trash-o"></i></button></td></tr>' );
     }
 
 });

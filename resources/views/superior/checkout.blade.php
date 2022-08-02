@@ -1649,19 +1649,19 @@ $('.card.card-accordion .ship-to-multiple-location-open-close').toggle();
 
                         <div class="row pt-3 pb-5">  
                             <div class="col-md-2">
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/BBB-Logo 2.png"/>
+                                <img src="/resources/views/superior/assets/images/BBB-Logo 2.png"/>
                             </div>
                             <div class="col-md-2">
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/visa.png"/> 
+                                <img src="/resources/views/superior/assets/images/visa.png"/>
                             </div>
                             <div class="col-md-2">
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/american express.png"/> 
+                                <img src="/resources/views/superior/assets/images/american express.png"/>
                             </div>
                             <div class="col-md-2">
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/discover.png"/>
+                                <img src="/resources/views/superior/assets/images/discover.png"/>
                             </div>
                             <div class="col-md-2">
-                                <img src="{{$base_url}}/resources/views/superior/assets/images/mastercard.png"/>
+                                <img src="/resources/views/superior/assets/images/mastercard.png"/>
                             </div>
                         </div>
 
@@ -2200,7 +2200,7 @@ $('.card.card-accordion .ship-to-multiple-location-open-close').toggle();
 
 
                         <div class="row pb-5 place-final-ord">
-                        <div class="col-md-2 backord"><a href="{{$base_url}}/cart"><button class="bck-ord">Back</button></a></div>
+                        <div class="col-md-2 backord"><a href="/cart"><button class="bck-ord">Back</button></a></div>
                          @if($data['user']!="")
                         <div class="col-md-2 ord"><button class="place-ord">Place Order</button></div>
                          @endif
@@ -2478,7 +2478,7 @@ color: #0759A4;
 <div class="heading mb-1">
     <h2 class="log-txt">Login</h2>
 </div>
-<form action="{{$base_url}}/user-checkout-login" method="post">
+<form action="/user-checkout-login" method="post">
     {{ csrf_field() }}
 <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
   <label for="login-email">
@@ -2542,7 +2542,7 @@ color: #0759A4;
 
    <div class="row d-flex align-items-center pb-4">
        <div class="col-md-5 gicon">
-       <img src="{{$base_url}}/resources/views/superior/assets/images/google-icon.png"/>
+       <img src="/resources/views/superior/assets/images/google-icon.png"/>
        </div>
        <div class="col-md-7">
        <span><a href="#" class="txt-g-log">Sing in with google</a></span>
@@ -3050,7 +3050,7 @@ color: #59BD8B !important;
 
 <div class="row  pt-3 pl-5">
 <div class="account-content">
-<form action="{{$base_url}}/registeruser-checkout" method="post" onsubmit="return checkForm(this);">
+<form action="/registeruser-checkout" method="post" onsubmit="return checkForm(this);">
 {{ csrf_field() }}
             
 <!-- <input type="hidden" id="ot_checkout_main" name="ot" value="{{$data['order_total']}}"/>
@@ -3285,7 +3285,7 @@ color: #575757;
 
 <div class="container  container-back-btn pb-5 pt-3 hidden">
 <div class="row place-final-ord-check">
-<div class="col-md-2 backtocart"><a href="{{$base_url}}/cart"><button class="bck-ord">Back</button></a></div>
+<div class="col-md-2 backtocart"><a href="/cart"><button class="bck-ord">Back</button></a></div>
 </div>
 </div>
 
@@ -3827,7 +3827,7 @@ $(".expiration-error").addClass("hidden");
 
   $.ajax({
     method:"POST",
-    url:"{{$base_url}}/place/order",
+    url:"/place/order",
     cache: false,
     contentType: false,
     processData: false,
@@ -3835,7 +3835,7 @@ $(".expiration-error").addClass("hidden");
     success: function(data){
      
     //var order_id = data['order_id'];
-    window.location.href="{{$base_url}}/success?order_id="+data;
+    window.location.href="/success?order_id="+data;
 
     // if(data.status=="true"){
 
@@ -3897,7 +3897,7 @@ $(window).scrollTop(600);
 
   $.ajax({
     method: "POST",
-    url:"{{$base_url}}/place/order",
+    url:"/place/order",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -3914,7 +3914,7 @@ $(window).scrollTop(600);
     }
 
     var order_id = data['order_id'];  
-    window.location.href="{{$base_url}}/success?order_id="+order_id;
+    window.location.href="/success?order_id="+order_id;
 
     }else{
      $.notify(data.data.message_text,data.data.msg_type);
@@ -4053,7 +4053,7 @@ $(document).ready(function(){
 $('#updated-billing-address').on('click','.edit-delete-billing a.delete-bill-add', function(event){
 var address_id=$(this).attr('id');
 $.ajax({
-url:"{{$base_url}}/delete/billing/address",
+url:"/delete/billing/address",
 type:'POST',
 data:{'address_id':address_id,_token:'{{csrf_token()}}'},
 success:function(data){
@@ -4079,7 +4079,7 @@ error: function (xhr, textStatus, errorThrown) {
 /*all used billing 0 when load page*/
 $(document).ready(function(){
 $.ajax({
-url:"{{$base_url}}/checkout/used/billing/address_zero",
+url:"/checkout/used/billing/address_zero",
 type:'POST',
 data:{_token:'{{csrf_token()}}'},
 success:function(data){
@@ -4099,7 +4099,7 @@ var address = JSON.parse(address);
 
 var address_id=address.address_id;
 $.ajax({
-url:"{{$base_url}}/checkout/used/billing/address",
+url:"/checkout/used/billing/address",
 type:'POST',
 data:{'address_id':address_id,_token:'{{csrf_token()}}'},
 success:function(data){
@@ -4162,7 +4162,7 @@ $(document).ready(function(){
         var country_id =190;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -4200,7 +4200,7 @@ $('.select-billling-address').on('click','input.united-state-bill-edit',function
         var country_id =190;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -4243,7 +4243,7 @@ $('.select-billling-address').on('click','input.canada-bill-edit',function(event
        var country_id =35;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -4323,7 +4323,7 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    url: "{{$base_url}}/checkout/edit/billing/address",
+    url: "/checkout/edit/billing/address",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -4340,7 +4340,7 @@ if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zip
         var country_id =190;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -4430,7 +4430,7 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    url: "{{$base_url}}/checkout/addnew/billing/address",
+    url: "/checkout/addnew/billing/address",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -4447,7 +4447,7 @@ if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zip
         var country_id =190;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -4502,7 +4502,7 @@ $('.form-check').on('click','input.canada-bill',function(event){
         var country_id =35;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -4532,7 +4532,7 @@ $(document).ready(function(){
 var country_id =190;
 $.ajax({
 type: "post",
-url: "{{$base_url}}/getall-country-checkout",
+url: "/getall-country-checkout",
 data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 success: function (result) {    
 var state=result['states'];
@@ -4567,7 +4567,7 @@ $('.form-check').on('click','input.united-state-bill',function(event){
         var country_id =190;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -4712,7 +4712,7 @@ $('#edit-address-main').on('click','.edit-delete-row a.delete-add', function(eve
 //alert($(this).attr('id'));
 var address_id=$(this).attr('id');
 $.ajax({
-url:"{{$base_url}}/delete/shipping/address",
+url:"/delete/shipping/address",
 type:'POST',
 data:{'address_id':address_id,_token:'{{csrf_token()}}'},
     success: function(data)
@@ -4775,7 +4775,7 @@ $('.form-check').on('click','input.canadan',function(event){
  var country_id =35;
 $.ajax({
 type: "post",
-url: "{{$base_url}}/getall-country-checkout",
+url: "/getall-country-checkout",
 data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 success: function (result) {    
 var state=result['states'];
@@ -4808,7 +4808,7 @@ $(document).ready(function(){
 var country_id = 190;
 $.ajax({
 type: "post",
-url: "{{$base_url}}/getall-country-checkout",
+url: "/getall-country-checkout",
 data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 success: function (result) {    
 var state=result['states'];
@@ -4846,7 +4846,7 @@ $('.form-check').on('click','input.united-staten',function(event){
  var country_id = 190;
 $.ajax({
 type: "post",
-url: "{{$base_url}}/getall-country-checkout",
+url: "/getall-country-checkout",
 data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 success: function (result) {    
 var state=result['states'];
@@ -4931,7 +4931,7 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    url: "{{$base_url}}/checkout/addnew/address",
+    url: "/checkout/addnew/address",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -4955,7 +4955,7 @@ if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zip
          var country_id = 190;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -4990,7 +4990,7 @@ if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zip
         var country_id = 190;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -5100,7 +5100,7 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    url: "{{$base_url}}/checkout-edit-address",
+    url: "/checkout-edit-address",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -5118,7 +5118,7 @@ if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zip
         var country_id =190;
         $.ajax({
         type: "post",
-        url: "{{$base_url}}/getall-country-checkout",
+        url: "/getall-country-checkout",
         data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
         success: function (result) {    
         var state=result['states'];
@@ -5176,7 +5176,7 @@ $('.edit-address-main').on('click','input.canada',function(event){
  var country_id =35;
 $.ajax({
 type: "post",
-url: "{{$base_url}}/getall-country-checkout",
+url: "/getall-country-checkout",
 data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 success: function (result) {    
 var state=result['states'];
@@ -5212,7 +5212,7 @@ $(document).ready(function(){
 var country_id =190;
 $.ajax({
 type: "post",
-url: "{{$base_url}}/getall-country-checkout",
+url: "/getall-country-checkout",
 data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 success: function (result) {    
 var state=result['states'];
@@ -5249,7 +5249,7 @@ $('.edit-address-main').on('click','input.united-state',function(event){
 var country_id =190;
 $.ajax({
 type: "post",
-url: "{{$base_url}}/getall-country-checkout",
+url: "/getall-country-checkout",
 data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 success: function (result) {    
 var state=result['states'];

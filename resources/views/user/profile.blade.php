@@ -16,7 +16,7 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
@@ -43,7 +43,7 @@
                   <h5>@lang("user.profile")</h5>
                   <span class="upper-buttons pull-right" >
                     <button type="submit" name="save" class="btn btn-primary waves-effect waves-light pull-right">@lang("global.save")</button>
-                    <a href="{{$base_url}}/"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">@lang("global.cancel")
+                    <a href="/"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">@lang("global.cancel")
                     </button></a>
                   </span>
                 </div>
@@ -135,7 +135,7 @@
   <div class="col-sm-12">
     <div class="main-footer">
       <button type="submit" name="save" class="btn btn-primary waves-effect waves-light pull-right">@lang("global.save")</button>    
-      <a href="{{$base_url}}/"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">@lang("global.cancel")
+      <a href="/"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">@lang("global.cancel")
       </button></a>
     </div>
   </div>

@@ -45,7 +45,7 @@
                             <div class="card">
                                 <div class="text-center">
                               
-                                <!--  <img class="logo-image" style="height: 60px !important;" src="{{$base_url}}/storage/app/logo.png" alt=""> -->
+                                <!--  <img class="logo-image" style="height: 60px !important;" src="/storage/app/logo.png" alt=""> -->
                               </div>
                               <div class="col-md-12">
                                 <div class="auth-box">

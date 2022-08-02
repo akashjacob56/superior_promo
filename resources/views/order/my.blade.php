@@ -6,7 +6,7 @@
     <h4>All orders</h4>
     <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
       <li class="breadcrumb-item">
-        <a href="{{$base_url}}/">
+        <a href="/">
           <i class="icofont icofont-home"></i>
         </a>
       </li>
@@ -58,7 +58,7 @@
   $(document).ready(function() {
     advance = $('#advanced-table').DataTable( $.extend( {      
       "ajax": {
-        url: "{{$base_url}}/order/myData",
+        url: "/order/myData",
         type: "GET",
         contentType: "application/json;charset=UTF-8",
         dataType: "json",

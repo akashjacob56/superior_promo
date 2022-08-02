@@ -391,7 +391,7 @@ color: #FFFFFF;
                  
 
                 <div class="row d-flex align-items-center cart-box p-4 d-flex mb-1">
-                      <div class="col-md-2  align-self-start"><img class="product-img" src="{{$base_url}}/storage/app/{{$product->product->product_image}}"/></div>
+                      <div class="col-md-2  align-self-start"><img class="product-img" src="/storage/app/{{$product->product->product_image}}"/></div>
  
                       <div class="col-md-3">
 
@@ -506,7 +506,7 @@ color: #FFFFFF;
                        </div>
 
                        <div class="row mb-1">
-                       <a href="{{$base_url}}/edit-cartitem?pid={{$product->product_id}}&cid={{$product->id}}">
+                       <a href="/edit-cartitem?pid={{$product->product_id}}&cid={{$product->id}}">
                        <button class="btn-save-edit">Edit</button>
                         </a>
                        </div>
@@ -517,7 +517,7 @@ color: #FFFFFF;
                        </div>
 
                        <div class="row mb-1">
-                       <a href="{{$base_url}}/cartremove/{{$product->id}}"><button class="btn-save-edit">Delete</button></a>
+                       <a href="/cartremove/{{$product->id}}"><button class="btn-save-edit">Delete</button></a>
                        </div>
 
 
@@ -525,7 +525,7 @@ color: #FFFFFF;
 
 
                    <!--  <div class="col-md-2">
-                    	<a href="{{$base_url}}/cartremove/{{$product->cart_id}}">
+                    	<a href="/cartremove/{{$product->cart_id}}">
                     <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M6.71875 0.25C6.26302 0.25 5.88867 0.396484 5.5957 0.689453C5.30273 0.982422 5.15625 1.35677 5.15625 1.8125V2.59375H0.46875V4.15625H1.25V16.6562C1.25 17.291 1.47786 17.8444 1.93359 18.3164C2.4056 18.7721 2.95898 19 3.59375 19H12.9688C13.6035 19 14.1488 18.7721 14.6045 18.3164C15.0765 17.8444 15.3125 17.291 15.3125 16.6562V4.15625H16.0938V2.59375H11.4062V1.8125C11.4062 1.35677 11.2598 0.982422 10.9668 0.689453C10.6738 0.396484 10.2995 0.25 9.84375 0.25H6.71875ZM6.71875 1.8125H9.84375V2.59375H6.71875V1.8125ZM2.8125 4.15625H13.75V16.6562C13.75 16.8678 13.6686 17.055 13.5059 17.2178C13.3594 17.3643 13.1803 17.4375 12.9688 17.4375H3.59375C3.38216 17.4375 3.19499 17.3643 3.03223 17.2178C2.88574 17.055 2.8125 16.8678 2.8125 16.6562V4.15625ZM4.375 6.5V15.0938H5.9375V6.5H4.375ZM7.5 6.5V15.0938H9.0625V6.5H7.5ZM10.625 6.5V15.0938H12.1875V6.5H10.625Z" fill="#FF1001"/>
 					</svg>
@@ -597,7 +597,7 @@ color: #FFFFFF;
                          $discount=0;
                          @endphp
                        
-                      <!--   <a href="{{$base_url}}/checkout?ot={{$main_total}}&sc={{$shipping_cost}}&pt={{$main_total}}" target="_blank">
+                      <!--   <a href="/checkout?ot={{$main_total}}&sc={{$shipping_cost}}&pt={{$main_total}}" target="_blank">
                         <button type="button" class="check-text">Continue Checkout</button>
                         </a> -->
                         </div>
@@ -613,7 +613,7 @@ color: #FFFFFF;
 
 <!--                  <div class="row cart-box p-4 d-flex align-items-center mb-6">
                  	 
-                      <div class="col-md-2  align-self-start"><img class="product-img" src="{{$base_url}}/resources/views/superior/assets/images/mgggg 2.png"/></div>
+                      <div class="col-md-2  align-self-start"><img class="product-img" src="/resources/views/superior/assets/images/mgggg 2.png"/></div>
 
                       <div class="col-md-3">
 
@@ -783,7 +783,7 @@ color: #FFFFFF;
 
                
    
-                    <a href="{{$base_url}}/checkout"><button class="btn-p-guide " type="button" style="width:100%;">Continue Checkout</button></a>
+                    <a href="/checkout"><button class="btn-p-guide " type="button" style="width:100%;">Continue Checkout</button></a>
            
                 	</div>
                 	
@@ -820,11 +820,11 @@ color: #FFFFFF;
           <div class="col-md-12">
           	<center>
               <div>
-		      <img src="{{$base_url}}/storage/app/empty-cart.png" class="img-fluid empty-cart-image" alt="tbl" width="200">
+		      <img src="/storage/app/empty-cart.png" class="img-fluid empty-cart-image" alt="tbl" width="200">
               <span class="no-itemrow">Your cart is empty!</span>
                <br>
                <br>
-              <a href="{{$base_url}}/shop">
+              <a href="/shop">
               	<button class="btn-go-shopping mb-6" type="submit">Go Shopping</button>
               </a>
 		     </div>
@@ -850,7 +850,7 @@ var total_ammount={{$main_total}};
 if(discount_cupon!==""&&discount_cupon!==null){   
     $.ajax({
 	type: 'post',
-	url:'{{$base_url}}/discount-cart',
+	url:'/discount-cart',
 	data:{"_token": "{{ csrf_token() }}",'discount_cupon':discount_cupon,'total_ammount':total_ammount},
 	success: function (result){
 
@@ -880,15 +880,15 @@ if(discount_cupon!==""&&discount_cupon!==null){
 
 
 
-/* $('#checkout-link').attr('href',"{{$base_url}}/checkout?ot="+total+"&sc={{$shipping_cost}}&pt={{$main_total}}&discount="+discount+"&discode="+discount_code+"");
+/* $('#checkout-link').attr('href',"/checkout?ot="+total+"&sc={{$shipping_cost}}&pt={{$main_total}}&discount="+discount+"&discode="+discount_code+"");
 
-$('.headercheckout').attr('href',"{{$base_url}}/checkout?ot="+total+"&sc={{$shipping_cost}}&pt={{$main_total}}&discount="+discount+"&discode="+discount_code+"");*/
+$('.headercheckout').attr('href',"/checkout?ot="+total+"&sc={{$shipping_cost}}&pt={{$main_total}}&discount="+discount+"&discode="+discount_code+"");*/
          
          $('.discount-input').attr('placeholder',"Discount Applied");
 
          $('.discount-cancel-btn').removeClass('hidden');
          
-         $(".remove-discount").attr('href',"{{$base_url}}/remove-discount?id="+result.discount_id+" ");
+         $(".remove-discount").attr('href',"/remove-discount?id="+result.discount_id+" ");
 
           $.notify(result.msg,'success');
 		}else{
@@ -917,7 +917,7 @@ $('.saved_cart_single').on('click', function(){
 var cart_item_id=$(this).attr('cid');
 $.ajax({
 type: 'post',
-url:'{{$base_url}}/savedcarts/single',
+url:'/savedcarts/single',
 
 data:{"_token": "{{ csrf_token() }}",'cart_item_id':cart_item_id},
 
@@ -952,7 +952,7 @@ cart_item_ids.push($(this).val());
 $.ajax({
 
 type: 'post',
-url:'{{$base_url}}/savedcarts',
+url:'/savedcarts',
 data:{"_token": "{{ csrf_token() }}",'cart_item_ids':cart_item_ids},
 success: function (data){
 if(data.status=="false"){
@@ -1094,7 +1094,7 @@ error: function (xhr, textStatus, errorThrown) { alert(textStatus + ':' + errorT
 
 			amount="$ "+(value.sku.my_price*value.quantity);
 
-			var cart_items='<tr id="delete_'+value.cart_id+'" class="product-row"> <td class="pro-list-img product-col"> <img src="{{$base_url}}/storage/app/'+value.sku.product.product_image+'" class="img-fluid fix-height mobile-responsive" alt="tbl" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; /> </td> <td class="pro-name"> <a class="hvr-shrink" href="{{$base_url}}/product/'+value.sku.product.product_url+'?pid='+value.sku.product.default_product_translation.product_id+'&skuid='+value.sku.sku_id+'&pvid='+value.sku.product.parent_variant_id+'&cvid='+value.sku.product.child_variant_id+'" target="_blank"> <h6> <span></span> '+result+'</h6> </a> <span> <div class="rating" id="rating_star_'+value.cart_id+'"> <span> </span> '+review+' </div> </span> <span class="text-muted f-10">'+delivery_message+'</span>	 </td> <td>$'+value.sku.my_price+' <small class="old-price">'+market_price+' </small> <p><span class="text-info"> '+offer+'  </span></p>  </td> <td class="mobile-responsive"> <div id="quantity_section" class="input-group"> <span id="down-arrow_'+value.cart_id+'" class="'+value.sku_id+' down-arrow input-group-btn"> <button type="button" class="btn btn-default btn-number shadow-none btn-sm" data-type="minus" data-field="quant[1]"> <span id="btn-number" class="fa fa-minus"></span> </button></span><input type="text" id="'+value.sku_id+'" class="quantity form-control input-number text-center" value="'+value.quantity+'"> <span id="up-arrow_'+value.cart_id+'" class="'+value.sku_id+' up-arrow input-group-btn"> <button type="button" class="btn btn-default btn-number shadow-none btn-sm" data-type="plus" data-field="quant[1]"> <span id="btn-number" class="fa fa-plus"></span></button> </span> </div> </td>'+stock+'<td>'+amount+' </td> <td class="'+value.cart_id+'" id="'+value.sku.sku_id+'"><a id="add_wishlist" class="m-r-15 text-muted add_wishlist" data-toggle="tooltip" data-placement="top" title="Move to wishlist" data-original-title="Move to wishlist"><i class="wishlist far fa-heart"></i></a><a id="'+value.cart_id+'" class="text-muted delete-cart" data-toggle="tooltip" data-placement="top" title="Remove from cart" data-original-title="Remove from cart"><i class="fa fa-trash"></i></a></td></tr>';
+			var cart_items='<tr id="delete_'+value.cart_id+'" class="product-row"> <td class="pro-list-img product-col"> <img src="/storage/app/'+value.sku.product.product_image+'" class="img-fluid fix-height mobile-responsive" alt="tbl" onerror=this.src="/files/assets/images/product.png"; /> </td> <td class="pro-name"> <a class="hvr-shrink" href="/product/'+value.sku.product.product_url+'?pid='+value.sku.product.default_product_translation.product_id+'&skuid='+value.sku.sku_id+'&pvid='+value.sku.product.parent_variant_id+'&cvid='+value.sku.product.child_variant_id+'" target="_blank"> <h6> <span></span> '+result+'</h6> </a> <span> <div class="rating" id="rating_star_'+value.cart_id+'"> <span> </span> '+review+' </div> </span> <span class="text-muted f-10">'+delivery_message+'</span>	 </td> <td>$'+value.sku.my_price+' <small class="old-price">'+market_price+' </small> <p><span class="text-info"> '+offer+'  </span></p>  </td> <td class="mobile-responsive"> <div id="quantity_section" class="input-group"> <span id="down-arrow_'+value.cart_id+'" class="'+value.sku_id+' down-arrow input-group-btn"> <button type="button" class="btn btn-default btn-number shadow-none btn-sm" data-type="minus" data-field="quant[1]"> <span id="btn-number" class="fa fa-minus"></span> </button></span><input type="text" id="'+value.sku_id+'" class="quantity form-control input-number text-center" value="'+value.quantity+'"> <span id="up-arrow_'+value.cart_id+'" class="'+value.sku_id+' up-arrow input-group-btn"> <button type="button" class="btn btn-default btn-number shadow-none btn-sm" data-type="plus" data-field="quant[1]"> <span id="btn-number" class="fa fa-plus"></span></button> </span> </div> </td>'+stock+'<td>'+amount+' </td> <td class="'+value.cart_id+'" id="'+value.sku.sku_id+'"><a id="add_wishlist" class="m-r-15 text-muted add_wishlist" data-toggle="tooltip" data-placement="top" title="Move to wishlist" data-original-title="Move to wishlist"><i class="wishlist far fa-heart"></i></a><a id="'+value.cart_id+'" class="text-muted delete-cart" data-toggle="tooltip" data-placement="top" title="Remove from cart" data-original-title="Remove from cart"><i class="fa fa-trash"></i></a></td></tr>';
 			$('#cart_products').append(cart_items);
 			for(i=1;i<=5;i++){
 				if(i<=reviewCount){
@@ -1147,7 +1147,7 @@ $(document).ready(function(){
 		setquntity=$(this).attr('id');
 		$.ajax({
 			type: "post",
-			url: "{{$base_url}}/postAddToCart",
+			url: "/postAddToCart",
 			data: {'quantity':quantity,'sku_id':sku_id},
 			dataType: 'json',
 			cache: false,
@@ -1178,7 +1178,7 @@ $(document).ready(function(){
 
 			$.ajax({
 				type: "post",
-				url: "{{$base_url}}/postAddToCart",
+				url: "/postAddToCart",
 				data: {'quantity':quantity,'sku_id':sku_id},
 				dataType: 'json',
 				cache: false,
@@ -1208,7 +1208,7 @@ $(document).ready(function(){
 		else{
 			$.ajax({
 				type: "post",
-				url: "{{$base_url}}/postAddToCart",
+				url: "/postAddToCart",
 				data: {'quantity':quantity,'sku_id':sku_id},
 				dataType: 'json',
 				cache: false,
@@ -1232,7 +1232,7 @@ $(document).ready(function(){
 		$('#new_order_amount').html(" ");
 		$.ajax({
 			type: "post",
-			url: "{{$base_url}}/wdeleteFromCart",
+			url: "/wdeleteFromCart",
 			data: {'cart_id':cart_id},
 			dataType: 'json',
 			cache: false,
@@ -1266,14 +1266,14 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: "post",
-			url: "{{$base_url}}/waddToWishlist",
+			url: "/waddToWishlist",
 			data: {'sku_id':sku_id,'click_source':click_source},
 			success: function (result) {	
 				notify(result.data.msg);
 				//now delete from cart
 				$.ajax({
 					type: "post",
-					url: "{{$base_url}}/wdeleteFromCart",
+					url: "/wdeleteFromCart",
 					data: {'cart_id':cart_id},
 					dataType: 'json',
 					cache: false,
@@ -1305,7 +1305,7 @@ $(document).ready(function(){
         $(document).ready(function(){
             $('.header_search_button').on('click',function(){
                 var search = $('.header_search_input').val();
-                window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
+                window.location.href = "/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
             });
         });
 					</script>

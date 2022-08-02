@@ -31,12 +31,12 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">QUICK LINKS</h2>
               <ul class="list-unstyled">
-                <li><a href="{{$base_url}}/about" class="py-2 d-block">About us</a></li>
-                <!-- <li><a href="{{$base_url}}/support" class="py-2 d-block">Customer support</a></li> -->
-                <li><a href="{{$base_url}}/contact" class="py-2 d-block">Contact us</a></li> 
-                <li><a href="{{$base_url}}/media-press" class="py-2 d-block">Media and Press</a></li>
-                <li><a href="{{$base_url}}/cards-gifts" class="py-2 d-block">Cards and gift set</a></li>
-                <li><a href="{{$base_url}}/sales-offers" class="py-2 d-block">Sale & Offers</a></li>
+                <li><a href="/about" class="py-2 d-block">About us</a></li>
+                <!-- <li><a href="/support" class="py-2 d-block">Customer support</a></li> -->
+                <li><a href="/contact" class="py-2 d-block">Contact us</a></li>
+                <li><a href="/media-press" class="py-2 d-block">Media and Press</a></li>
+                <li><a href="/cards-gifts" class="py-2 d-block">Cards and gift set</a></li>
+                <li><a href="/sales-offers" class="py-2 d-block">Sale & Offers</a></li>
 
               </ul>
             </div>
@@ -46,10 +46,10 @@
               <h2 class="ftco-heading-2">Legal</h2>
               <div class="d-flex">
 	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-	                <li><a href="{{$base_url}}/privacy-policy" class="py-2 d-block">Privacy Policy</a></li>
-	                <li><a href="{{$base_url}}/terms-conditions" class="py-2 d-block">Terms of Use</a></li> 
-	                 <li><a href="{{$base_url}}/return-policy" class="py-2 d-block">Return policy</a></li> 
-	                <li><a href="{{$base_url}}/faq" class="py-2 d-block">FAQ's</a></li>  
+	                <li><a href="/privacy-policy" class="py-2 d-block">Privacy Policy</a></li>
+	                <li><a href="/terms-conditions" class="py-2 d-block">Terms of Use</a></li>
+	                 <li><a href="/return-policy" class="py-2 d-block">Return policy</a></li>
+	                <li><a href="/faq" class="py-2 d-block">FAQ's</a></li>
 	              </ul> 
 	            </div>
             </div>
@@ -58,7 +58,7 @@
               <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">@lang("navigation.newsletter")</h2>
                 <p class="widget-newsletter-content mb-0">@lang("navigation.subscribe_to_our_latest_newsletter")</p>
-        <form method="post" action="{{$base_url}}/subscription">
+        <form method="post" action="/subscription">
          <input type="hidden" name="_token" value="{{csrf_token()}}">
          <div class="footer-submit-wrapper d-flex">
           <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="news_letter_email" placeholder="@lang('order.email')" size="40">

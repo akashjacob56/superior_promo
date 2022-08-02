@@ -109,12 +109,12 @@
 																<div class="col-3">
 																	@if($orderitem!="")
 																		@if($orderitem->product!="")
-								                							<img src="{{$base_url}}/storage/app/{{$orderitem->product->product_image}}">
+								                							<img src="/storage/app/{{$orderitem->product->product_image}}">
 								                						@else
-								                							<img src="{{$base_url}}/files/assets/images/product.png">
+								                							<img src="/files/assets/images/product.png">
 								                						@endif
 								                					@else
-								                						<img src="{{$base_url}}/files/assets/images/product.png">
+								                						<img src="/files/assets/images/product.png">
 																	@endif
 
 
@@ -404,7 +404,7 @@
 																</div>
 
 																<div class="col-3">
-																	<a href="{{$base_url}}/storage/app/{{$artproof->path}}" target="_blank">
+																	<a href="/storage/app/{{$artproof->path}}" target="_blank">
 																	<p>
 																		<i class="fa fa-file-pdf-o preview_pdf_class" aria-hidden="true" style=""></i> &nbsp; <span style="color: #68bee5;">Preview PDF</span> 
 																	</p>
@@ -417,7 +417,7 @@
 																		<span class="text-success text-font_weight-500 approved_change_order_history_name_art_proof_{{$artproof->id}} hidden">Approved</span>
 																		<span class="text-danger ext-font_weight-500 delclined_change_order_history_name_art_proof_{{$artproof->id}} hidden">Declined</span>
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span  class="text-right">
-																		<img id="pending_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="{{$base_url}}/resources/views/superior/assets/images/down-collapse.png"></span>
+																		<img id="pending_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="/resources/views/superior/assets/images/down-collapse.png"></span>
 																	</p>
 																</div>
 															</div>
@@ -464,14 +464,14 @@
 																<p><?php echo date("m-d-Y", strtotime($artproof->created_at)); ?></p>
 															</div>
 															<div class="col-3">
-																<a href="{{$base_url}}/storage/app/{{$artproof->path}}" target="_blank">
+																<a href="/storage/app/{{$artproof->path}}" target="_blank">
 																<p>
 																	<i class="fa fa-file-pdf-o preview_pdf_class" aria-hidden="true"></i> &nbsp; <span style="color: #68bee5;">Preview PDF</span> 
 																</p>
 															</a>
 															</div>
 															<div class="col-3">
-																<p class="approved_art_proof_collapse" artproof_id="{{$artproof->id}}"><span class="text-success text-font_weight-500">Approved</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><!-- <i class="fa fa-angle-down" aria-hidden="true"></i> --><img id="approved_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="{{$base_url}}/resources/views/superior/assets/images/down-collapse.png"></span></p>
+																<p class="approved_art_proof_collapse" artproof_id="{{$artproof->id}}"><span class="text-success text-font_weight-500">Approved</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><!-- <i class="fa fa-angle-down" aria-hidden="true"></i> --><img id="approved_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="/resources/views/superior/assets/images/down-collapse.png"></span></p>
 															</div>
 															</div>
 
@@ -505,14 +505,14 @@
 																<p><?php echo date("m-d-Y", strtotime($artproof->created_at)); ?></p>
 															</div>
 															<div class="col-3">
-																<a href="{{$base_url}}/storage/app/{{$artproof->path}}" target="_blank">
+																<a href="/storage/app/{{$artproof->path}}" target="_blank">
 																<p>
 																	<i class="fa fa-file-pdf-o preview_pdf_class" aria-hidden="true" ></i> &nbsp; <span style="color: #68bee5;">Preview PDF</span> 
 																</p>
 															</a>
 															</div>
 															<div class="col-3">
-																<p class="declined_art_proof_collapse" artproof_id="{{$artproof->id}}"><span class="text-danger ext-font_weight-500">Declined</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><img id="declined_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="{{$base_url}}/resources/views/superior/assets/images/down-collapse.png"></span></p>
+																<p class="declined_art_proof_collapse" artproof_id="{{$artproof->id}}"><span class="text-danger ext-font_weight-500">Declined</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><img id="declined_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="/resources/views/superior/assets/images/down-collapse.png"></span></p>
 															</div>
 															</div>
 

@@ -317,12 +317,12 @@ th{
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item"><a href="all">Orders</a>
           </li> 
@@ -519,7 +519,7 @@ $role_id=$getuser->role_id;
           <div class="card-block no-padding-print">
             <div class="row">
               <div class="col-md-6 no-padding-print">
-                <img class="img logo-image-header pull-left no-padding-print" src="{{$base_url}}/swaas/images/logo.png"/>
+                <img class="img logo-image-header pull-left no-padding-print" src="/swaas/images/logo.png"/>
                
               </div>
               <div class="col-md-6 no-padding-print" align="right">
@@ -832,7 +832,7 @@ $role_id=$getuser->role_id;
  var delivery_statuses=<?php echo json_encode($delivery_statuses);?>;
  $.each(delivery_statuses,function(index,item){
 
-  $("#dd").append('<a class="dropdown-item waves-light waves-effect" href="{{$base_url}}/admin/order/other/{{$order->order_id}}/'+item.delivery_status_id+'">'+item.default_delivery_status_translation.delivery_status_name+'</a>');
+  $("#dd").append('<a class="dropdown-item waves-light waves-effect" href="/admin/order/other/{{$order->order_id}}/'+item.delivery_status_id+'">'+item.default_delivery_status_translation.delivery_status_name+'</a>');
 });
 
 
@@ -886,7 +886,7 @@ $(document).ready(function(){$(".table-break  tbody th, .table-break tbody td").
 
     $.ajax({
       type: "post",
-      url: "{{$base_url}}/admin/order/postTrackingNumber",
+      url: "/admin/order/postTrackingNumber",
       data: {'tracking_number':tracking_number,'order_id':order_id},
       dataType: 'json',
       cache: false,

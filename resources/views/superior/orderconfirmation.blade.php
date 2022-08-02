@@ -813,7 +813,7 @@ color: #575757;
 
                       <div class="row">
                         <div class="col-12">
-                          <p class="confirmation_email_text">A confirmation email was sent to devid.itinfonity@gmail.com and fill order details are available in <a class="my-account-profile-link" href="{{$base_url}}/my-account-profile">My Account</a> Section</p>
+                          <p class="confirmation_email_text">A confirmation email was sent to devid.itinfonity@gmail.com and fill order details are available in <a class="my-account-profile-link" href="/my-account-profile">My Account</a> Section</p>
                         </div>
                       </div>
 
@@ -845,7 +845,7 @@ color: #575757;
 
                   <div class="col-2">
                     <div class="print-btn-div text-right">
-                      <button class="print-btn"><img class="d-inline-block" src="{{$base_url}}/resources/views/superior/assets/images/print-icon.png" style="width:30px;height: 30px;">&nbsp;&nbsp;<span style="">Print PDF</span></button>
+                      <button class="print-btn"><img class="d-inline-block" src="/resources/views/superior/assets/images/print-icon.png" style="width:30px;height: 30px;">&nbsp;&nbsp;<span style="">Print PDF</span></button>
                     </div>
                       
                   </div>
@@ -962,7 +962,7 @@ color: #575757;
                   <div class="col-12">
                     <div class="row">
                         <div class="col-2">
-                        <img class="item-image" src="{{$base_url}}/resources/views/superior/assets/images/mgggg.png">
+                        <img class="item-image" src="/resources/views/superior/assets/images/mgggg.png">
                       </div>
                       <div class="col-10 product-info-side">
                         <h5>Buzz Bluetooth Earbuds</h5>
@@ -1004,7 +1004,7 @@ color: #575757;
              
               <div class="row mb-4 total-order-shopping">
                 <div class="col-3">
-                  <a href="{{$base_url}}/shop">
+                  <a href="/shop">
                     <button class="continue-shopping-btn">Continue Shopping</button>
                   </a>
                 </div>

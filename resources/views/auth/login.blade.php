@@ -259,10 +259,10 @@ color: #0759A4;
 
    <div class="row d-flex align-items-center pb-4">
        <div class="col-md-5 gicon">
-       <img src="{{$base_url}}/resources/views/superior/assets/images/google-icon.png"/>
+       <img src="/resources/views/superior/assets/images/google-icon.png"/>
        </div>
        <div class="col-md-7">
-       <span><a href="{{$base_url}}/register/google" class="txt-g-log">Sing in with google</a></span>
+       <span><a href="/register/google" class="txt-g-log">Sing in with google</a></span>
        </div>
    </div>
 
@@ -274,7 +274,7 @@ color: #0759A4;
     <!-- <button class="btn-md w-100 btn-register">
         Register
     </button> -->
-<a href="{{$base_url}}/register">
+<a href="/register">
     <button class="btn-md w-100 btn-register" type="button">
         Register
     </button>

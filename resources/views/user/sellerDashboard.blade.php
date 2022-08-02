@@ -18,18 +18,18 @@
 			<div class="col-md-8">
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}">
+						<a href="">
 							<i class="feather icon-home"></i> 
 						</a>
 					</li>
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}/admin/home">Admin</a>
+						<a href="/admin/home">Admin</a>
 					</li>
 					<li class="breadcrumb-item">
 						<a>Dashboard</a>
 					</li>
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}/admin/dashboard/seller">Seller's Dashboard
+						<a href="/admin/dashboard/seller">Seller's Dashboard
 							<b class="language-title-color"></b>
 						</a>
 					</li>

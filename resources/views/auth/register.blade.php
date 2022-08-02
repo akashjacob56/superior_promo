@@ -463,7 +463,7 @@ ul.password-configuration-show li{
 
 <div class="row  pt-3 pl-5">
     <div class="account-content">
-        <form action="{{$base_url}}/registeruser" method="post" onsubmit="return checkForm(this);">
+        <form action="/registeruser" method="post" onsubmit="return checkForm(this);">
             {{ csrf_field() }}
               <!-- <div class="form-group mb-2 ">
                 <label  class="form-lbl">Country<span class="required">*</span></label>

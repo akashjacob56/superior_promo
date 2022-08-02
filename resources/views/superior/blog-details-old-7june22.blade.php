@@ -40,7 +40,7 @@ $language_product="";
                         <article class="post single">
                             <div class="post-media">
                                 <div class="post-slider owl-carousel owl-theme">
-                                    <img src="{{$base_url}}/storage/app/{{$blog->image}}" alt="Post" style="max-height: : 500px;object-fit: cover;">
+                                    <img src="/storage/app/{{$blog->image}}" alt="Post" style="max-height: : 500px;object-fit: cover;">
                                    
                                 </div><!-- End .post-slider -->
                             </div><!-- End .post-media -->

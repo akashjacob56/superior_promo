@@ -28,12 +28,12 @@
 			<div class="col-md-12">
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}">
+						<a href="">
 							<i class="feather icon-home"></i>
 						</a>
 					</li>
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}/admin/home">Admin</a>
+						<a href="/admin/home">Admin</a>
 					</li>
 					
 				</ul>
@@ -53,7 +53,7 @@
 								<i class="feather icon-file-text text-c-green d-block f-40"></i>
 								<h4 class="m-t-20"><span class="text-c-green">{{$todays_order_count}}</span></h4>
 								<p class="m-b-20">Today's Order</p>
-								<a class="text-white" href="{{$base_url}}/admin/order/todays"><button class="btn btn-success btn-sm btn-round">Manage Orders</button></a>
+								<a class="text-white" href="/admin/order/todays"><button class="btn btn-success btn-sm btn-round">Manage Orders</button></a>
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 								<i class="feather icon-package text-warning d-block f-40"></i>
 								<h4 class="m-t-20"><span class="text-c-yellow">{{$todays_sales_count}}</span></h4>
 								<p class="m-b-20">Today's Sale</p>
-								<a class="text-white" href="{{$base_url}}/admin/order/todays"><button class="btn btn-warning btn-sm btn-round">Manage Sales</button></a>
+								<a class="text-white" href="/admin/order/todays"><button class="btn btn-warning btn-sm btn-round">Manage Sales</button></a>
 							</div>
 						</div>
 					</div>
@@ -74,7 +74,7 @@
 								<i class="feather icon-shopping-cart text-info d-block f-40"></i>
 								<h4 class="m-t-20"><span class="text-info">{{$todays_cart_count}}</span></h4>
 								<p class="m-b-20">Today's Cart</p>
-								<a class="text-white" href="{{$base_url}}/admin/reports/cart"><button class="btn btn-info btn-sm btn-round">Manage Cart</button></a>
+								<a class="text-white" href="/admin/reports/cart"><button class="btn btn-info btn-sm btn-round">Manage Cart</button></a>
 							</div>
 						</div>
 					</div>
@@ -84,7 +84,7 @@
 								<i class="feather icon-heart-on text-c-red d-block f-40"></i>
 								<h4 class="m-t-20"><span class="text-c-red">{{$todays_wishlist_count}}</span></h4>
 								<p class="m-b-20">Today's Wishlist</p>
-								<a class="text-white" href="{{$base_url}}/admin/reports/wishlist"><button class="btn btn-danger btn-sm btn-round">Manage Wishlist</button></a>
+								<a class="text-white" href="/admin/reports/wishlist"><button class="btn btn-danger btn-sm btn-round">Manage Wishlist</button></a>
 							</div>
 						</div>
 					</div>
@@ -96,7 +96,7 @@
 							<div class="review-block">
 								<div class="row first_product">
 									<div class="col-sm-auto" >
-										<img src="{{$base_url}}/files/assets/images/product.svg" class="profile-img cust-img m-b-15">
+										<img src="/files/assets/images/product.svg" class="profile-img cust-img m-b-15">
 									</div>
 									<div class="col">
 										@if($product_count==0)
@@ -106,7 +106,7 @@
 										@endif
 										<p class="m-t-15 m-b-15 text-muted">You can add physical items, customize your services, or anything else you want to.
 										</p>
-										<a class="btn btn-primary btn-sm " href="{{$base_url}}/admin/product/add">Add Product</a>
+										<a class="btn btn-primary btn-sm " href="/admin/product/add">Add Product</a>
 									</div>
 								</div>
 							</div>
@@ -118,13 +118,13 @@
 							<div class="review-block ">
 								<div class="row first_product">
 									<div class="col-sm-auto" >
-										<img src="{{$base_url}}/files/assets/images/collection.svg" class="profile-img cust-img m-b-15">
+										<img src="/files/assets/images/collection.svg" class="profile-img cust-img m-b-15">
 									</div>
 									<div class="col">
 										<h6 class="m-b-15">Customize your online store in different collections </h6>
 										<p class="m-t-15 m-b-15 text-muted">Choose different collections to manage, sort & categorize your products. 
 										</p>
-										<a class="btn btn-primary btn-sm " href="{{$base_url}}/admin/collection/add">Add Collection</a>
+										<a class="btn btn-primary btn-sm " href="/admin/collection/add">Add Collection</a>
 									</div>
 								</div>
 							</div>

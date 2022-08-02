@@ -390,7 +390,7 @@
                 <input type="radio" name="address" c-name="{{$product_sub_image->color->name}}" value="{{$product_sub_image->color_id}}" class="color-id-selected"> 
                 <span style="    width: 41px !important;
     height: 33px !important;"><i class="address_icon select_icon" id="selected-color-main">
-                    <img class="color-image" src="{{$base_url}}/storage/app/{{$product_sub_image->image_src}}" alt="product-thumbnail">
+                    <img class="color-image" src="/storage/app/{{$product_sub_image->image_src}}" alt="product-thumbnail">
                 </i>
             </span>
         </label>
@@ -466,7 +466,7 @@
                 <input type="radio" name="address" c-name="{{$product_sub_image->color->name}}" value="{{$product_sub_image->color_id}}" class="color-id-selected"> 
                 <span style="    width: 148px !important;
     height: 60px !important;"><i class="address_icon select_icon" id="selected-color-main">
-                    <img class="color-image" src="{{$base_url}}/storage/app/{{$product_sub_image->image_src}}" width="80" height="110" alt="product-thumbnail">
+                    <img class="color-image" src="/storage/app/{{$product_sub_image->image_src}}" width="80" height="110" alt="product-thumbnail">
                 </i>
             </span>
         </label>

@@ -37,7 +37,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{$base_url}}"><i class="icon-home"></i></a></li>
+                <li class="breadcrumb-item"><a href=""><i class="icon-home"></i></a></li>
                 <li class="breadcrumb-item active" aria-current="page">@lang("user.register")</li>
             </ol>
         </div><!-- End .container -->
@@ -227,7 +227,7 @@
                                         <label>
                                             <input id="i_read_and_accept_terms_conditions" type="checkbox" name="accept_the_terms_and_conditions" value="1" >
                                             <!-- <span class="cr"><i class="cr-icon fa fa-check"></i></span> -->
-                                            <span class="text-inverse"><a target="_blabk" href="{{$base_url}}/terms-conditions">@lang("user.i_read_and_accept_terms_conditions") </a></span>
+                                            <span class="text-inverse"><a target="_blabk" href="/terms-conditions">@lang("user.i_read_and_accept_terms_conditions") </a></span>
 
                                         </label>
 
@@ -252,7 +252,7 @@
             </div>
         </div>
     </div>
-    <img src="{{$base_url}}/files/assets/images/pattern-1.png" style="width: 100% !important;">
+    <img src="/files/assets/images/pattern-1.png" style="width: 100% !important;">
 </section>
 </main>
 
@@ -327,7 +327,7 @@
 
            $.ajax({
             type: "post",
-            url: "{{$base_url}}/getlocations-country",
+            url: "/getlocations-country",
             data: {'country_id':country_id},
             success: function (result) {    
              var states=result;
@@ -354,7 +354,7 @@
 
            $.ajax({
             type: "post",
-            url: "{{$base_url}}/getlocations-state",
+            url: "/getlocations-state",
             data: {'state_id':state_id},
             success: function (result) {
                 var cities=result;
@@ -381,7 +381,7 @@
            $("#area_id").empty();
            $.ajax({
             type: "post",
-            url: "{{$base_url}}/getlocations-pincode-area",
+            url: "/getlocations-pincode-area",
             data: {'pincode_id':pincode_id},
             success: function (result) {
                 var areas=result;

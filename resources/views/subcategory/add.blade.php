@@ -27,12 +27,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item"><a href="all">Sub Category</a>
           </li> 
@@ -122,7 +122,7 @@
 
                  <div class="form-group">
                   <label for="file"  class="col-form-label form-control-label">Category Banner image (optional)</label><br>
-                  <img src="{{$base_url}}/files/assets/images/preview.png" id="category_banner_image">
+                  <img src="/files/assets/images/preview.png" id="category_banner_image">
                   <label for="file" class="custom-file">
                     <input type="file" name="category_banner_image" class="form-control" accept="image/x-png,image/gif,image/jpeg" onchange="document.getElementById('category_banner_image').src = window.URL.createObjectURL(this.files[0])"/>
                     <span class="custom-file-control"></span>

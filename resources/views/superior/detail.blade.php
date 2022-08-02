@@ -1793,14 +1793,14 @@ max-width: 360px;
         <div class="container">
             <ol class="breadcrumb">
 
-                <li class="breadcrumb-item"><a href="{{$base_url}}/">Home</a></li>
-                <!-- <li class="breadcrumb-item"><a href="{{$base_url}}/shop?page=&search=&cat_id=&category_id={{$data['product_categorydata']->category_id}}&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=">{{$data['product_categorydata']->category_link->category_translation->category_name}}</a></li> -->
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <!-- <li class="breadcrumb-item"><a href="/shop?page=&search=&cat_id=&category_id={{$data['product_categorydata']->category_id}}&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=">{{$data['product_categorydata']->category_link->category_translation->category_name}}</a></li> -->
              
                 <li class="breadcrumb-item">
-                <a href="{{$base_url}}/shop/{{ $data['parent_category']->category_url }}">{{ str_replace('-',' ',$data['parent_category']->category_url)}}</a></li>
+                <a href="/shop/{{ $data['parent_category']->category_url }}">{{ str_replace('-',' ',$data['parent_category']->category_url)}}</a></li>
                  @if($data['child_category'] !='')
                 <li class="breadcrumb-item">
-                <a href="{{$base_url}}/shop/{{ $data['parent_category']->category_url }}/{{ $data['child_category']->category_url }}">{{ str_replace('-',' ',$data['child_category']->category_url)}}</a></li>
+                <a href="/shop/{{ $data['parent_category']->category_url }}/{{ $data['child_category']->category_url }}">{{ str_replace('-',' ',$data['child_category']->category_url)}}</a></li>
                 @endif
                 @if($data['product_categorydata']->product_translation->product_name!=="")
                 <li class="breadcrumb-item"><a href="javascript:void(0);" class="currunt-dir"><?php echo $data['product_categorydata']->product_translation->product_name; ?></a></li>
@@ -1834,11 +1834,11 @@ max-width: 360px;
             <div class="product-thumbs owl-dots" id='carousel-custom-dots'>
                 @foreach($data['all_product_images'] as $all_product_image)
                     <div class="owl-dot">
-                      <img src="{{$base_url}}/storage/app/{{$all_product_image->product_image}}"width="128" height="128" alt="product-thumbnail-img">
+                      <img src="/storage/app/{{$all_product_image->product_image}}"width="128" height="128" alt="product-thumbnail-img">
                     </div>
                  @endforeach
 <!--                     <div class="owl-dot">
-                        <img src="{{$base_url}}/storage/app/{{$data['product']->product_image}}" width="128" height="128" alt="product-thumbnail-img">
+                        <img src="/storage/app/{{$data['product']->product_image}}" width="128" height="128" alt="product-thumbnail-img">
                     </div> -->
                     
                 </div>
@@ -1849,7 +1849,7 @@ max-width: 360px;
             <div class="product-thumbs owl-dots" id='carousel-custom-dots'>
 
             <div class="owl-dot">
-            <img src="{{$base_url}}/storage/app/{{$data['product']->product_image}}" width="128" height="128" alt="product-thumbnail-img">
+            <img src="/storage/app/{{$data['product']->product_image}}" width="128" height="128" alt="product-thumbnail-img">
             </div>
             </div>
             </div>
@@ -1881,7 +1881,7 @@ max-width: 360px;
 </div>
 
 <figure class="prod-full-screen">
-<img class="product-single-image icon-plus" src="{{$base_url}}/storage/app/{{$all_product_image->product_image}}"data-zoom-image="{{$base_url}}/storage/app/{{$all_product_image->product_image}}" width="540" height="540" alt="product-img"/>
+<img class="product-single-image icon-plus" src="/storage/app/{{$all_product_image->product_image}}"data-zoom-image="/storage/app/{{$all_product_image->product_image}}" width="540" height="540" alt="product-img"/>
 </figure>
 
 </div>
@@ -1889,7 +1889,7 @@ max-width: 360px;
 @else
 <div class="product-item active ">
 <figure class="prod-full-screen">
-<img class="product-single-image icon-plus" src="{{$base_url}}/storage/app/{{$data['product']->product_image}}" data-zoom-image="{{$base_url}}/storage/app/{{$data['product']->product_image}}" width="540" height="540" alt="product-img">
+<img class="product-single-image icon-plus" src="/storage/app/{{$data['product']->product_image}}" data-zoom-image="/storage/app/{{$data['product']->product_image}}" width="540" height="540" alt="product-img">
 </figure>
 </div>
 
@@ -2024,7 +2024,7 @@ margin-left:2rem!important;
                     <div class="col-md-4">
                     @if($data['product']->product_image!="")
                     <figure>
-                    <img class="product-single-image" src="{{$base_url}}/storage/app/{{$data['product']->product_image}}" data-zoom-image="{{$base_url}}/storage/app/{{$data['product']->product_image}}" width="200" height="200" alt="product-img">
+                    <img class="product-single-image" src="/storage/app/{{$data['product']->product_image}}" data-zoom-image="/storage/app/{{$data['product']->product_image}}" width="200" height="200" alt="product-img">
                     </figure>
                     @endif
                     </div>
@@ -2327,11 +2327,11 @@ margin-left:2rem!important;
                @if($product_sub_image->image_src!="")
                 <style type="text/css">
                 .radios label input[type=radio]:checked+span.address_icon.select_icon {
-                    background: url({{$base_url}}/storage/app/{{$product_sub_image->image_src}}) no-repeat -4px 0px;
+                    background: url(/storage/app/{{$product_sub_image->image_src}}) no-repeat -4px 0px;
                 }
 
                 .radios label input[type=radio]+span.address_icon.select_icon {
-                    background: url({{$base_url}}/storage/app/{{$product_sub_image->image_src}}) no-repeat -4px 0px;
+                    background: url(/storage/app/{{$product_sub_image->image_src}}) no-repeat -4px 0px;
                 }
 
                 .owl-carousel .owl-item {
@@ -2349,7 +2349,7 @@ margin-left:2rem!important;
              <div class="item_color_select d-inline-block radios proposerAddress">
              <label> <input type="radio" name="address" c-name="{{$product_sub_image->color->name}}" value="{{$product_sub_image->color_id}}" class="color-id-selected"> 
                 <span><i class="address_icon select_icon" id="selected-color-main">
-                    <img class="color-image" src="{{$base_url}}/storage/app/{{$product_sub_image->image_src}}" width="80" height="110" alt="product-thumbnail">
+                    <img class="color-image" src="/storage/app/{{$product_sub_image->image_src}}" width="80" height="110" alt="product-thumbnail">
                 </i>
             </span>
         </label>
@@ -2716,14 +2716,14 @@ margin-left:2rem!important;
                     <div class="row d-flex align-items-center">
                     <div class="col-md-2">
                     <figure>
-                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <img class="img-curve" src="/resources/views/superior/assets/images/Capture.png"/>
                     <div class="caption-centered">1</div> 
                     </figure>
                     </div>
 
                     <div class="col-md-3">
                     <figure>
-                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-1.png"/> 
+                    <img src="/resources/views/superior/assets/images/order-process-1.png"/>
                     </figure>
                     </div>
                     <div class="col-md-7 ">
@@ -2745,14 +2745,14 @@ margin-left:2rem!important;
                     <div class="row d-flex align-items-center">
                     <div class="col-md-2">
                     <figure>
-                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <img class="img-curve" src="/resources/views/superior/assets/images/Capture.png"/>
                     <div class="caption-centered">2</div> 
                     </figure>
                     </div>
 
                     <div class="col-md-3">
                     <figure>
-                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-2.png"/> 
+                    <img src="/resources/views/superior/assets/images/order-process-2.png"/>
                     </figure>
                     </div>
                     <div class="col-md-7 ">
@@ -2770,14 +2770,14 @@ margin-left:2rem!important;
                     <div class="row d-flex align-items-center">
                     <div class="col-md-2">
                     <figure>
-                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <img class="img-curve" src="/resources/views/superior/assets/images/Capture.png"/>
                     <div class="caption-centered">3</div> 
                     </figure>
                     </div>
 
                     <div class="col-md-3">
                     <figure>
-                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-3.png"/> 
+                    <img src="/resources/views/superior/assets/images/order-process-3.png"/>
                     </figure>
                     </div>
                     <div class="col-md-7 ">
@@ -2796,14 +2796,14 @@ margin-left:2rem!important;
                     <div class="row d-flex align-items-center">
                     <div class="col-md-2">
                     <figure>
-                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <img class="img-curve" src="/resources/views/superior/assets/images/Capture.png"/>
                     <div class="caption-centered">4</div> 
                     </figure>
                     </div>
 
                     <div class="col-md-3">
                     <figure>
-                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-4.png"/> 
+                    <img src="/resources/views/superior/assets/images/order-process-4.png"/>
                     </figure>
                     </div>
                     <div class="col-md-7 ">
@@ -2828,14 +2828,14 @@ margin-left:2rem!important;
                     <div class="row d-flex align-items-center">
                     <div class="col-md-2">
                     <figure>
-                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <img class="img-curve" src="/resources/views/superior/assets/images/Capture.png"/>
                     <div class="caption-centered">5</div> 
                     </figure>
                     </div>
 
                     <div class="col-md-3">
                     <figure>
-                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-5.png"/> 
+                    <img src="/resources/views/superior/assets/images/order-process-5.png"/>
                     </figure>
                     </div>
                     <div class="col-md-7 ">
@@ -2854,14 +2854,14 @@ margin-left:2rem!important;
                     <div class="row d-flex align-items-center">
                     <div class="col-md-2">
                     <figure>
-                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <img class="img-curve" src="/resources/views/superior/assets/images/Capture.png"/>
                     <div class="caption-centered">6</div> 
                     </figure>
                     </div>
 
                     <div class="col-md-3">
                     <figure>
-                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-6.png"/> 
+                    <img src="/resources/views/superior/assets/images/order-process-6.png"/>
                     </figure>
                     </div>
                     <div class="col-md-7 ">
@@ -2879,14 +2879,14 @@ margin-left:2rem!important;
                     <div class="row d-flex align-items-center">
                     <div class="col-md-2">
                     <figure>
-                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <img class="img-curve" src="/resources/views/superior/assets/images/Capture.png"/>
                     <div class="caption-centered">7</div> 
                     </figure>
                     </div>
 
                     <div class="col-md-3">
                     <figure>
-                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-7.png"/> 
+                    <img src="/resources/views/superior/assets/images/order-process-7.png"/>
                     </figure>
                     </div>
                     <div class="col-md-7 ">
@@ -2904,14 +2904,14 @@ margin-left:2rem!important;
                     <div class="row d-flex align-items-center">
                     <div class="col-md-2">
                     <figure>
-                    <img class="img-curve" src="{{$base_url}}/resources/views/superior/assets/images/Capture.png"/>
+                    <img class="img-curve" src="/resources/views/superior/assets/images/Capture.png"/>
                     <div class="caption-centered">8</div> 
                     </figure>
                     </div>
 
                     <div class="col-md-3">
                     <figure>
-                    <img src="{{$base_url}}/resources/views/superior/assets/images/order-process-8.png"/> 
+                    <img src="/resources/views/superior/assets/images/order-process-8.png"/>
                     </figure>
                     </div>
                     <div class="col-md-7 ">
@@ -3700,8 +3700,8 @@ In-hand date is determined by the item's production time, transit time and type 
                                         <!-- <i class="fa" style="font-size:20px;color: #68bee5;">&#xf004;</i> -->
                                     </div>
         <figure>
-            <a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" target="_blank">
-                <img src="{{$base_url}}/storage/app/{{$product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
+            <a href="/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" target="_blank">
+                <img src="/storage/app/{{$product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
             </a>
         </figure>
         <div class="product-details">
@@ -3863,8 +3863,8 @@ In-hand date is determined by the item's production time, transit time and type 
                                         <!-- <i class="fa" style="font-size:20px;color: #68bee5;">&#xf004;</i> -->
                                     </div>
         <figure>
-            <a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" target="_blank">
-                <img src="{{$base_url}}/storage/app/{{$product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
+            <a href="/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" target="_blank">
+                <img src="/storage/app/{{$product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
             </a>
         </figure>
         <div class="product-details">
@@ -4275,7 +4275,7 @@ $.ajaxSetup
 
     $.ajax({
     method: "POST",
-    url: "{{$base_url}}/shipping-api-datail",
+    url: "/shipping-api-datail",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -4469,7 +4469,7 @@ $('.suboption-select').change( function(e){
     var selected_sub_option=$(this).find('option:selected').text();
 
     $.ajax({
-    url:"{{$base_url}}/matched-suboption-quantity",
+    url:"/matched-suboption-quantity",
     type:'POST',
     data:{'option_id':option_id,'product_id':product_id,'quantity':quantity,'sub_option_id':sub_option_id,_token:'{{csrf_token()}}'},
     success:function(result){
@@ -4582,7 +4582,7 @@ $(this).attr('tabindex',1);
     var product_id=$(this).attr('value');
     $.ajax({
       type: 'post',
-      url:'{{$base_url}}/wishlist/add',
+      url:'/wishlist/add',
       data:{"_token": "{{ csrf_token() }}",'product_id':product_id},
       success: function (result){
         if(result!=""){
@@ -4604,7 +4604,7 @@ $(this).attr('tabindex',1);
     var product_id=$(this).attr('value');
     $.ajax({
       type: 'post',
-      url:'{{$base_url}}/wishlist/add',
+      url:'/wishlist/add',
       data:{"_token": "{{ csrf_token() }}",'product_id':product_id},
       success: function (result){
         if(result!=""){
@@ -4640,7 +4640,7 @@ $('#user-quanity').on('keyup', function(){
         $('#select-color').text(selected_color_name);
 
   $.ajax({
-    url:"{{$base_url}}/matched-quantity",
+    url:"/matched-quantity",
     type:'POST',
     data:{'product_id':product_id,'quantity':quantity,_token:'{{csrf_token()}}'},
     success:function(data){
@@ -5329,7 +5329,7 @@ if(is_deadline==true){
       if(zipcode!==""){
             $.ajax({
             method: "POST",
-            url: "{{$base_url}}/cart-data",
+            url: "/cart-data",
             dataType: 'json',
             cache: false,
             contentType: false,
@@ -5337,7 +5337,7 @@ if(is_deadline==true){
             data: form_data,
             success: function(result){
             $.notify(result.msg,'success');
-            window.location.href="{{$base_url}}/cart";
+            window.location.href="/cart";
             },
             error: function(result){
             }           
@@ -5357,7 +5357,7 @@ if(is_deadline==true){
 
                     $.ajax({
                     method: "POST",
-                    url: "{{$base_url}}/cart-data",
+                    url: "/cart-data",
                     dataType: 'json',
                     cache: false,
                     contentType: false,
@@ -5365,7 +5365,7 @@ if(is_deadline==true){
                     data: form_data,
                     success: function(result){
                     $.notify(result.msg,'success');
-                    window.location.href="{{$base_url}}/cart";
+                    window.location.href="/cart";
                     },
                     error: function(result){
                     }           
@@ -5382,7 +5382,7 @@ if(is_deadline==true){
                  if(outsideof_us==true){
                     $.ajax({
                     method: "POST",
-                    url: "{{$base_url}}/cart-data",
+                    url: "/cart-data",
                     dataType: 'json',
                     cache: false,
                     contentType: false,
@@ -5390,7 +5390,7 @@ if(is_deadline==true){
                     data: form_data,
                     success: function(result){
                     $.notify(result.msg,'success');
-                    window.location.href="{{$base_url}}/cart";
+                    window.location.href="/cart";
                     },
                     error: function(result){
                     }           
@@ -5403,7 +5403,7 @@ if(is_deadline==true){
 
                     $.ajax({
                     method: "POST",
-                    url: "{{$base_url}}/cart-data",
+                    url: "/cart-data",
                     dataType: 'json',
                     cache: false,
                     contentType: false,
@@ -5411,7 +5411,7 @@ if(is_deadline==true){
                     data: form_data,
                     success: function(result){
                     $.notify(result.msg,'success');
-                    window.location.href="{{$base_url}}/cart";
+                    window.location.href="/cart";
                     },
                     error: function(result){
                     }           
@@ -5434,7 +5434,7 @@ if(is_deadline==true){
             if(zipcode!==""){
             $.ajax({
             method: "POST",
-            url: "{{$base_url}}/cart-data",
+            url: "/cart-data",
             dataType: 'json',
             cache: false,
             contentType: false,
@@ -5442,7 +5442,7 @@ if(is_deadline==true){
             data: form_data,
             success: function(result){
             $.notify(result.msg,'success');
-            window.location.href="{{$base_url}}/cart";
+            window.location.href="/cart";
             },
             error: function(result){
             }           
@@ -5460,7 +5460,7 @@ if(is_deadline==true){
               if(acnumber!==""&&carrier!==""&&method!==""){
                 $.ajax({
                 method: "POST",
-                url: "{{$base_url}}/cart-data",
+                url: "/cart-data",
                 dataType: 'json',
                 cache: false,
                 contentType: false,
@@ -5468,7 +5468,7 @@ if(is_deadline==true){
                 data: form_data,
                 success: function(result){
                 $.notify(result.msg,'success');
-                window.location.href="{{$base_url}}/cart";
+                window.location.href="/cart";
                 },
                 error: function(result){
                 }           
@@ -5482,7 +5482,7 @@ if(is_deadline==true){
              }else{
                 $.ajax({
                 method: "POST",
-                url: "{{$base_url}}/cart-data",
+                url: "/cart-data",
                 dataType: 'json',
                 cache: false,
                 contentType: false,
@@ -5490,7 +5490,7 @@ if(is_deadline==true){
                 data: form_data,
                 success: function(result){
                 $.notify(result.msg,'success');
-                window.location.href="{{$base_url}}/cart";
+                window.location.href="/cart";
                 },
                 error: function(result){
                 }           
@@ -5514,7 +5514,7 @@ if(is_deadline==true){
             var product_id = $(this).attr('id');
             $.ajax({
               type: 'post',
-              url:'{{$base_url}}/wishlist/add',
+              url:'/wishlist/add',
               data:{"_token": "{{ csrf_token() }}",'product_id':product_id},
               success: function (result){
                 if(result!=""){
@@ -5548,7 +5548,7 @@ if(is_deadline==true){
 
             $.ajax({
               type: 'post',
-              url:'{{$base_url}}/wishlist/add',
+              url:'/wishlist/add',
               data:{"_token": "{{ csrf_token() }}",'product_id':product_id},
               success: function (result){
                 if(result!=""){
@@ -5593,7 +5593,7 @@ if(is_deadline==true){
 $(document).ready(function(){
 $('.header_search_button').on('click',function(){
 var search = $('.header_search_input').val();
-window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
+window.location.href = "/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
 });
 });
 </script>

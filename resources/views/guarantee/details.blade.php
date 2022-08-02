@@ -7,12 +7,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item"><a href="all-guarantee">Guarantee</a>
           </li> 
@@ -72,7 +72,7 @@
 
 
               <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
-                <img  src="{{$base_url}}/storage/app/{{$OurGuarantee->image}}" id="image" alt="">
+                <img  src="/storage/app/{{$OurGuarantee->image}}" id="image" alt="">
                 <label for="file" class="custom-file">
                   <label for="file"  class="col-form-label form-control-label">Guarantee  Image</label>
                   <input type="file" name="image" class="form-control " accept="image/x-png,image/gif,image/jpeg" value="{{old('image')}}" onchange="document.getElementById('image').src = window.URL.createObjectURL(this.files[0])"/>

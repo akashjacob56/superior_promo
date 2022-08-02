@@ -30,8 +30,8 @@
 						<div class="col-lg-6">
 						<article class="post">
 							<div class="post-media">
-								<a href="{{$base_url}}/blog/{{$blog->url}}">
-									<img src="{{$base_url}}/storage/app/{{$blog->image}}" alt="Post" style="width: 100%;max-height: 350px; object-fit: cover;">
+								<a href="/blog/{{$blog->url}}">
+									<img src="/storage/app/{{$blog->image}}" alt="Post" style="width: 100%;max-height: 350px; object-fit: cover;">
 								</a>
 							</div><!-- End .post-media -->
 
@@ -42,7 +42,7 @@
 								</div><!-- End .post-date -->
 
 								<h2 class="post-title">
-									 <a href="{{$base_url}}/blog/{{$blog->url}}">{{$blog->blog_type->blog_type_name}}</a>
+									 <a href="/blog/{{$blog->url}}">{{$blog->blog_type->blog_type_name}}</a>
 								</h2>
 
 								<div class="post-content">
@@ -64,7 +64,7 @@
                       </p>
                       @endif
 
-									<a href="{{$base_url}}/blog/{{$blog->url}}" class="read-more">Read More <i class="icon-angle-double-right"></i></a>
+									<a href="/blog/{{$blog->url}}" class="read-more">Read More <i class="icon-angle-double-right"></i></a>
 								</div><!-- End .post-content -->
 
 								<div class="post-meta">

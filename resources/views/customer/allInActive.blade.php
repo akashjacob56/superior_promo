@@ -20,12 +20,12 @@ select.select-width{
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a>Active Customers</a>
@@ -339,7 +339,7 @@ select.select-width{
         var button="";
       /*  @if($my_permissions->contains('CREATE_ORDER'))
         if(row.status_id==1){
-          button='<a href="{{$base_url}}/admin/create-order/'+row.id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Create Order</button></a> ';
+          button='<a href="/admin/create-order/'+row.id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Create Order</button></a> ';
         }
         @endif*/
         @if($my_permissions->contains('CUSTOMER_DETAILS'))

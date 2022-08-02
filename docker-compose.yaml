@@ -1,0 +1,41 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:1.14
+    depends_on:
+      - php-fpm
+    links:
+      - php-fpm
+    env_file:
+      - ./.env
+    ports:
+      - ${NGINX_API_PORT}:8080
+    volumes:
+      - ./docker/nginx/:/etc/nginx/conf.d/
+      - .:/var/www/project
+
+  database:
+    image: mysql:5.7
+    env_file:
+      - ./.env
+    ports:
+      - 8173:3306
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+
+  php-fpm:
+#    image: itdevgroup/php-fpm8.0
+    build: docker/php
+    depends_on:
+      - database
+    links:
+      - database
+    volumes:
+      - .:/var/www/project
+      - ./docker/cron/:/etc/cron.d
+    working_dir: /var/www/project
+    env_file:
+      - ./.env
+
+volumes:
+  data: { }

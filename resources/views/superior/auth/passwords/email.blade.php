@@ -6,7 +6,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{$base_url}}"><i class="icon-home"></i></a></li>
+                <li class="breadcrumb-item"><a href=""><i class="icon-home"></i></a></li>
                 <li class="breadcrumb-item active" aria-current="page">@lang("user.forgot_your_password")</li>
             </ol>
         </div><!-- End .container -->

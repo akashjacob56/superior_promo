@@ -6,12 +6,12 @@
       <div class="col-md-12">
        <ul class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="{{$base_url}}">
+          <a href="">
             <i class="feather icon-home"></i>
           </a>
         </li>
         <li class="breadcrumb-item">
-          <a href="{{$base_url}}/admin/home">Admin</a>
+          <a href="/admin/home">Admin</a>
         </li>
         <li class="breadcrumb-item"><a href="all">Offer blocks</a>
         </li> 
@@ -65,7 +65,7 @@
                     <label class="form-control-label" for="usr">Current offer block image</label>
                     <div class="col-md-12 p-0">
                       <center>
-                        <img class="img-fluid" src="{{$base_url}}/storage/app/{{$offer_block->default_offer_block_translation->offer_block_image}}" style="height:150px;width:350px;">
+                        <img class="img-fluid" src="/storage/app/{{$offer_block->default_offer_block_translation->offer_block_image}}" style="height:150px;width:350px;">
                       </center>       
                     </div>         
                   </div> 

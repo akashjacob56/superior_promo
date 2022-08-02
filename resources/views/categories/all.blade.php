@@ -60,12 +60,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a>Categories
@@ -89,7 +89,7 @@
                 <h5> Categories</h5>
                 <span class="upper-buttons pull-right">
                   @if($my_permissions->contains('CATEGORY_ADD'))
-                  <a href="{{$base_url}}/admin/category/add" class="pull-right">
+                  <a href="/admin/category/add" class="pull-right">
                     <button type="button" class="btn btn-primary waves-effect waves-light add pull-right">   Add Category
                     </button>
                   </a>
@@ -274,8 +274,8 @@ function drop(event) {
           // //Edit Category Start -----------------------------------------
           //   $('.category_edit_'+item.category_id).on('click',function(){
           //     category_id = item.category_id;
-          //   //   url = "{{$base_url}}/admin/category/"+category_id;
-          //     window.location.href = "{{$base_url}}/admin/category/"+category_id;
+          //   //   url = "/admin/category/"+category_id;
+          //     window.location.href = "/admin/category/"+category_id;
           //   //   window.open(url,'_blank');
           //   });
           // //Edit Category Start -----------------------------------------
@@ -288,7 +288,7 @@ function drop(event) {
                         // //edit child category id Start-----------
                         // $('.child_category_edit_'+item.child_category_id).on('click',function(){
                         //     var category_id = item.child_category_id;
-                        //     url = "{{$base_url}}/admin/category/"+category_id;
+                        //     url = "/admin/category/"+category_id;
                         //     window.open(url);
                         // });
                         // //edit child category id End----------
@@ -328,7 +328,7 @@ function drop(event) {
                               //   $('.sub_child_category_edit_'+item.category.category_id).on('click',function(){
                                   
                               //       var category_id = item.category.category_id;
-                              //       url = "{{$base_url}}/admin/category/"+category_id;
+                              //       url = "/admin/category/"+category_id;
                               //       window.open(url);
                               //   });
                               // //sub child Categories end--------------------
@@ -535,7 +535,7 @@ $( ".subchild_content" ).droppable({
 
           $.ajax({
           type: 'post',
-          url: '{{$base_url}}/admin/category/drag-drop',  
+          url: '/admin/category/drag-drop',
           data: {"_token": "{{ csrf_token() }}",'child_category_id':child_id,'new_parent_category_id':parent_id,'old_parent_category_id':current_parent_content_id},
           success: function (result){
 
@@ -580,7 +580,7 @@ $( ".subchild_content" ).droppable({
                 if (subchild==null || subchild==undefined || subchild=="") {
                 $.ajax({
                   type: 'post',
-                  url: '{{$base_url}}/admin/category/drag-drop',  
+                  url: '/admin/category/drag-drop',
                   data: {"_token": "{{ csrf_token() }}",'child_category_id':child_id,'new_parent_category_id':parent_id,'old_parent_category_id':current_parent_content_id},
                   success: function (result){
                     location.reload();
@@ -624,7 +624,7 @@ $( ".subchild_content" ).droppable({
                   console.log("3"+current_parent_content_id+": "+child_id +": "+parent_id);
                 $.ajax({
                   type: 'post',
-                  url: '{{$base_url}}/admin/category/drag-drop',  
+                  url: '/admin/category/drag-drop',
                   data: {"_token": "{{ csrf_token() }}",'child_category_id':child_id,'new_parent_category_id':parent_id,'old_parent_category_id':current_parent_content_id},
                   success: function (result){
                     location.reload();
@@ -674,8 +674,8 @@ $( ".subchild_content" ).droppable({
             $('.category_edit').on('click',function(){
               category_id = $(this).attr('category_id');
               
-            //   url = "{{$base_url}}/admin/category/"+category_id;
-              window.location.href = "{{$base_url}}/admin/category/"+category_id;
+            //   url = "/admin/category/"+category_id;
+              window.location.href = "/admin/category/"+category_id;
             //   window.open(url,'_blank');
             });
           //Edit Category Start -----------------------------------------
@@ -685,8 +685,8 @@ $( ".subchild_content" ).droppable({
                             var category_id = $(this).attr('category_id');
                             
 
-                            window.location.href = "{{$base_url}}/admin/category/"+category_id;
-                            // url = "{{$base_url}}/admin/category/"+category_id;
+                            window.location.href = "/admin/category/"+category_id;
+                            // url = "/admin/category/"+category_id;
                             // window.open(url);
                         });
                         //edit child category id End----------
@@ -720,8 +720,8 @@ $( ".subchild_content" ).droppable({
                                     var category_id = $(this).attr('category_id');
                                    
 
-                                    window.location.href = "{{$base_url}}/admin/category/"+category_id;
-                                    // url = "{{$base_url}}/admin/category/"+category_id;
+                                    window.location.href = "/admin/category/"+category_id;
+                                    // url = "/admin/category/"+category_id;
                                     // window.open(url);
                                 });
                               //sub child Categories end--------------------

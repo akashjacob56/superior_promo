@@ -71,7 +71,7 @@ color: #FFFFFF;
 
                 <div class="row pt-5 pb-5 b-bottom">
                     <div class="col-md-2">  
-                        <img src="{{$base_url}}/resources/views/superior/assets/images/rus-image.png"/>
+                        <img src="/resources/views/superior/assets/images/rus-image.png"/>
                     </div>
                     <div class="col-md-10">
                      <p class="bold-p-txt">
@@ -87,7 +87,7 @@ color: #FFFFFF;
        
                 <div class="row pt-5 pb-5 b-bottom">
                     <div class="col-md-2">  
-                        <img src="{{$base_url}}/resources/views/superior/assets/images/rus-image.png"/>
+                        <img src="/resources/views/superior/assets/images/rus-image.png"/>
                     </div>
                     <div class="col-md-10">
                      <p class="bold-p-txt">
@@ -107,7 +107,7 @@ color: #FFFFFF;
 
                 <div class="row pt-5 pb-5 b-bottom">
                     <div class="col-md-2">  
-                        <img src="{{$base_url}}/resources/views/superior/assets/images/rus-image.png"/>
+                        <img src="/resources/views/superior/assets/images/rus-image.png"/>
                     </div>
                     <div class="col-md-10">
                      <p class="bold-p-txt">
@@ -127,7 +127,7 @@ color: #FFFFFF;
 
 
             <div class="row pt-5 pb-5 d-flex align-items-center">
-              <div class="col-md-12 text-center"><a href="{{$base_url}}/shop"><button class="btn-go-shopping">Go Shopping</button></a></div>
+              <div class="col-md-12 text-center"><a href="/shop"><button class="btn-go-shopping">Go Shopping</button></a></div>
             </div>
 
 

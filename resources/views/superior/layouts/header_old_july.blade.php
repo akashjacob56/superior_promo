@@ -387,30 +387,30 @@ border-bottom: solid 2px #0056b3;
 <ul style="float: right;">
 
 <li> 
-<!-- <img class="img-fluid img_elite" src="{{$base_url}}/resources/views/superior/assets/images/reseller.png" style="float: right;margin-right: 3rem !important;"> -->
+<!-- <img class="img-fluid img_elite" src="/resources/views/superior/assets/images/reseller.png" style="float: right;margin-right: 3rem !important;"> -->
 <a href="https://www.resellerratings.com/seal/landing/52232" target="_blank">
-<img style="" class="img-fluid elite-seal-1" src="{{$base_url}}/resources/views/superior/assets/images/elite_seal_1.png">
-<img style="width: 102px;height: 35.35px;" class="img-fluid" src="{{$base_url}}/resources/views/superior/assets/images/reseller-ratings.png">
+<img style="" class="img-fluid elite-seal-1" src="/resources/views/superior/assets/images/elite_seal_1.png">
+<img style="width: 102px;height: 35.35px;" class="img-fluid" src="/resources/views/superior/assets/images/reseller-ratings.png">
 </a>
 </li>
 
 @auth
-<li><a href="{{$base_url}}/my-account-profile" class="login-links"><button type="button" class="btn-header-my-ac">My Account</button></a></li>
+<li><a href="/my-account-profile" class="login-links"><button type="button" class="btn-header-my-ac">My Account</button></a></li>
 <li> <a class="login-links" href="{{ route('logout') }}" onclick="event.preventDefault();
 document.getElementById('logout-form').submit();" id="logout-button"> <i class="icon-power"></i><button type="button" class="btn-header"> @lang("navigation.logout") </button></a>
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 {{ csrf_field() }}
 </form></li>
 @else
-<li><a href="{{$base_url}}/login" class="login-links"><button type="button" class="btn-header">Login</button></a></li>
-<li><a href="{{$base_url}}/register" class="login-links"><button type="button" class="btn-header">Register</button></a></li>
+<li><a href="/login" class="login-links"><button type="button" class="btn-header">Login</button></a></li>
+<li><a href="/register" class="login-links"><button type="button" class="btn-header">Register</button></a></li>
 @endauth
 
 <!-- Dropdown Menu LI Start ------------------------------ -->
 <li>
 <div class="dropdown cart-dropdown cart_dropdown_new" style=""> <!-- main dropdown div start -->
-<a href="{{$base_url}}/cart" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" >
-<img src="{{$base_url}}/resources/views/superior/assets/images/cart.png" class="cart-image">
+<a href="/cart" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" >
+<img src="/resources/views/superior/assets/images/cart.png" class="cart-image">
 <span id="cart_count" class="cart-count badge-circle" style="right: 6px; top:7px;">{{$cart_count}}</span>
 <p class="cart-text" ><span>Cart</span>&nbsp;<span><i class="fas fa-caret-down fas_cart"></i></span></p>
 </a>
@@ -429,7 +429,7 @@ padding-top: 10px;
 width: 510px;">
 <!-- <a href="#" title="Close (Esc)" class="btn-close">×</a> -->
 <div class="dropdownmenu-wrapper custom-scrollbar">
-<div class="dropdown-cart-header"><a href="#" title="Close (Esc)" class="btn-close"><img src="{{$base_url}}/resources/views/superior/assets/images/cross-cancel.png" style=""></a></div>
+<div class="dropdown-cart-header"><a href="#" title="Close (Esc)" class="btn-close"><img src="/resources/views/superior/assets/images/cross-cancel.png" style=""></a></div>
 <div class="dropdown-cart-products">
 
 
@@ -647,7 +647,7 @@ $imprint_price=$imprint_price+$imprint->setup_price;
 <!-- img div start --------- -->
 <div class="cart-dropdown-image-div">
 <!-- <a href="javascript:void(0);" class=""> -->
-<img class="cart-product-image" src="{{$base_url}}/storage/app/{{$cart->product->product_image}}" alt="product">
+<img class="cart-product-image" src="/storage/app/{{$cart->product->product_image}}" alt="product">
 <!-- </a> -->
 </div>
 <!-- img div end --------- -->
@@ -697,7 +697,7 @@ $imprint_price=$imprint_price+$imprint->setup_price;
 <div class="text-right price-value mb-1">$<?php echo number_format($cart->quantity*$cart->price+$imprint_price,2,);?></div>
 @endif
 <div class="text-right">
-<span><a href="javascript:void(0);" class="d-inline-block text-info">Edit</a></span>&nbsp;&nbsp;<span><a href="{{$base_url}}/cart_remove_header/{{$cart->id}}" class="d-lg-inline-block text-danger">Delete</a></span>
+<span><a href="javascript:void(0);" class="d-inline-block text-info">Edit</a></span>&nbsp;&nbsp;<span><a href="/cart_remove_header/{{$cart->id}}" class="d-lg-inline-block text-danger">Delete</a></span>
 </div>
 
 </div>
@@ -723,13 +723,13 @@ $imprint_price=$imprint_price+$imprint->setup_price;
 <p class="cart-text-para mt-1">*Total price may vary depending on final shipping selection and any order adjustments <br>before final Checkout Step.</p>
 <div class="text-right">
 
-<a href="{{$base_url}}/cart" class="text-info text-font-weight-500 d-inline-block mr-4"><button class="btn_view_cart">View Cart</button></a>
+<a href="/cart" class="text-info text-font-weight-500 d-inline-block mr-4"><button class="btn_view_cart">View Cart</button></a>
 
-<!-- <a href="{{$base_url}}/checkout" class="text-danger text-font-weight-500 d-inline-block headercheckout"><button class="btn_checkout_cart">Checkout</button></a> -->
+<!-- <a href="/checkout" class="text-danger text-font-weight-500 d-inline-block headercheckout"><button class="btn_checkout_cart">Checkout</button></a> -->
 
 
 <a href="javascript:void(0);" class="text-danger text-font-weight-500 d-inline-block headercheckout">
-<form action="{{$base_url}}/checkout" method="post">
+<form action="/checkout" method="post">
 {{ csrf_field() }}
 <input type="hidden" id="ot_checkout_header" name="ot" value="{{$main_total_app}}"/>
 <input type="hidden" id="sc_checkout_header" name="sc" value="{{$shipping_cost_app}}"/>
@@ -747,7 +747,7 @@ $imprint_price=$imprint_price+$imprint->setup_price;
 <div class="col-md-12">
 <center>
 <div>
-<img src="{{$base_url}}/storage/app/empty-cart.png" class="img-fluid" alt="tbl" width="">
+<img src="/storage/app/empty-cart.png" class="img-fluid" alt="tbl" width="">
 <span class="no-itemrow">Your cart is empty!</span>
 </div>
 </center>
@@ -835,14 +835,14 @@ color: #FFFFFF;
 <button class="mobile-menu-toggler" type="button">
 <i class="icon-menu"></i>
 </button>
-<a href="{{$base_url}}"><img style="margin-left: 0px;" src="{{$base_url}}/resources/views/superior/assets/images/new_logo.png" class="logo-img" alt="" style=""></a>
+<a href=""><img style="margin-left: 0px;" src="/resources/views/superior/assets/images/new_logo.png" class="logo-img" alt="" style=""></a>
 </div><!-- End .header-left -->
 
 <div class="header-center">
 <div class="header-icon header-icon header-search header-search-inline header-search-category w-lg-max text-right">
 <a href="#" class="search-toggle" role="button"><i class="icon-search-3"></i></a>
 
-<!-- <form action="{{$base_url}}/searchProducts" id="search-form" method="post"> -->
+<!-- <form action="/searchProducts" id="search-form" method="post"> -->
 <div class="header-search-wrapper">
 
 <input type="search" class="form-control header_search_input" id="searchbar-header" placeholder="Search Items.."  name="keyword">
@@ -865,25 +865,25 @@ color: #FFFFFF;
 <p class="title-user">Hello! {{Auth::user()->name}}</p>
 @if($role_id!=6)
 <li>
-<a class="font" href="{{$base_url}}/admin/home">
+<a class="font" href="/admin/home">
 @lang("navigation.switch_to_admin")
 </a>
 </li>
 @endif        
 <li>
-<a class="font" href="{{$base_url}}/profile">
+<a class="font" href="/profile">
 @lang("user.profile")
 </a>
 </li>
 <li>
-<a class="font" href="{{$base_url}}/orders">
+<a class="font" href="/orders">
 @lang("navigation.my_orders")
 </a>
 </li>
 
 
 <li>
-<a class="font" href="{{$base_url}}/changePassword">
+<a class="font" href="/changePassword">
 @lang("user.change_password")
 </a>
 </li>
@@ -899,7 +899,7 @@ document.getElementById('logout-form').submit();" id="logout-button"> <i class="
 </div><!-- End .header-menu -->
 </div><!-- End .header-dropown -->
 @else
-<!-- <a href="{{$base_url}}/login" class="header-icon"><i class="icon-user-2"></i></a> -->
+<!-- <a href="/login" class="header-icon"><i class="icon-user-2"></i></a> -->
 @endif
 
 
@@ -931,8 +931,8 @@ $length=count($carts);
 
 
 <!-- <div class="dropdown cart-dropdown cart_dropdown_new" style="">
-<a href="{{$base_url}}/cart" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" >
-<img src="{{$base_url}}/resources/views/superior/assets/images/cart.png" class="cart-image">
+<a href="/cart" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" >
+<img src="/resources/views/superior/assets/images/cart.png" class="cart-image">
 <span id="cart_count" class="cart-count badge-circle" badge-circle" style="right: 6px; top:7px;"></span>
 </a>
 <div class="cart-overlay"></div>
@@ -940,8 +940,8 @@ $length=count($carts);
 </div> -->
 
 
-<a href="{{$base_url}}/contact" title="Message" class="" role="button" >
-<img src="{{$base_url}}/resources/views/superior/assets/images/message-box.png" class="message-box">
+<a href="/contact" title="Message" class="" role="button" >
+<img src="/resources/views/superior/assets/images/message-box.png" class="message-box">
 </a>
 
 
@@ -1277,7 +1277,7 @@ $category_translation=$category->default_category_translation;
 <li>
 <div class="row">
 <div class="col-md-10"> 
-<a class="category-child-listing shop_by_category_id level1" href="{{$base_url}}/shop?category_id={{$category_translation->category_id}}"> {{$category_translation->category_name}}</a>
+<a class="category-child-listing shop_by_category_id level1" href="/shop?category_id={{$category_translation->category_id}}"> {{$category_translation->category_name}}</a>
 </div>
 <div class="col-md-2 collapsed" data-toggle="collapse" data-target="#service{{$category_translation->category_id}}">
 <span class="arrow"></span>
@@ -1302,7 +1302,7 @@ $child_category_translation=$child_category->category->default_category_translat
 <div class="row">
 
 <div class="col-md-10"> 
-<a class="category-child-listing shop_by_category_id level2" href="{{$base_url}}/shop?category_id={{$child_category_translation->category_id}}">{{$child_category_translation->category_name}}</a>
+<a class="category-child-listing shop_by_category_id level2" href="/shop?category_id={{$child_category_translation->category_id}}">{{$child_category_translation->category_name}}</a>
 </div>
 
 <div class="col-md-2 collapsed" data-toggle="collapse" data-target="#new-sub{{$child_category_translation->category_id}}">
@@ -1322,7 +1322,7 @@ $sub_child_category_translation=$sub_child_category->category->default_category_
 }
 @endphp
 <li class="child">
-<a class="category-child-listing shop_by_category_id" href="{{$base_url}}/shop?category_id={{$sub_child_category_translation->category_id}}">{{$sub_child_category_translation->category_name}}</a>
+<a class="category-child-listing shop_by_category_id" href="/shop?category_id={{$sub_child_category_translation->category_id}}">{{$sub_child_category_translation->category_name}}</a>
 </li>
 @endforeach
 </ul>
@@ -1330,7 +1330,7 @@ $sub_child_category_translation=$sub_child_category->category->default_category_
 
 @else
 <li class=" nocat">
-<a class="category-child-listing shop_by_category_id" href="{{$base_url}}/shop?category_id={{$child_category_translation->category_id}}">
+<a class="category-child-listing shop_by_category_id" href="/shop?category_id={{$child_category_translation->category_id}}">
  {{$child_category_translation->category_name}}
 </a>
 </li>
@@ -1343,7 +1343,7 @@ $sub_child_category_translation=$sub_child_category->category->default_category_
 @else
 
 <li class="nocat">
-<a class="category-child-listing shop_by_category_id" href="{{$base_url}}/shop?category_id={{$category_translation->category_id}}">
+<a class="category-child-listing shop_by_category_id" href="/shop?category_id={{$category_translation->category_id}}">
 {{$category_translation->category_name}}
 </a> 
 </li>
@@ -1363,11 +1363,11 @@ $sub_child_category_translation=$sub_child_category->category->default_category_
 </ul>
 
 <ul class="menu w-100">
-<li><a href="{{$base_url}}/currunt-promotion" class="active">Current Promotions</a></li>
-<li><a href="{{$base_url}}/art-work">Full Art Services</a></li>
-<li><a href="{{$base_url}}/shop?page=&search=&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=&max_quantity=&min_quantity=&under_dollar_1=1">Under $1 Deals</a></li>
-<li><a href="{{$base_url}}/order-process">Order Processing Guide</a></li>
-<li><a href="{{$base_url}}/product-sample">Samples</a></li>
+<li><a href="/currunt-promotion" class="active">Current Promotions</a></li>
+<li><a href="/art-work">Full Art Services</a></li>
+<li><a href="/shop?page=&search=&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=&max_quantity=&min_quantity=&under_dollar_1=1">Under $1 Deals</a></li>
+<li><a href="/order-process">Order Processing Guide</a></li>
+<li><a href="/product-sample">Samples</a></li>
 </ul>
 
 
@@ -1413,7 +1413,7 @@ headers : {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
 
 $.ajax({
 method: "POST",
-url: "{{$base_url}}/searchbar-view",
+url: "/searchbar-view",
 dataType: 'json',
 cache: false,
 contentType: false,
@@ -1497,7 +1497,7 @@ cart_id=$(this).attr('id');
 $('#new_order_amount').html(" ");
 $.ajax({
 type: "post",
-url: "{{$base_url}}/wdeleteFromCart",
+url: "/wdeleteFromCart",
 data: {'cart_id':cart_id},
 dataType: 'json',
 cache: false,

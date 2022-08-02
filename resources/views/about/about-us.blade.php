@@ -15,12 +15,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a> About Us 
@@ -48,7 +48,7 @@
                   <button type="submit" name="save"  class="btn btn-primary waves-effect waves-light pull-right">Save</button>
 
 
-                  <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                  <a href=""><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                   </button></a>
 
 
@@ -79,7 +79,7 @@
 
           <div class="col-md-12">
             <div class="form-group">
-              <img id="about_image" src="{{$base_url}}/storage/app/{{$about_translation->about_image}}" height="100" > 
+              <img id="about_image" src="/storage/app/{{$about_translation->about_image}}" height="100" >
             </div>
 
             <div class="form-group {{ $errors->has('about_image') ? ' has-error' : '' }}">
@@ -95,7 +95,7 @@
 
           <div class="col-md-12">
             <div class="form-group">
-              <img id="about_video" src="{{$base_url}}/storage/app/{{$about_translation->about_video}}" height="100" > 
+              <img id="about_video" src="/storage/app/{{$about_translation->about_video}}" height="100" >
             </div>
 
             <div class="form-group {{ $errors->has('about_video') ? ' has-error' : '' }}">
@@ -116,7 +116,7 @@
                 <button type="submit" name="save"  class="btn btn-primary waves-effect waves-light pull-right">Save</button>
                 
 
-                <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                <a href=""><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                 </button></a>
 
               </span>

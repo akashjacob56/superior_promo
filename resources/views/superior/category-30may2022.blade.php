@@ -440,11 +440,11 @@ li.active>a {
                                     <div class="toolbox-item layout-modes">
                                     <a id="grid_icon" href="javascript:void(0);" class="layout-btn btn-grid active" title="Grid">
                                         <!-- <i class="icon-mode-grid"></i> -->
-                                        <img src="{{$base_url}}/resources/views/superior/assets/images/grid-icon.png" style="width: 28.35px;height: 28.35px">
+                                        <img src="/resources/views/superior/assets/images/grid-icon.png" style="width: 28.35px;height: 28.35px">
                                     </a>
                                     <a id="list_icon" href="javascript:void(0);" class="layout-btn btn-list" title="List">
                                         <!-- <i class="icon-mode-list"></i> -->
-                                        <img src="{{$base_url}}/resources/views/superior/assets/images/list-icon.png" style="width: 26.35px;height: 24.35px;margin-top: 2px;">
+                                        <img src="/resources/views/superior/assets/images/list-icon.png" style="width: 26.35px;height: 24.35px;margin-top: 2px;">
                                         <!-- <i style="font-size: 25px;" class="fas fa-bars"></i> -->
                                     </a>
                                 </div>
@@ -673,8 +673,8 @@ padding:5px;
                                     </div>
                                 <figure>
                                     <a href="javascript:void(0);">
-                                        <img class="product_image_first" src="{{$base_url}}/storage/app/{{$product->product_image}}" width="250" height="250" alt="product">
-                                        <img class="product_image_second" src="{{$base_url}}/storage/app/{{$product->product_image}}" width="250" height="250" alt="product">
+                                        <img class="product_image_first" src="/storage/app/{{$product->product_image}}" width="250" height="250" alt="product">
+                                        <img class="product_image_second" src="/storage/app/{{$product->product_image}}" width="250" height="250" alt="product">
                                     </a><br>
                                     <ul class="circle-rounded-ul" >
                                         @if($product->product_color_group!="")
@@ -801,8 +801,8 @@ padding:5px;
 
                                     <figure>
 
-                                        <a href="{{$base_url}}/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">
-                                            <img src="{{$base_url}}/storage/app/{{$product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
+                                        <a href="/product/{{$product->product_url}}?pid={{$product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1">
+                                            <img src="/storage/app/{{$product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
                                         </a>
                                     </figure>
 
@@ -1344,7 +1344,7 @@ color: #212121;
 
                                         
                                             <li>
-                                                <a href="{{$base_url}}/shop" style="font-family: Roboto;font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;align-items: center;text-decoration-line: underline;color: #68BEE5;">
+                                                <a href="/shop" style="font-family: Roboto;font-style: normal;font-weight: 500;font-size: 16px;line-height: 19px;align-items: center;text-decoration-line: underline;color: #68BEE5;">
                                                     Clear Filters
                                                 </a>
 
@@ -1603,11 +1603,11 @@ color: #212121;
                                                 @endphp
 
                                             @if($key==0)
-                                            <li class="product_price_li" ><!-- <a href="{{$base_url}}/shop?category_id=&color_id=&min=0&max={{$range['max']}}"> --><input type="checkbox" name="range_values" class="price-checkbox" min="0" max="{{$range['max']}}" {{$check}}>&nbsp;Under${{$range['max']}}<!-- </a> --></li>
+                                            <li class="product_price_li" ><!-- <a href="/shop?category_id=&color_id=&min=0&max={{$range['max']}}"> --><input type="checkbox" name="range_values" class="price-checkbox" min="0" max="{{$range['max']}}" {{$check}}>&nbsp;Under${{$range['max']}}<!-- </a> --></li>
                                             @elseif($key==$count-1)
-                                            <li  class="product_price_li" ><!-- <a href="{{$base_url}}/shop?category_id=&color_id=&min={{$range['min']}}&max={{$range['max']}}"> --><input type="checkbox" name="range_values" class="price-checkbox" min="{{$range['min']}}" max="{{$range['max']}}"  {{$check}}>&nbsp;Over ${{$range['min']}}<!-- </a> --></li>
+                                            <li  class="product_price_li" ><!-- <a href="/shop?category_id=&color_id=&min={{$range['min']}}&max={{$range['max']}}"> --><input type="checkbox" name="range_values" class="price-checkbox" min="{{$range['min']}}" max="{{$range['max']}}"  {{$check}}>&nbsp;Over ${{$range['min']}}<!-- </a> --></li>
                                             @else
-                                            <li  class="product_price_li"><!-- <a href="{{$base_url}}/shop?category_id=&color_id=&min={{$range['min']}}&max={{$range['max']}}"> --><input type="checkbox" name="range_values" class="price-checkbox" min="{{$range['min']}}" max="{{$range['max']}}"  {{$check}}>&nbsp;${{$range['min']}} - ${{$range['max']}}<!-- </a> --></li>
+                                            <li  class="product_price_li"><!-- <a href="/shop?category_id=&color_id=&min={{$range['min']}}&max={{$range['max']}}"> --><input type="checkbox" name="range_values" class="price-checkbox" min="{{$range['min']}}" max="{{$range['max']}}"  {{$check}}>&nbsp;${{$range['min']}} - ${{$range['max']}}<!-- </a> --></li>
                                             @endif
 
                                 @endforeach
@@ -1738,7 +1738,7 @@ color: #212121;
                         var product_id = item.product_id;
                         $.ajax({
                               type: 'post',
-                              url:'{{$base_url}}/wishlist/add',
+                              url:'/wishlist/add',
                               data:{"_token": "{{ csrf_token() }}",'product_id':product_id},
                               success: function (result){
                                 if(result!=""){
@@ -1805,7 +1805,7 @@ color: #212121;
                         var max_quantity = <?php echo json_encode($max_quantities);?>;  
                         var min_quantity = <?php echo json_encode($min_quantities);?>;
                         var under_dollar_1 = "{{$under_dollar_1}}";
-                        window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                        window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
 
                         
                     });
@@ -1848,7 +1848,7 @@ color: #212121;
             var max_quantity = <?php echo json_encode($max_quantities);?>;  
             var min_quantity = <?php echo json_encode($min_quantities);?>;
             var under_dollar_1 = "{{$under_dollar_1}}";
-            window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_id+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+            window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_id+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
         });
     });
 </script>
@@ -1883,7 +1883,7 @@ color: #212121;
                                                     var max_quantity = <?php echo json_encode($max_quantities);?>;  
                                                     var min_quantity = <?php echo json_encode($min_quantities);?>;
                                                     var under_dollar_1 = "{{$under_dollar_1}}";
-                                                    window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min_value+"&max="+max_value+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                                                    window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min_value+"&max="+max_value+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
 
                                                 });
                                             });
@@ -1907,7 +1907,7 @@ color: #212121;
                                                     var max_quantity = <?php echo json_encode($max_quantities);?>;  
                                                     var min_quantity = <?php echo json_encode($min_quantities);?>;
                                                     var under_dollar_1 = "{{$under_dollar_1}}";
-                                                    window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id=&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                                                    window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id=&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
                                                 });
                                             });
                                         </script>
@@ -1935,7 +1935,7 @@ color: #212121;
                                                         var max_quantity = <?php echo json_encode($max_quantities);?>;  
                                                         var min_quantity = <?php echo json_encode($min_quantities);?>;
                                                         var under_dollar_1 = "{{$under_dollar_1}}";
-                                                        window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_id_new+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                                                        window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_id_new+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
                                                     });
                                                 });
                                                 });
@@ -1964,7 +1964,7 @@ color: #212121;
                                                         var max_quantity = <?php echo json_encode($max_quantities);?>;  
                                                         var min_quantity = <?php echo json_encode($min_quantities);?>;
                                                         var under_dollar_1 = "{{$under_dollar_1}}";
-                                                        window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_id_new+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                                                        window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_id_new+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
                                                     });
                                                 });
                                             });
@@ -1998,7 +1998,7 @@ color: #212121;
                                                         var max_quantity = <?php echo json_encode($max_quantities);?>;  
                                                         var min_quantity = <?php echo json_encode($min_quantities);?>;
                                                         var under_dollar_1 = "{{$under_dollar_1}}";
-                                                        window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min_new+"&max="+max_new+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                                                        window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min_new+"&max="+max_new+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
 
                                                     });
                                                 });
@@ -2025,7 +2025,7 @@ color: #212121;
             var max_quantity = <?php echo json_encode($max_quantities);?>;  
             var min_quantity = <?php echo json_encode($min_quantities);?>;
             var under_dollar_1 = "{{$under_dollar_1}}";
-            window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+            window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
         });
     });
 </script>
@@ -2068,7 +2068,7 @@ color: #212121;
                                     var max_quantity = <?php echo json_encode($max_quantities);?>;  
                                     var min_quantity = <?php echo json_encode($min_quantities);?>;
                                     var under_dollar_1 = "{{$under_dollar_1}}";
-                                    window.location.href = "{{$base_url}}/shop?page="+page_num+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                                    window.location.href = "/shop?page="+page_num+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
                                     return false;
                                 });
 
@@ -2091,7 +2091,7 @@ color: #212121;
                                     var max_quantity = <?php echo json_encode($max_quantities);?>;  
                                     var min_quantity = <?php echo json_encode($min_quantities);?>;
                                     var under_dollar_1 = "{{$under_dollar_1}}";
-                                    window.location.href = "{{$base_url}}/shop?page="+page_num+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                                    window.location.href = "/shop?page="+page_num+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
                                     return false;
                                 });
                             });
@@ -2115,7 +2115,7 @@ color: #212121;
                 var max_quantity = <?php echo json_encode($max_quantities);?>;  
                 var min_quantity = <?php echo json_encode($min_quantities);?>;
                 var under_dollar_1 = "{{$under_dollar_1}}";
-                window.location.href = "{{$base_url}}/shop?page="+page_num+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                window.location.href = "/shop?page="+page_num+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
             });
             //Remove Page End----------------
 
@@ -2134,7 +2134,7 @@ color: #212121;
                 var max_quantity = <?php echo json_encode($max_quantities);?>;  
                 var min_quantity = <?php echo json_encode($min_quantities);?>;
                 var under_dollar_1 = "{{$under_dollar_1}}";
-                window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
             });
             //Remove search end -------------------
         });
@@ -2161,7 +2161,7 @@ color: #212121;
                 var max_quantity = <?php echo json_encode($max_quantities);?>;  
                 var min_quantity = <?php echo json_encode($min_quantities);?>;
                 var under_dollar_1 = "{{$under_dollar_1}}";
-                window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
             });
 
             $('.header_search_input').on('keypress',function(e) {
@@ -2179,7 +2179,7 @@ color: #212121;
                     var max_quantity = <?php echo json_encode($max_quantities);?>;  
                     var min_quantity = <?php echo json_encode($min_quantities);?>;
                     var under_dollar_1 = "{{$under_dollar_1}}";
-                    window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                    window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
                 }
             });
 
@@ -2205,7 +2205,7 @@ color: #212121;
                         var max_quantity = <?php echo json_encode($max_quantities);?>;  
                         var min_quantity = <?php echo json_encode($min_quantities);?>;
                         var under_dollar_1 = "{{$under_dollar_1}}";
-                        window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                        window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
                     });
             //category select end
 
@@ -2231,7 +2231,7 @@ color: #212121;
                         var max_quantity = <?php echo json_encode($max_quantities);?>;  
                         var min_quantity = <?php echo json_encode($min_quantities);?>;
                         var under_dollar_1 = "{{$under_dollar_1}}";
-                        window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                        window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
                     });
             //Remove cat_id end ----
 
@@ -2277,7 +2277,7 @@ color: #212121;
             var max_quantity = <?php echo json_encode($max_quantities);?>;  
             var min_quantity = <?php echo json_encode($min_quantities);?>;
             var under_dollar_1 = "{{$under_dollar_1}}";
-            window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+            window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
         })
     });
 </script>
@@ -2298,7 +2298,7 @@ color: #212121;
             var max_quantity = <?php echo json_encode($max_quantities);?>;  
             var min_quantity = <?php echo json_encode($min_quantities);?>;
             var under_dollar_1 = "{{$under_dollar_1}}";
-            window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+            window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
         })
     });
 </script>
@@ -2320,7 +2320,7 @@ color: #212121;
             var max_quantity = <?php echo json_encode($max_quantities);?>;  
             var min_quantity = <?php echo json_encode($min_quantities);?>;
             var under_dollar_1 = "{{$under_dollar_1}}";
-            window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+            window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
     });
 
 
@@ -2353,7 +2353,7 @@ color: #212121;
                                                     var max = <?php echo json_encode($max_prices);?>;  
                                                     var min = <?php echo json_encode($min_prices);?>;
                                                     var under_dollar_1 = "{{$under_dollar_1}}";
-                                                    window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+qty_max_value+"&min_quantity="+qty_min_value+"&under_dollar_1="+under_dollar_1;
+                                                    window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+qty_max_value+"&min_quantity="+qty_min_value+"&under_dollar_1="+under_dollar_1;
 
                                                 });
                                              });
@@ -2390,7 +2390,7 @@ color: #212121;
                                                         var shop_cat_id = "{{$shop_cat_id}}";
                                                         var under_dollar_1 = "{{$under_dollar_1}}";
 
-                                                        window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity_new+"&min_quantity="+min_quantity_new+"&under_dollar_1="+under_dollar_1;
+                                                        window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity_new+"&min_quantity="+min_quantity_new+"&under_dollar_1="+under_dollar_1;
                                                 });
                                             });
                                             
@@ -2416,7 +2416,7 @@ color: #212121;
                                                     var min = <?php echo json_encode($min_prices);?>;
                                                     var max_quantity = <?php echo json_encode($max_quantities);?>;  
                                                     var min_quantity = <?php echo json_encode($min_quantities);?>;
-                                                    window.location.href = "{{$base_url}}/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
+                                                    window.location.href = "/shop?page="+page+"&search="+search+"&cat_id="+cat_id+"&category_id="+category_ids+"&color_id="+color_ids+"&min="+min+"&max="+max+"&orderby="+orderby+"&pagi_num="+pagi_num+"&shop_cat_id="+shop_cat_id+"&max_quantity="+max_quantity+"&min_quantity="+min_quantity+"&under_dollar_1="+under_dollar_1;
 
                                                 });
                                              });

@@ -14,8 +14,8 @@
    <h1 style="display: none;">Swaas Life</h1>
   @endif
   <meta charset="utf-8">
-  <link rel="icon" href="{{$base_url}}/swaas/images/logo.png" type="image/x-icon"/>
-  <link rel="shortcut icon" href="{{$base_url}}/swaas/images/logo.png" type="image/x-icon"/>
+  <link rel="icon" href="/swaas/images/logo.png" type="image/x-icon"/>
+  <link rel="shortcut icon" href="/swaas/images/logo.png" type="image/x-icon"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -154,8 +154,8 @@ ol.breadcrumb{
           <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
           <span class="text">+91 95 97 155 255</span>
         </a>
-           <a href="{{$base_url}}/cart" class="nav-link desktop-hide float-right"><span class="icon-shopping_cart cart-count desktop-hide"></span>[<span id="mobile_cart_count"></span>]</a>
-        <a href="{{$base_url}}/wishlist" class="nav-link desktop-hide float-right"><span class="icon-heart desktop-hide"></span></a>
+           <a href="/cart" class="nav-link desktop-hide float-right"><span class="icon-shopping_cart cart-count desktop-hide"></span>[<span id="mobile_cart_count"></span>]</a>
+        <a href="/wishlist" class="nav-link desktop-hide float-right"><span class="icon-heart desktop-hide"></span></a>
       </div>
 
       <div class="col-md pr-3 d-flex topper align-items-center  mobile-hide">
@@ -185,10 +185,10 @@ ol.breadcrumb{
   <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><img src="{{asset('swaas/images/menu.png')}}"></a>
   <div class="collapse" id="collapseExample">
    <ul>
-    <li><a class="dropdown-item" title="BedSheet" href="{{$base_url}}/collection/bedsheets-all"><img src="{{$base_url}}/swaas/images/bed.png"></a></li>
-    <li> <a class="dropdown-item" title="Quilt" href="{{$base_url}}/collection/quilts"><img src="{{$base_url}}/swaas/images/quilt.png"></a></li>
-    <li><a class="dropdown-item" title="Pillow" href="{{$base_url}}/collection/pillow-covers"><img src="{{$base_url}}/swaas/images/pillow.png"></a> </li>
-    <li><a class="dropdown-item" title="Mask" href="{{$base_url}}/collection/protective-mask"><img src="{{$base_url}}/swaas/images/mask.png"></a> </li>
+    <li><a class="dropdown-item" title="BedSheet" href="/collection/bedsheets-all"><img src="/swaas/images/bed.png"></a></li>
+    <li> <a class="dropdown-item" title="Quilt" href="/collection/quilts"><img src="/swaas/images/quilt.png"></a></li>
+    <li><a class="dropdown-item" title="Pillow" href="/collection/pillow-covers"><img src="/swaas/images/pillow.png"></a> </li>
+    <li><a class="dropdown-item" title="Mask" href="/collection/protective-mask"><img src="/swaas/images/mask.png"></a> </li>
   </ul>
 </div>
 </div>
@@ -244,7 +244,7 @@ ol.breadcrumb{
 <script src="{{asset('swaas/js/zoomsl.js')}}"></script>
 <script type="text/javascript">
 
-  baseURL="{{$base_url}}";
+  baseURL="";
 
 
 </script>
@@ -270,7 +270,7 @@ ol.breadcrumb{
 
       $.ajax({
         type: "post",
-        url: "{{$base_url}}/postAddToCart",
+        url: "/postAddToCart",
         data: {'sku_id':sku_id,'quantity':quantity},
         dataType: 'json',
         cache: false,
@@ -278,7 +278,7 @@ ol.breadcrumb{
           $.notify(result.data.msg);
           $.ajax({
             type: "post",
-            url: "{{$base_url}}/wdeleteWishlist",
+            url: "/wdeleteWishlist",
             data: {'sku_id':sku_id},
             dataType: 'json',
             cache: false,
@@ -311,7 +311,7 @@ ol.breadcrumb{
 
      $.ajax({
       type: "post",
-      url: "{{$base_url}}/waddToWishlist",
+      url: "/waddToWishlist",
       data: { "_token": "{{ csrf_token() }}",'sku_id':sku_id,'click_source':click_source},
       success: function (result) {
         if(result.status=="true"){

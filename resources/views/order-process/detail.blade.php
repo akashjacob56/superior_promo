@@ -15,12 +15,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a> Order Process
@@ -55,7 +55,7 @@
                   <button type="submit" name="save" class="btn btn-primary waves-effect waves-light pull-right">Save</button>
 
 
-                  <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">Cancel
+                  <a href=""><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">Cancel
                   </button></a>
 
 
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="form-group">
-              <img id="order_process_image" src="{{$base_url}}/storage/app/{{$order_process->order_process_image}}" height="100" > 
+              <img id="order_process_image" src="/storage/app/{{$order_process->order_process_image}}" height="100" >
             </div>
 
             <div class="form-group {{ $errors->has('order_process_image') ? ' has-error' : '' }}">
@@ -103,7 +103,7 @@
 
           <!-- <div class="col-md-12">
             <div class="form-group">
-              <img id="about_image" src="{{$base_url}}/storage/app/" height="100" > 
+              <img id="about_image" src="/storage/app/" height="100" >
             </div>
             <div class="form-group {{ $errors->has('about_image') ? ' has-error' : '' }}">
               <label class="form-control-label">Image</label>          
@@ -122,7 +122,7 @@
             <div class="main-footer">
               <span class="lower-buttons">
                 <button type="submit" class="btn btn-primary waves-effect waves-light pull-right"> Save </button>
-                <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                <a href=""><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                 </button></a>
 
               </span>

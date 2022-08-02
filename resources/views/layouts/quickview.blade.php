@@ -167,9 +167,9 @@
         }
         rating_count='<span class="text-muted">('+rating_count+')</span>';
 
-        image='<center><img class="img quick_view_image center" src="{{$base_url}}/storage/app/'+product.product_image+'" alt="Big_Details" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; align="middle"> </center>';
+        image='<center><img class="img quick_view_image center" src="/storage/app/'+product.product_image+'" alt="Big_Details" onerror=this.src="/files/assets/images/product.png"; align="middle"> </center>';
 
-        product_url='<a href="{{$base_url}}/product/'+product.product_url+' ?pid='+product.product_id+'&skuid='+product.sku.sku_id+'&pvid='+product.sku.parent_variant_id+'&cvid='+product.sku.child_variant_id+'" target="_blank" class="btn btn-primary waves-effect waves-light m-r-20"><span class="m-l-10">@lang("product.see_product_details")</span></a>';
+        product_url='<a href="/product/'+product.product_url+' ?pid='+product.product_id+'&skuid='+product.sku.sku_id+'&pvid='+product.sku.parent_variant_id+'&cvid='+product.sku.child_variant_id+'" target="_blank" class="btn btn-primary waves-effect waves-light m-r-20"><span class="m-l-10">@lang("product.see_product_details")</span></a>';
 
         $('#quick-p-image').html("");
         $('#product-barcode').html("");

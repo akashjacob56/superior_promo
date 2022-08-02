@@ -4,7 +4,7 @@
     
     $.ajax({
       type: 'post',
-      url: "{{$base_url}}/changeLanguage",
+      url: "/changeLanguage",
       data: {"_token": "{{ csrf_token() }}",'language_id':language_id},
        headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

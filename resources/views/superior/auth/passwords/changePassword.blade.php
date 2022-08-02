@@ -12,7 +12,7 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{$base_url}}"><i class="icon-home"></i></a></li>
+                <li class="breadcrumb-item"><a href=""><i class="icon-home"></i></a></li>
                 <li class="breadcrumb-item active" aria-current="page">Change password</li>
             </ol>
         </div><!-- End .container -->
@@ -23,7 +23,7 @@
       <div class="page-body">
         <div class="row">
          <div class="col-md-12">
-          <form class="theme-form contact-form" id="personal-info-form" method="post" action="{{$base_url}}/changePassword" enctype='multipart/form-data'>
+          <form class="theme-form contact-form" id="personal-info-form" method="post" action="/changePassword" enctype='multipart/form-data'>
             <input type="hidden" name="_token" value="{{csrf_token()}}">
 
           
@@ -62,7 +62,7 @@
             <div class="col-md-12">    
               <span class="lower-buttons">
                 <button type="submit" class="btn btn-theme waves-effect waves-light pull-right no-padding">Save</button>
-                <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-primary btn-md add pull-right">Cancel
+                <a href=""><button type="button" class="m-r-5 btn btn-primary btn-md add pull-right">Cancel
                 </button></a>
               </span>   
             </div>

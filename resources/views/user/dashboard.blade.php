@@ -26,7 +26,7 @@
 			<div class="col-md-12">
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}">
+						<a href="">
 							<i class="feather icon-home"></i>
 						</a>
 					</li>
@@ -51,7 +51,7 @@
 									<i class="feather icon-mail text-c-green d-block f-40"></i>
 									<h4 class="m-t-20"><span class="text-c-green">{{$todays_order_count}}</span></h4>
 									<p class="m-b-20">Your Today's Orders</p>
-									<a class="text-white hide" href="{{$base_url}}/admin/order/todays"><button class="btn btn-success btn-sm btn-round">Manage Orders</button></a>
+									<a class="text-white hide" href="/admin/order/todays"><button class="btn btn-success btn-sm btn-round">Manage Orders</button></a>
 								</div>
 							</div>
 						</div>
@@ -61,7 +61,7 @@
 									<i class="feather icon-file-text text-info d-block f-40"></i>
 									<h4 class="m-t-20"><span class="text-info">{{$all_order_count}}</span></h4>
 									<p class="m-b-20">All Orders</p>
-									<a class="text-white hide" href="{{$base_url}}/admin/order/all"><button class="btn btn-info btn-sm btn-round">Manage Orders</button></a>
+									<a class="text-white hide" href="/admin/order/all"><button class="btn btn-info btn-sm btn-round">Manage Orders</button></a>
 								</div>
 							</div>
 						</div>
@@ -71,7 +71,7 @@
 									<i class="feather icon-users text-warning d-block f-40"></i>
 									<h4 class="m-t-20"><span class="text-c-yellow">{{$total_product_count}}</span></h4>
 									<p class="m-b-20">Total Products</p>
-									<a class="text-white hide" href="{{$base_url}}/admin/product/all"><button class="btn btn-warning btn-sm btn-round">Manage Products</button></a>
+									<a class="text-white hide" href="/admin/product/all"><button class="btn btn-warning btn-sm btn-round">Manage Products</button></a>
 								</div>
 							</div>
 						</div>
@@ -82,7 +82,7 @@
 									<i class="feather icon-package text-c-red d-block f-40"></i>
 									<h4 class="m-t-20"><span class="text-c-red">{{$total_sales_count}}</span></h4>
 									<p class="m-b-20">Total Sales</p>
-									<a class="text-white hide" href="{{$base_url}}/admin/order/all"><button class="btn btn-danger btn-sm btn-round">Manage Sales</button></a>
+									<a class="text-white hide" href="/admin/order/all"><button class="btn btn-danger btn-sm btn-round">Manage Sales</button></a>
 								</div>
 							</div>
 						</div>

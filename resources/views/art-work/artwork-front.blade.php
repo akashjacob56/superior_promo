@@ -15,12 +15,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a> Art Work Front End 
@@ -48,7 +48,7 @@
                   <button type="submit" name="save"  class="btn btn-primary waves-effect waves-light pull-right">Save</button>
 
 
-                  <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                  <a href=""><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                   </button></a>
 
 
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="form-group">
-              <img id="product_sample_image" src="{{$base_url}}/storage/app/{{$art_work->art_digital_revision_proofs_image}}" height="100" > 
+              <img id="product_sample_image" src="/storage/app/{{$art_work->art_digital_revision_proofs_image}}" height="100" >
             </div>
 
             <div class="form-group {{ $errors->has('art_digital_revision_proofs_image') ? ' has-error' : '' }}">
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="form-group">
-              <img id="preffered_file_types_image" src="{{$base_url}}/storage/app/{{$art_work->preffered_file_types_image}}" height="100" > 
+              <img id="preffered_file_types_image" src="/storage/app/{{$art_work->preffered_file_types_image}}" height="100" >
             </div>
 
             <div class="form-group {{ $errors->has('preffered_file_types_image') ? ' has-error' : '' }}">
@@ -155,7 +155,7 @@
                 </div>
 
                 <div class="form-group">
-              <img id="redraws_modification_file_types_image" src="{{$base_url}}/storage/app/{{$art_work->redraws_modification_file_types_image}}" height="100"> 
+              <img id="redraws_modification_file_types_image" src="/storage/app/{{$art_work->redraws_modification_file_types_image}}" height="100">
             </div>
 
             <div class="form-group {{ $errors->has('redraws_modification_file_types_image') ? ' has-error' : '' }}">
@@ -191,7 +191,7 @@
                 </div>
 
                 <div class="form-group">
-              <img id="font_image" src="{{$base_url}}/storage/app/{{$art_work->font_image}}" height="100" > 
+              <img id="font_image" src="/storage/app/{{$art_work->font_image}}" height="100" >
             </div>
 
 
@@ -218,7 +218,7 @@
             <div class="main-footer">
               <span class="lower-buttons">
                 <button type="submit" class="btn btn-primary waves-effect waves-light pull-right"> Save </button>
-                <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                <a href=""><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                 </button></a>
 
               </span>

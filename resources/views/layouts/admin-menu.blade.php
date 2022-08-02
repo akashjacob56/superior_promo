@@ -10,9 +10,9 @@ $pos_items=0;
 
  <div class="main-menu-header">
   <center>
-    <a href="{{$base_url}}/admin/home">
+    <a href="/admin/home">
 
-        <img class="logo-image" style="height: 35px !important;width: 200px;" src="{{$base_url}}/storage/app/logo.png" alt="">
+        <img class="logo-image" style="height: 35px !important;width: 200px;" src="/storage/app/logo.png" alt="">
 
 
     </a>
@@ -31,7 +31,7 @@ $pos_items=0;
 
         @if($my_permissions->contains(config('permissions.HOME')))
         <li>
-            <a href="{{$base_url}}/admin/home" class="waves-effect waves-dark">
+            <a href="/admin/home" class="waves-effect waves-dark">
                 <span class="pcoded-micon">
                     <i class="feather icon-home"></i>
                 </span>
@@ -42,7 +42,7 @@ $pos_items=0;
 
 
 <li>
-            <a href="{{$base_url}}/admin/analytics/dashboard" class="waves-effect waves-dark">
+            <a href="/admin/analytics/dashboard" class="waves-effect waves-dark">
                 <span class="pcoded-micon">
                     <i class="feather icon-home"></i>
                 </span>
@@ -54,7 +54,7 @@ $pos_items=0;
 
             @if($my_permissions->contains(config('permissions.ORDER_ALL')) || $my_permissions->contains(config('permissions.ORDER_SELLER')))
                 <li>
-                    <a href="{{$base_url}}/admin/order/all" class="waves-effect waves-dark">
+                    <a href="/admin/order/all" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                         <i class="feather icon-home"></i>
                     </span>
@@ -64,7 +64,7 @@ $pos_items=0;
             @endif
 
             <li>
-                    <a href="{{$base_url}}/admin/order/all-reorder" class="waves-effect waves-dark">
+                    <a href="/admin/order/all-reorder" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                         <i class="feather icon-home"></i>
                     </span>
@@ -73,7 +73,7 @@ $pos_items=0;
                 </li>
 
             <li>
-                    <a href="{{$base_url}}/admin/production/all" class="waves-effect waves-dark">
+                    <a href="/admin/production/all" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                     <i class="feather icon-home"></i>
                 </span>
@@ -97,14 +97,14 @@ $pos_items=0;
 
                 @if($my_permissions->contains(config('permissions.ORDER_ALL')) || $my_permissions->contains(config('permissions.ORDER_SELLER')))
                 <li>
-                    <a href="{{$base_url}}/admin/order/all" class="waves-effect waves-dark">
+                    <a href="/admin/order/all" class="waves-effect waves-dark">
                         <span class="pcoded-mtext">All Orders</span>
                     </a>
                 </li>
                 @endif
 
                 <li>
-                    <a href="{{$base_url}}/admin/order/all-reorder" class="waves-effect waves-dark">
+                    <a href="/admin/order/all-reorder" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                         <i class="feather icon-home"></i>
                     </span>
@@ -124,7 +124,7 @@ $pos_items=0;
 
         @if($my_permissions->contains(config('permissions.CUSTOMERS')))
               <li>
-                <a href="{{$base_url}}/admin/customer/all-Active" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/customer/all-Active" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                         <i class="icon-people"></i>
                     </span>
@@ -132,7 +132,7 @@ $pos_items=0;
                 </a>
             </li>
             <li>
-                <a href="{{$base_url}}/admin/customer/all-InActive" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/customer/all-InActive" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                         <i class="icon-people"></i>
                     </span>
@@ -142,7 +142,7 @@ $pos_items=0;
             @endif
 
 <li>
-    <a href="{{$base_url}}/admin/role/all" class="waves-effect waves-dark {{++$menu_count}}">
+    <a href="/admin/role/all" class="waves-effect waves-dark {{++$menu_count}}">
         <span class="pcoded-micon">
                         <i class="icon-people"></i>
                     </span>
@@ -157,7 +157,7 @@ $pos_items=0;
 
             @if($my_permissions->contains(config('permissions.CUSTOMERS')))
             <li>
-                <a href="{{$base_url}}/admin/customer/all-Active" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/customer/all-Active" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                         <i class="icon-people"></i>
                     </span>
@@ -178,7 +178,7 @@ $pos_items=0;
           <ul class="pcoded-submenu">
               @if($my_permissions->contains(config('permissions.CUSTOMERS')))
               <li>
-                <a href="{{$base_url}}/admin/customer/all-Active" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/customer/all-Active" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                         <i class="icon-people"></i>
                     </span>
@@ -186,7 +186,7 @@ $pos_items=0;
                 </a>
             </li>
             <li>
-                <a href="{{$base_url}}/admin/customer/all-InActive" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/customer/all-InActive" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                         <i class="icon-people"></i>
                     </span>
@@ -196,7 +196,7 @@ $pos_items=0;
             @endif
 
             <li>
-                <a href="{{$base_url}}/admin/role/all" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/role/all" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-mtext">Roles</span>
                 </a>
             </li>
@@ -223,7 +223,7 @@ $pos_items=0;
                         @if($my_permissions->contains(config('permissions.PRODUCT_ALL')))
                         <li>
 
-                            <a href="{{$base_url}}/admin/product/all" class="waves-effect waves-dark">
+                            <a href="/admin/product/all" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">
                           <i class="fa fa-product-hunt" aria-hidden="true"></i>
                       </span>
@@ -248,7 +248,7 @@ $pos_items=0;
 
              @if($my_permissions->contains(config('permissions.VENDOR_ALL')))
                 <li>
-                <a href="{{$base_url}}/admin/vendor/all-vendor" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/vendor/all-vendor" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                         <i class="icon-people"></i>
                     </span>
@@ -266,7 +266,7 @@ $pos_items=0;
 
 
                         <li>
-                    <a href="{{$base_url}}/admin/categories/all" class="waves-effect waves-dark">
+                    <a href="/admin/categories/all" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                           <i class="icon-user-follow"></i>
                       </span>
@@ -290,7 +290,7 @@ $pos_items=0;
 
 
                 <li>
-                    <a href="{{$base_url}}/admin/categories/all" class="waves-effect waves-dark">
+                    <a href="/admin/categories/all" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="icon-grid"></i>
                         </span>
@@ -298,7 +298,7 @@ $pos_items=0;
                     </a>
                 </li>
                 <li>
-                    <a href="{{$base_url}}/admin/sub-category/all" class="waves-effect waves-dark">
+                    <a href="/admin/sub-category/all" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="icon-grid"></i>
                         </span>
@@ -330,7 +330,7 @@ $pos_items=0;
 
                 @if($my_permissions->contains(config('permissions.PRODUCT_ALL')))
                 <li>
-                    <a href="{{$base_url}}/admin/product/all" class="waves-effect waves-dark">
+                    <a href="/admin/product/all" class="waves-effect waves-dark">
                         <span class="pcoded-mtext">All products</span>
                     </a>
                 </li>
@@ -342,7 +342,7 @@ $pos_items=0;
                
 
                 <li>
-                    <a href="{{$base_url}}/admin/categories/all" class="waves-effect waves-dark">
+                    <a href="/admin/categories/all" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="icon-grid"></i>
                         </span>
@@ -350,7 +350,7 @@ $pos_items=0;
                     </a>
                 </li>
                 <li>
-                    <a href="{{$base_url}}/admin/sub-category/all" class="waves-effect waves-dark">
+                    <a href="/admin/sub-category/all" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="icon-grid"></i>
                         </span>
@@ -364,7 +364,7 @@ $pos_items=0;
                 @if($my_permissions->contains(config('permissions.RETURN_POLICY')))  
 
                 <li>
-                    <a href="{{$base_url}}/admin/returnpolicy/all" class="waves-effect waves-dark">
+                    <a href="/admin/returnpolicy/all" class="waves-effect waves-dark">
                         <span class="pcoded-mtext">Return Policy</span>
                     </a>
                 </li>
@@ -401,7 +401,7 @@ $role_id=$getuser->role_id;
 
                 @if($my_permissions->contains('DASHBOARD'))
                 <li>
-                    <a href="{{$base_url}}/admin/dashboard" class="waves-effect waves-dark">
+                    <a href="/admin/dashboard" class="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="icon-chart"></i>
                         </span>
@@ -429,7 +429,7 @@ $role_id=$getuser->role_id;
           </a>
           <ul class="pcoded-submenu">
               <li>
-                <a href="{{$base_url}}/admin/vendor/all-vendor" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/vendor/all-vendor" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                         <i class="icon-people"></i>
                     </span>
@@ -454,7 +454,7 @@ $role_id=$getuser->role_id;
 
        @if($my_permissions->contains(config('permissions.COUNTRY')))
        <li>
-        <a href="{{$base_url}}/admin/country/all" class="waves-effect waves-dark {{++$location_menu}}">
+        <a href="/admin/country/all" class="waves-effect waves-dark {{++$location_menu}}">
             <span class="pcoded-mtext">Countries</span>
         </a>
     </li>
@@ -462,7 +462,7 @@ $role_id=$getuser->role_id;
 
     @if($my_permissions->contains(config('permissions.STATE')))
     <li>
-        <a href="{{$base_url}}/admin/state/all" class="waves-effect waves-dark {{++$location_menu}}">
+        <a href="/admin/state/all" class="waves-effect waves-dark {{++$location_menu}}">
             <span class="pcoded-mtext">States</span>
         </a>
     </li>
@@ -470,7 +470,7 @@ $role_id=$getuser->role_id;
 
     @if($my_permissions->contains(config('permissions.CITY')))
     <li>
-        <a href="{{$base_url}}/admin/city/all" class="waves-effect waves-dark {{++$location_menu}}">
+        <a href="/admin/city/all" class="waves-effect waves-dark {{++$location_menu}}">
             <span class="pcoded-mtext">Cities</span>
         </a>
     </li>
@@ -479,7 +479,7 @@ $role_id=$getuser->role_id;
         
     @if($my_permissions->contains(config('permissions.PINCODE')))
     <li>
-        <a href="{{$base_url}}/admin/pincode/all" class="waves-effect waves-dark {{++$location_menu}}">
+        <a href="/admin/pincode/all" class="waves-effect waves-dark {{++$location_menu}}">
             <span class="pcoded-micon">
                 <i class="fa fa-neuter "></i>
             </span>
@@ -511,7 +511,7 @@ $role_id=$getuser->role_id;
 
        @if($my_permissions->contains(config('permissions.ORDER_ALL')))
        <li>
-        <a href="{{$base_url}}/admin/allProductEnquiry" class="waves-effect waves-dark">
+        <a href="/admin/allProductEnquiry" class="waves-effect waves-dark">
             <span class="pcoded-mtext">All Product Enquiry</span>
         </a>
     </li>
@@ -534,7 +534,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.GUARANTEE')))
             <li>
-                <a href="{{$base_url}}/admin/guarantee/all-guarantee" class="waves-effect waves-dark">
+                <a href="/admin/guarantee/all-guarantee" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-percent"></i>
                     </span>
@@ -547,7 +547,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.PRODUCT_SAMPLE')))
             <li>
-                <a href="{{$base_url}}/admin/productsample" class="waves-effect waves-dark">
+                <a href="/admin/productsample" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-percent"></i>
                     </span>
@@ -560,7 +560,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.ABOUTUS_ADD')))
             <li>
-                <a href="{{$base_url}}/admin/aboutus" class="waves-effect waves-dark">
+                <a href="/admin/aboutus" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-sliders"></i>
                     </span>
@@ -572,7 +572,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.CONTACT_US')))
             <li>
-                <a href="{{$base_url}}/admin/contactus/contactus-master" class="waves-effect waves-dark">
+                <a href="/admin/contactus/contactus-master" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-sliders"></i>
                     </span>
@@ -585,7 +585,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.ART_WORK')))
                 <li>
-                    <a href="{{$base_url}}/admin/art-work" classs="waves-effect waves-dark">
+                    <a href="/admin/art-work" classs="waves-effect waves-dark">
                         <span class="pcoded-micon">
                             <i class="fa fa-percent"></i>
                         </span>
@@ -596,7 +596,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.ORDER_PROCESS')))
             <li>
-                <a href="{{$base_url}}/admin/order-process/all" classs="waves-effect waves-dark">
+                <a href="/admin/order-process/all" classs="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-percent"></i>
                     </span>
@@ -609,7 +609,7 @@ $role_id=$getuser->role_id;
 
 
   <!--           <li>
-                <a href="{{$base_url}}/admin/homeimages" class="waves-effect waves-dark">
+                <a href="/admin/homeimages" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-sliders"></i>
                     </span>
@@ -622,7 +622,7 @@ $role_id=$getuser->role_id;
 <!-- 
             @if($my_permissions->contains(config('permissions.ABOUTUS_ADD')))
             <li>
-                <a href="{{$base_url}}/admin/faq" class="waves-effect waves-dark">
+                <a href="/admin/faq" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-sliders"></i>
                     </span>
@@ -634,7 +634,7 @@ $role_id=$getuser->role_id;
 
 <!--             @if($my_permissions->contains(config('permissions.ABOUTUS_ADD')))
             <li>
-                <a href="{{$base_url}}/admin/review/all" class="waves-effect waves-dark">
+                <a href="/admin/review/all" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-edit"></i>
                     </span>
@@ -644,7 +644,7 @@ $role_id=$getuser->role_id;
             @endif -->
              @if($my_permissions->contains(config('permissions.TERM_CONDITION_ALL')))
             <li>
-                <a href="{{$base_url}}/admin/policy" class="waves-effect waves-dark">
+                <a href="/admin/policy" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-sliders"></i>
                     </span>
@@ -655,7 +655,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.TERM_CONDITION_ALL')))
             <li>
-                <a href="{{$base_url}}/admin/termconditions" class="waves-effect waves-dark">
+                <a href="/admin/termconditions" class="waves-effect waves-dark">
                     <span class="pcoded-micon">
                         <i class="fa fa-sliders"></i>
                     </span>
@@ -668,7 +668,7 @@ $role_id=$getuser->role_id;
             @if($my_permissions->contains(config('permissions.RETURN_POLICY')))  
 
                         <li>
-                            <a href="{{$base_url}}/admin/returnpolicy/all" class="waves-effect waves-dark">
+                            <a href="/admin/returnpolicy/all" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">
                                     <i class="icon-grid"></i>
                                 </span>
@@ -679,7 +679,7 @@ $role_id=$getuser->role_id;
 
                         @if($my_permissions->contains(config('permissions.OFFER_BLOCK')))
 <li>
-    <a href="{{$base_url}}/admin/slider/all" class="waves-effect waves-dark">
+    <a href="/admin/slider/all" class="waves-effect waves-dark">
         <span class="pcoded-micon">
             <i class="fa fa-percent"></i>
         </span>
@@ -690,7 +690,7 @@ $role_id=$getuser->role_id;
 
 @if($my_permissions->contains(config('permissions.OFFER_BLOCK')))
 <li>
-    <a href="{{$base_url}}/admin/offerblock/all" class="waves-effect waves-dark">
+    <a href="/admin/offerblock/all" class="waves-effect waves-dark">
         <span class="pcoded-micon">
             <i class="fa fa-percent"></i>
         </span>
@@ -704,7 +704,7 @@ $role_id=$getuser->role_id;
 
 <!-- @if($my_permissions->contains(config('permissions.OFFER_BLOCK')))
 <li>
-    <a href="{{$base_url}}/admin/slider/all" class="waves-effect waves-dark">
+    <a href="/admin/slider/all" class="waves-effect waves-dark">
         <span class="pcoded-micon">
             <i class="fa fa-percent"></i>
         </span>
@@ -715,7 +715,7 @@ $role_id=$getuser->role_id;
 
 <!-- @if($my_permissions->contains(config('permissions.OFFER_BLOCK')))
 <li>
-    <a href="{{$base_url}}/admin/offerblock/all" class="waves-effect waves-dark">
+    <a href="/admin/offerblock/all" class="waves-effect waves-dark">
         <span class="pcoded-micon">
             <i class="fa fa-percent"></i>
         </span>
@@ -736,7 +736,7 @@ $role_id=$getuser->role_id;
 
 <!-- @if($my_permissions->contains(config('permissions.CATEGORIES')))
 <li>
-    <a href="{{$base_url}}/admin/blog/all" class="waves-effect waves-dark">
+    <a href="/admin/blog/all" class="waves-effect waves-dark">
         <span class="pcoded-micon">
             <i class="icon-grid"></i>
         </span>
@@ -747,7 +747,7 @@ $role_id=$getuser->role_id;
 
 <!-- @if($my_permissions->contains(config('permissions.CATEGORIES')))
 <li>
-    <a href="{{$base_url}}/admin/discount/all" class="waves-effect waves-dark">
+    <a href="/admin/discount/all" class="waves-effect waves-dark">
         <span class="pcoded-mtext">Discounts</span>
     </a>
 </li>
@@ -758,7 +758,7 @@ $role_id=$getuser->role_id;
 
 <!-- @if($my_permissions->contains(config('permissions.CONTACT_US')))
 <li>
-    <a href="{{$base_url}}/admin/contact/all" class="waves-effect waves-dark">
+    <a href="/admin/contact/all" class="waves-effect waves-dark">
         <span class="pcoded-micon">
            <i class="icon-phone"></i>
        </span>
@@ -768,7 +768,7 @@ $role_id=$getuser->role_id;
 @endif -->
 <!-- @if($my_permissions->contains(config('permissions.CONTACT_US')))
 <li>
-    <a href="{{$base_url}}/admin/newsletter/all" class="waves-effect waves-dark">
+    <a href="/admin/newsletter/all" class="waves-effect waves-dark">
         <span class="pcoded-micon">
            <i class="icon-phone"></i>
        </span>
@@ -779,7 +779,7 @@ $role_id=$getuser->role_id;
 
 <!-- @if($my_permissions->contains(config('permissions.COMPLAINTS')) )
 <li>
-    <a href="{{$base_url}}/admin/complaint/all" class="waves-effect waves-dark">
+    <a href="/admin/complaint/all" class="waves-effect waves-dark">
         <span class="pcoded-mtext">Complaints</span>
     </a>
 </li>
@@ -787,7 +787,7 @@ $role_id=$getuser->role_id;
 
 @if($my_permissions->contains(config('permissions.COMPLAINTS')) )
 <li>
-    <a href="{{$base_url}}/admin/setting/shipping" class="waves-effect waves-dark">
+    <a href="/admin/setting/shipping" class="waves-effect waves-dark">
         <span class="pcoded-mtext">Shipping</span>
     </a>
 </li>
@@ -846,7 +846,7 @@ $role_id=$getuser->role_id;
 
 @if($my_permissions->contains(config('permissions.CATEGORIES')))
 <!-- <li>
-    <a href="{{$base_url}}/admin/discount/all" class="waves-effect waves-dark">
+    <a href="/admin/discount/all" class="waves-effect waves-dark">
         <span class="pcoded-mtext">Discounts</span>
     </a>
 </li> -->
@@ -878,7 +878,7 @@ $role_id=$getuser->role_id;
 
             
                         <li>
-                        <a href="{{$base_url}}/admin/apparel/apparel-all" class="waves-effect waves-dark {{++$menu_count}}">
+                        <a href="/admin/apparel/apparel-all" class="waves-effect waves-dark {{++$menu_count}}">
                                 <span class="pcoded-micon">
                                     <i class="icon-people"></i>
                                 </span>
@@ -889,7 +889,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.COLOR')))
                 <li>
-                    <a href="{{$base_url}}/admin/color/all-color" class="waves-effect waves-dark">
+                    <a href="/admin/color/all-color" class="waves-effect waves-dark">
                         <span class="pcoded-mtext">Colors</span>
                     </a>
                 </li>
@@ -897,14 +897,14 @@ $role_id=$getuser->role_id;
 
 
             <li>
-                    <a href="{{$base_url}}/admin/production/all" class="waves-effect waves-dark">
+                    <a href="/admin/production/all" class="waves-effect waves-dark">
                         <span class="pcoded-mtext">Production Stage</span>
                     </a>
                 </li>
 
 
                 <li>
-                    <a href="{{$base_url}}/admin/discount/all" class="waves-effect waves-dark">
+                    <a href="/admin/discount/all" class="waves-effect waves-dark">
                         <span class="pcoded-mtext">Discounts</span>
                     </a>
                 </li>
@@ -961,7 +961,7 @@ $role_id=$getuser->role_id;
 
             @if($my_permissions->contains(config('permissions.BLOG')))
             <li>
-                <a href="{{$base_url}}/admin/blog/all" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/blog/all" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                   <!-- <i class="icon-user-follow"></i> -->
                   <i class="icon-settings"></i>
@@ -974,7 +974,7 @@ $role_id=$getuser->role_id;
 
         <li>
 
-                <a href="{{$base_url}}/admin/role/all" class="waves-effect waves-dark {{++$menu_count}}">
+                <a href="/admin/role/all" class="waves-effect waves-dark {{++$menu_count}}">
                     <span class="pcoded-micon">
                   <!-- <i class="icon-user-follow"></i> -->
                   <i class="icon-settings"></i>
@@ -986,7 +986,7 @@ $role_id=$getuser->role_id;
         <!-- <ul class="pcoded-submenu">
 
             <li>
-                <a href="{{$base_url}}/admin/discount/all" class="waves-effect waves-dark">
+                <a href="/admin/discount/all" class="waves-effect waves-dark">
                     <span class="pcoded-mtext">Discounts</span>
                 </a>
             </li>
@@ -1032,7 +1032,7 @@ $role_id=$getuser->role_id;
         <!-- <ul class="pcoded-submenu">
 
             <li>
-                <a href="{{$base_url}}/admin/discount/all" class="waves-effect waves-dark">
+                <a href="/admin/discount/all" class="waves-effect waves-dark">
                     <span class="pcoded-mtext">Discounts</span>
                 </a>
             </li>
@@ -1060,7 +1060,7 @@ $role_id=$getuser->role_id;
             <ul class="pcoded-submenu">
              @if($my_permissions->contains(config('permissions.ALL_PRODUCT_REPORT')))
              <li class="">
-                <a href="{{$base_url}}/admin/reports/sale/product" class="waves-effect waves-dark">
+                <a href="/admin/reports/sale/product" class="waves-effect waves-dark">
                     <span class="pcoded-mtext">Product</span>
                 </a>
             </li>
@@ -1069,7 +1069,7 @@ $role_id=$getuser->role_id;
     
             @if($my_permissions->contains(config('permissions.ALL_SKU_REPORT')))
             <li class="">
-                <a href="{{$base_url}}/admin/reports/sale/sku" class="waves-effect waves-dark">
+                <a href="/admin/reports/sale/sku" class="waves-effect waves-dark">
                     <span class="pcoded-mtext">Sku</span>
                 </a>
             </li>
@@ -1077,7 +1077,7 @@ $role_id=$getuser->role_id;
     
             @if($my_permissions->contains(config('permissions.ALL_CUSTOMER_REPORT')))
             <li class="">
-                <a href="{{$base_url}}/admin/reports/sale/customer" class="waves-effect waves-dark">
+                <a href="/admin/reports/sale/customer" class="waves-effect waves-dark">
                     <span class="pcoded-mtext">Customer</span>
                 </a>
             </li>
@@ -1087,7 +1087,7 @@ $role_id=$getuser->role_id;
 
     @if($my_permissions->contains(config('permissions.ALL_CART_REPORT')))
     <li class="">
-        <a href="{{$base_url}}/admin/reports/cart" class="waves-effect waves-dark">
+        <a href="/admin/reports/cart" class="waves-effect waves-dark">
             <span class="pcoded-mtext">Cart</span>
         </a>
     </li>
@@ -1095,7 +1095,7 @@ $role_id=$getuser->role_id;
 
     @if($my_permissions->contains(config('permissions.ALL_WISHLIST_REPORT')))
     <li class="">
-        <a href="{{$base_url}}/admin/reports/wishlist" class="waves-effect waves-dark">
+        <a href="/admin/reports/wishlist" class="waves-effect waves-dark">
             <span class="pcoded-mtext">Wishlist</span>
         </a>
     </li>
@@ -1104,7 +1104,7 @@ $role_id=$getuser->role_id;
 
     @if($my_permissions->contains(config('permissions.ALL_ORDER_REPORT')))
     <li class="">
-        <a href="{{$base_url}}/admin/reports/order" class="waves-effect waves-dark">
+        <a href="/admin/reports/order" class="waves-effect waves-dark">
             <span class="pcoded-mtext">Order</span>
         </a>
     </li>
@@ -1114,14 +1114,14 @@ $role_id=$getuser->role_id;
     
      @if($my_permissions->contains(config('permissions.ORDER_ALL')))
     <li>
-        <a href="{{$base_url}}/admin/order/logs" class="waves-effect waves-dark">
+        <a href="/admin/order/logs" class="waves-effect waves-dark">
             <span class="pcoded-mtext">Order Logs</span>
         </a>
     </li>
     @endif
     @if($my_permissions->contains(config('permissions.ALL_ORDER_REPORT')))
     <li>
-        <a href="{{$base_url}}/admin/reports/transactions" class="waves-effect waves-dark">
+        <a href="/admin/reports/transactions" class="waves-effect waves-dark">
             <span class="pcoded-mtext">Transaction</span>
         </a>
     </li>

@@ -43,7 +43,7 @@ use Carbon\Carbon;
       <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
         <i class="feather icon-toggle-right"></i>
       </a>
-      <a href="{{$base_url}}">
+      <a href="">
        
         <h4 style="font-size: 1.25rem !important;">Superior Promos</h4>
        
@@ -62,7 +62,7 @@ use Carbon\Carbon;
   @if(Auth::user())
 <li class="header-notification">
   <div class="dropdown-primary">
-    <a href="{{$base_url}}/admin/complaint/all">Support
+    <a href="/admin/complaint/all">Support
       <i class="fa fa-headphones"></i></a>
       
       @if( Auth::user())
@@ -80,7 +80,7 @@ use Carbon\Carbon;
   <li class="user-profile header-notification">
     <div class="dropdown-primary dropdown">
       <div class="dropdown-toggle" data-toggle="dropdown">
-        <img src="{{$base_url}}/files/assets/images/icon.png" class="img-radius" alt="">
+        <img src="/files/assets/images/icon.png" class="img-radius" alt="">
         <span>{{Auth::user()->name}}</span>
         <i class="fa fa-sort-desc m-l-5"></i>
       </div>
@@ -88,32 +88,32 @@ use Carbon\Carbon;
 
 @if($role_id!=3)
 <li>
-  <a href="{{$base_url}}/admin/home">
+  <a href="/admin/home">
     <i class="feather icon-log-out"></i> @lang("navigation.switch_to_admin")
   </a>
 </li>
 
 <li>
-  <a href="{{$base_url}}">
+  <a href="">
     <i class="feather icon-log-out"></i> @lang("navigation.switch_to_website")
   </a>
 </li>
 
 @endif        
 <li>
-  <a href="{{$base_url}}/profile">
+  <a href="/profile">
     <i class="fa fa-user-o" aria-hidden="true"></i> @lang("user.profile")
   </a>
 </li>
 <li>
-  <a href="{{$base_url}}/orders">
+  <a href="/orders">
    <i class="icon-basket-loaded"></i> @lang("navigation.my_orders")
  </a>
 </li>
 
  
 <li>
-  <a href="{{$base_url}}/wishlist">
+  <a href="/wishlist">
     <i class="fa fa-heart-o"></i> @lang("navigation.my_wishlist")
   </a>
 </li>
@@ -121,7 +121,7 @@ use Carbon\Carbon;
 
 
 <li>
-  <a href="{{$base_url}}/changePassword">
+  <a href="/changePassword">
     <i class="icon-lock"></i> @lang("user.change_password")
   </a>
 </li>
@@ -139,7 +139,7 @@ use Carbon\Carbon;
 </li>
 @else
 <li class="header-notification">
-  <a href="{{$base_url}}/login" class="waves-effect waves-light">
+  <a href="/login" class="waves-effect waves-light">
     @lang("user.login") & @lang("user.sign_up")
   </a>
 </li>

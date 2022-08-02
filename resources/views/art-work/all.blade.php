@@ -556,12 +556,12 @@ textbox.text(filesCount + ' files selected');
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a>Artwork</a>
@@ -698,12 +698,12 @@ textbox.text(filesCount + ' files selected');
 
     { 
         "mRender": function(data, type, row){
-        return "<a href='{{$base_url}}/storage/app/"+row.path+"'><img src='{{$base_url}}/storage/app/preview.png' style='width:100px;height:50px;'></a>";
+        return "<a href='/storage/app/"+row.path+"'><img src='/storage/app/preview.png' style='width:100px;height:50px;'></a>";
       },
     },   
 
      { "mRender": function(data, type, row){
-      return '<td class="art-work-db-i"><div class="all-button-div"><a class="all-button-div" href="{{$base_url}}/admin/artwork/'+row.id+'"><i class="fa fa-pencil" aria-hidden="true"></i></a><i class="fa fa-database" data-toggle="modal" data-target="#exampleModalLong"></i><i class="fa fa-folder-open"class="fa fa-database" data-toggle="modal" data-target="#exampleModalLong-model-second"></i><i class="fa fa-usd"data-toggle="modal" data-target="#exampleModalLong-model-third"></i><i class="fa fa-magic" data-toggle="modal" data-target="#exampleModalLong-model-fourth"></i><i class="fa fa-file-text"data-toggle="modal" data-target="#exampleModalLong-model-fifth"></i><i class="fa fa-exclamation"></i><div></td>'
+      return '<td class="art-work-db-i"><div class="all-button-div"><a class="all-button-div" href="/admin/artwork/'+row.id+'"><i class="fa fa-pencil" aria-hidden="true"></i></a><i class="fa fa-database" data-toggle="modal" data-target="#exampleModalLong"></i><i class="fa fa-folder-open"class="fa fa-database" data-toggle="modal" data-target="#exampleModalLong-model-second"></i><i class="fa fa-usd"data-toggle="modal" data-target="#exampleModalLong-model-third"></i><i class="fa fa-magic" data-toggle="modal" data-target="#exampleModalLong-model-fourth"></i><i class="fa fa-file-text"data-toggle="modal" data-target="#exampleModalLong-model-fifth"></i><i class="fa fa-exclamation"></i><div></td>'
     }, 
     }     
 ]

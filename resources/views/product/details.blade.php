@@ -88,12 +88,12 @@ max-width: 450px;
 			<div class="col-md-8">
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}">
+						<a href="">
 							<i class="feather icon-home"></i>
 						</a>
 					</li>
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}/admin/home">Admin</a>
+						<a href="/admin/home">Admin</a>
 					</li>
 					<li class="breadcrumb-item"><a href="all">Products</a>
 					</li> 
@@ -213,7 +213,7 @@ max-width: 450px;
 										<div class="form-group">
 											<label for="file"  class="col-form-label form-control-label">Current product Main image</label>
 											<div class="col-md-12 p-0 product-div">
-												<img class="img-fluid" src="{{$base_url}}/storage/app/{{$product->product_image}}" id="current_product_image" style="max-height:150px;max-width:150px;" onerror="this.src='{{$base_url}}/files/assets/images/product.png';">
+												<img class="img-fluid" src="/storage/app/{{$product->product_image}}" id="current_product_image" style="max-height:150px;max-width:150px;" onerror="this.src='/files/assets/images/product.png';">
 											</div>
 										</div>
 
@@ -466,7 +466,7 @@ max-width: 450px;
 
 
                         <div class="col {{ $errors->has('custom_cost') ? ' has-error' : '' }}">
-		                      <a href="{{$base_url}}/productPriceDelete?product_price_id={{$product_price->product_price_id}}">
+		                      <a href="/productPriceDelete?product_price_id={{$product_price->product_price_id}}">
 		                        <button id="" type="button" class="form-control thresold-i grid-input-text"><i class="fa fa-trash"></i></button>
 		                      </a>
                         </div> 
@@ -606,7 +606,7 @@ max-width: 450px;
                             <h6 class="pt-2 pb-2">Added Vendors</h6>
                             @foreach($product_vendors as $product_vendor)
                             <div class="col-md-auto pb-3">
-                            <a class="form-control-label" href="{{$base_url}}/admin/product/product_vendor_delete/{{$product_vendor->id}}">
+                            <a class="form-control-label" href="/admin/product/product_vendor_delete/{{$product_vendor->id}}">
                             	    <span>{{$product_vendor->vendors->name}}</span>
                                   <i class="fa fa-trash"></i>
                               </a>
@@ -700,7 +700,7 @@ max-width: 450px;
                      <div class="col-md-12 text-right">
                      	<h6 class="float-left pt-2">Product Option {{$count}}</h6>
 
-                     	<a href="{{$base_url}}/delete/main-option/{{$option->id}}">
+                     	<a href="/delete/main-option/{{$option->id}}">
                       <button type="button" class="btn btn-danger"><i class="fa fa-minus"></i></button>
                       </a>
                      </div>
@@ -758,7 +758,7 @@ max-width: 450px;
                       @if($is_delete_sub>1)
                       <div class="col-md-3 {{ $errors->has('count_from') ? ' has-error' : '' }}">
                       <label class="form-control-label">Actions</label>
-                      <a href="{{$base_url}}/delete/product-suboption/{{$suboption->id}}">
+                      <a href="/delete/product-suboption/{{$suboption->id}}">
                         <button style="cursor: pointer;" style="" class="form-control" type="button"><i class="fa fa-trash"></i></button>
                       </a>
                       </div>
@@ -828,7 +828,7 @@ max-width: 450px;
                            @if($is_delete>1)
                            <div class="col-md-3 {{ $errors->has('count_from') ? ' has-error' : '' }}">
                                   <!--<label class="form-control-label">Actions</label>-->
-                                   <a href="{{$base_url}}/delete/suboption/subcount/{{$option_prices->id}}">
+                                   <a href="/delete/suboption/subcount/{{$option_prices->id}}">
                                     <button style="cursor: pointer;" style="" class="form-control" type="button"><i class="fa fa-trash"></i></button>
                                  </a>  
                             </div>
@@ -991,7 +991,7 @@ max-width: 450px;
                             <h6 class="pt-2 pb-2">Added Apparel</h6>
                             @foreach($product_Apparel as $product_App)
                             <div class="col-md-auto pb-3">
-                            <a class="form-control-label" href="{{$base_url}}/admin/apparel/product_apparel_delete/{{$product_App->id}}">
+                            <a class="form-control-label" href="/admin/apparel/product_apparel_delete/{{$product_App->id}}">
                             	    <span>{{$product_App->apparel->apparel_name}}</span>
                                   <i class="fa fa-trash"></i>
                               </a>
@@ -1104,7 +1104,7 @@ max-width: 450px;
                          <div class="col-12">
                             @foreach($imprint->imprint_colors as $imprint_color)
                                 <div style="margin-bottom:5px !important; " class="d-inline-flex">
-                                    {{$imprint_color->colors->name}}&nbsp;<a href="{{$base_url}}/admin/product/imprint_color_delete/{{$imprint_color->id}}">
+                                    {{$imprint_color->colors->name}}&nbsp;<a href="/admin/product/imprint_color_delete/{{$imprint_color->id}}">
                                     <button class="btn btn-danger imprint_color_delete_button" type="button"><i class="fa fa-trash"></i></button>
                                     </a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 </div>
@@ -1188,7 +1188,7 @@ button.imprint_color_delete_button {
 
                         <div class="col {{ $errors->has('custom_cost') ? ' has-error' : '' }}">
 
-                        <a href="{{$base_url}}/admin/product/imprintProductPriceDelete/{{$imprint_price->id}}">
+                        <a href="/admin/product/imprintProductPriceDelete/{{$imprint_price->id}}">
                           <button style="cursor: pointer;" style="" class="form-control grid-input-text-imprint" type="button"><i class="fa fa-trash "></i></button>
                         </a>
                         
@@ -1241,7 +1241,7 @@ button.imprint_color_delete_button {
 												@if($product_colors->product_colors!="[]")
 												@foreach($product_colors->product_colors as $color)
 												<div class="col-md-auto pb-3">
-												<a class="form-control-label" href="{{$base_url}}/admin/product/product_color_delete/{{$color->color->id}}">
+												<a class="form-control-label" href="/admin/product/product_color_delete/{{$color->color->id}}">
 												<span>{{$color->color->name}}</span>
 												<i class="fa fa-trash"></i>
 												</a>
@@ -1299,7 +1299,7 @@ button.imprint_color_delete_button {
                       <div class="form-group row">
                         <div class="col-md-6 {{ $errors->has('files') ? ' has-error' : '' }}">
                           
-                          <img class="img-fluid" src="{{$base_url}}/files/assets/images/preview.png" id="color_image_preview" alt="">
+                          <img class="img-fluid" src="/files/assets/images/preview.png" id="color_image_preview" alt="">
                           <label for="file"  class="col-form-label form-control-label">Product Color Image *</label>
                           <label for="file" class="custom-file">
                             <input type="file" id="variant_image_product" name="files[]" class="custom-file-input form-control"  onchange="document.getElementById('color_image_preview').src = window.URL.createObjectURL(this.files[0])"/>
@@ -1337,7 +1337,7 @@ button.imprint_color_delete_button {
                           @if($colorimage->image_src!="")
                           <div class="col-md-3" style="border:1px solid #eee;height: 170px;">
                               <i id="{{$colorimage->id}}" class="delete-product-color fa fa-check fa fa-trash-o" aria-hidden="true"></i>
-                              <img src="{{$base_url}}/storage/app/{{$colorimage->image_src}}" style="height:100px;width: 100%;">
+                              <img src="/storage/app/{{$colorimage->image_src}}" style="height:100px;width: 100%;">
                           </div>
                           @endif
                           @endforeach
@@ -1362,7 +1362,7 @@ button.imprint_color_delete_button {
 											<div class="form-group row">
 												<div class="col-md-4 {{ $errors->has('files') ? ' has-error' : '' }}">
 													
-													<img  src="{{$base_url}}/files/assets/images/preview.png" id="variant_image_preview" alt="">
+													<img  src="/files/assets/images/preview.png" id="variant_image_preview" alt="">
 													<label for="file"  class="col-form-label form-control-label">Multipe Images *</label>
 													<label for="file" class="custom-file">
 
@@ -1386,7 +1386,7 @@ button.imprint_color_delete_button {
 											@foreach($product_images as $product_image)
 											<div class="col-md-3" style="border:1px solid #eee;height: 170px;">
 												<i id="{{$product_image->product_image_id}}" class="delete-variant-image fa fa-trash-o" aria-hidden="true"></i>
-												<img src="{{$base_url}}/storage/app/{{$product_image->product_image}}" style="height:100px;width: 100%;">
+												<img src="/storage/app/{{$product_image->product_image}}" style="height:100px;width: 100%;">
 											</div>
 											@endforeach
 
@@ -1815,7 +1815,7 @@ price_per_item_sale_price=$('.per_item_sale_price-'+item.product_price_id).val()
 
 $.ajax({
 type:'POST',
-url:"{{$base_url}}/admin/product/editPricGridData",
+url:"/admin/product/editPricGridData",
 data:{'product_price_id':product_price_id,'price_setup_price':price_setup_price,'price_count_from':price_count_from,'price_per_item_price':price_per_item_price,'price_per_item_sale_price':price_per_item_sale_price,"_token": "{{csrf_token()}}"},
 
 success:function(data) {
@@ -2043,7 +2043,7 @@ alert("Prices Data Updated Successfully");
 
       $.ajax({
         method: "POST",
-        url: "{{$base_url}}/admin/product/editProductColor",
+        url: "/admin/product/editProductColor",
         dataType: 'json',
         cache: false,
         contentType: false,
@@ -2056,7 +2056,7 @@ alert("Prices Data Updated Successfully");
           $('#variant_image_product').val("");
          image_src = result["product_color"]["image_src"];
           /*$("#product_color_image_show").html('');*/
-          $("#product_color_image_show").append('<div class="col-md-3" style="border:1px solid #eee;height: 170px;"><i id="'+result["product_color"]["id"]+'" class="delete-product-color fa fa-check fa fa-trash-o" aria-hidden="true"></i><img src="{{$base_url}}/storage/app/'+image_src+'" style="height:100px;width: 100%;"></div>');
+          $("#product_color_image_show").append('<div class="col-md-3" style="border:1px solid #eee;height: 170px;"><i id="'+result["product_color"]["id"]+'" class="delete-product-color fa fa-check fa fa-trash-o" aria-hidden="true"></i><img src="/storage/app/'+image_src+'" style="height:100px;width: 100%;"></div>');
            alert(" Product color Image added successfully...");
 
         },
@@ -2109,7 +2109,7 @@ alert("Prices Data Updated Successfully");
 
 			$.ajax({
 				method: "POST",
-				url: "{{$base_url}}/admin/product/image/add",
+				url: "/admin/product/image/add",
 				dataType: 'json',
 				cache: false,
 				contentType: false,
@@ -2123,7 +2123,7 @@ alert("Prices Data Updated Successfully");
 
 							
 
-							$("#product-images-div").append('<div class="col-md-3" style="border:1px solid #eee;height: 170px;"><i id="'+item.product_image_id+'" class="delete-variant-image fa fa-check fa fa-trash-o" aria-hidden="true"></i><img src="{{$base_url}}/storage/app/'+item.product_image+'" style="height:100px;width: 100%;"></div>');
+							$("#product-images-div").append('<div class="col-md-3" style="border:1px solid #eee;height: 170px;"><i id="'+item.product_image_id+'" class="delete-variant-image fa fa-check fa fa-trash-o" aria-hidden="true"></i><img src="/storage/app/'+item.product_image+'" style="height:100px;width: 100%;"></div>');
 						});
 					}
 					// notify(result.data.msg);
@@ -2159,7 +2159,7 @@ alert("Prices Data Updated Successfully");
 
 			$.ajax({
 				type: "post",
-				url: "{{$base_url}}/admin/product/variantsAdd",
+				url: "/admin/product/variantsAdd",
 				data:  new FormData(this),
 				dataType: 'script',
 				cache: false,
@@ -2212,7 +2212,7 @@ alert("Prices Data Updated Successfully");
 							variants=variant;
 							
 						}
-						$("#product-images-div").append('<div class="col-md-3" style="border:1px solid #eee;height: 170px;"><i id="'+item.product_image_id+'" class="delete-variant-image fa fa-trash-o" aria-hidden="true"></i><img src="{{$base_url}}/storage/app/'+item.product_image+'" style="height:100px;width: 100%;"><p>'+variants+'</p></div>');
+						$("#product-images-div").append('<div class="col-md-3" style="border:1px solid #eee;height: 170px;"><i id="'+item.product_image_id+'" class="delete-variant-image fa fa-trash-o" aria-hidden="true"></i><img src="/storage/app/'+item.product_image+'" style="height:100px;width: 100%;"><p>'+variants+'</p></div>');
 					});
 					title="Product image deleted successfully";
 					// notify(title);
@@ -2455,7 +2455,7 @@ x--;
 
               $.ajax({
                         type:'POST',
-                        url:"{{$base_url}}/admin/product/imprint/delete",
+                        url:"/admin/product/imprint/delete",
                         data:{'imprint_id':imprint_id,"_token": "{{csrf_token()}}"},
                         success:function(data){
                           if(data['message']=='true'){
@@ -2812,7 +2812,7 @@ $(window).on('load', function() {
             }
             $.ajax({
               type:'POST',
-              url:"{{$base_url}}/admin/product/editImprintData",
+              url:"/admin/product/editImprintData",
               data:{'imprint_id':imprint_id,'imprint_name':imprint_name,'max_colors':max_colors,'color_group_id':color_group_id,"_token": "{{csrf_token()}}"},
               success:function(data) {
                   alert("Imprint Data Updated Successfully");
@@ -2834,7 +2834,7 @@ $(window).on('load', function() {
           
             $.ajax({
               type:'POST',
-              url:"{{$base_url}}/admin/product/editImprintColorData",
+              url:"/admin/product/editImprintColorData",
               data:{'imprint_id':imprint_id,'color_ids':color_ids,"_token": "{{csrf_token()}}"},
               success:function(data) {
                   alert("Imprint Color Data Updated Successfully");
@@ -2860,7 +2860,7 @@ $(window).on('load', function() {
                     // alert(imprint_additional_running_fee);
                     $.ajax({
                         type:'POST',
-                        url:"{{$base_url}}/admin/product/editImprintPriceData",
+                        url:"/admin/product/editImprintPriceData",
                         data:{'imprint_price_id':imprint_price_id,'imprint_count_from':imprint_count_from,'imprint_location_setup_fee':imprint_location_setup_fee,'imprint_additinal_location_running_fee':imprint_additinal_location_running_fee,'imprint_additional_setup_fee':imprint_additional_setup_fee,'imprint_additional_running_fee':imprint_additional_running_fee,"_token": "{{csrf_token()}}"},
                         success:function(data) {
                             alert("Imprint Price Data Updated Successfully");
@@ -3005,7 +3005,7 @@ $(document).ready(function(){
 
                 $.ajax({
                         type:'POST',
-                        url:"{{$base_url}}/admin/product/edit/product-option",
+                        url:"/admin/product/edit/product-option",
                         data:{'product_option_id':product_option_id,'product_id':product_id,'option_name':option_name_value,'show_as':show_as_value,'show_blank':show_blank_value,"_token": "{{csrf_token()}}"},
                         success:function(data){
                             alert("Product Option Data Updated Successfully");
@@ -3021,7 +3021,7 @@ $(document).ready(function(){
               var product_option_id=item.id;
               $.ajax({
                         type:'POST',
-                        url:"{{$base_url}}/admin/product/product-option/delete",
+                        url:"/admin/product/product-option/delete",
                         data:{'product_option_id':product_option_id,"_token": "{{csrf_token()}}"},
                         success:function(data){
                           if(data['message']=='true'){
@@ -3053,7 +3053,7 @@ $(document).ready(function(){
                       
                       $.ajax({
                         type:'POST',
-                        url:"{{$base_url}}/admin/product/edit/product-option-price",
+                        url:"/admin/product/edit/product-option-price",
                         data:{'product_option_price_id':product_option_price_id,'count_from':count_from,'setup_fee':setup_fee,'additional_fee':additional_fee,"_token": "{{csrf_token()}}"},
                         success:function(data){
                             alert("Product Option Price Data Updated Successfully");
@@ -3067,7 +3067,7 @@ $(document).ready(function(){
                         var product_option_price_id = item.id;
                         $.ajax({
                         type:'POST',
-                        url:"{{$base_url}}/admin/product/product-option-price/delete",
+                        url:"/admin/product/product-option-price/delete",
                         data:{'product_option_price_id':product_option_price_id,"_token": "{{csrf_token()}}"},
                         success:function(data){
                             if(data['message']=="true"){

@@ -14,12 +14,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
           </a>
       </li>
       <li class="breadcrumb-item">
-        <a href="{{$base_url}}/admin/home">Admin</a>
+        <a href="/admin/home">Admin</a>
     </li>
     <li class="breadcrumb-item"><a href="all">Blogs</a>
     </li> 
@@ -101,7 +101,7 @@
 
         <div class="form-group {{ $errors->has('blog_image') ? ' has-error' : '' }}">
           <label for="file"  class="col-form-label form-control-label">Blog Image</label>
-          <img src="{{$base_url}}/files/assets/images/preview.png" id="blog_image" alt="" width="150" height="150" required="">
+          <img src="/files/assets/images/preview.png" id="blog_image" alt="" width="150" height="150" required="">
           <label for="file" class="custom-file">
 
             <input type="file" name="image" class="form-control" accept="image/x-png,image/gif,image/jpeg" onchange="document.getElementById('blog_image').src = window.URL.createObjectURL(this.files[0])"/>

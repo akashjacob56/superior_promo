@@ -44,7 +44,7 @@ section{
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{$base_url}}"><i class="icon-home"></i></a></li>
+                <li class="breadcrumb-item"><a href=""><i class="icon-home"></i></a></li>
                 <li class="breadcrumb-item active" aria-current="page">@lang("user.login")</li>
             </ol>
         </div><!-- End .container -->
@@ -126,7 +126,7 @@ section{
         </div>
        
         <div class="col-lg-5 card" style="padding:0px 0px 20px 0px;margin-left: 5%;">
-            <center><a href="{{$base_url}}" class="logo"> <img src="{{$base_url}}/storage/app/{{$appearance->app_logo}}" class="img-fluid" alt="" style="margin-bottom: 10px;margin-top: 25px;" ></a></center>
+            <center><a href="" class="logo"> <img src="/storage/app/{{$appearance->app_logo}}" class="img-fluid" alt="" style="margin-bottom: 10px;margin-top: 25px;" ></a></center>
            <hr class="short-margin">
            <h3 class="title-font" style="text-align: center;">@lang("global.registration_title1") {{$appearance_translation->app_name}} @lang("global.registration_title2")</h3>
             <div class="theme-card authentication-right" style="padding: 0px 20px 20px 20px;">
@@ -134,13 +134,13 @@ section{
                 <p>@lang("global.registration_text1") {{$appearance_translation->app_name}} @lang("global.registration_text2") {{$appearance_translation->app_name}} @lang("global.registration_text3")
                     </p>
                      <center>
-                <a href="{{$base_url}}/register" class="btn btn-primary btn-md">@lang("user.register_now")</a>
+                <a href="/register" class="btn btn-primary btn-md">@lang("user.register_now")</a>
             </center>
             </div>
         </div>
     </div>
 </div>
- <img src="{{$base_url}}/files/assets/images/pattern-1.png" style="width: 100% !important;">
+ <img src="/files/assets/images/pattern-1.png" style="width: 100% !important;">
 </section>
 <!-- Login End -->
 </main>

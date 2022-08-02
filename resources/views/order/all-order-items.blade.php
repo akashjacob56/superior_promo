@@ -7,12 +7,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a>All Order Items</a>
@@ -244,7 +244,7 @@
       
       // return '<a href="'+row.id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Details</button></a>'; 
 
-      return '<a href="{{$base_url}}/admin/order/art-proof?order_item_id='+row.id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Art Proof</button></a><a href="{{$base_url}}/admin/order/art-proof?order_item_id='+row.id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Art Proof</button></a>'; 
+      return '<a href="/admin/order/art-proof?order_item_id='+row.id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Art Proof</button></a><a href="/admin/order/art-proof?order_item_id='+row.id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Art Proof</button></a>';
      
     }
   }]
@@ -252,7 +252,7 @@
 
     $('#customer_id').change(function(){
       var customer_id=$('#customer_id').val();
-      var button='  <a > <button type="button" class="btn btn-secondary waves-effect waves-light js-programmatic-disable data-table-button" data-dismiss="modal">Close</button></a> <a href="{{$base_url}}/admin/create-order/'+customer_id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Create Order</button></a>';
+      var button='  <a > <button type="button" class="btn btn-secondary waves-effect waves-light js-programmatic-disable data-table-button" data-dismiss="modal">Close</button></a> <a href="/admin/create-order/'+customer_id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button">Create Order</button></a>';
       $('#create-order-button').empty();
       $('#create-order-button').append($(button));
     });

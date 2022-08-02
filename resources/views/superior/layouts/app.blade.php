@@ -7,8 +7,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="author" content="vshopy">
   <meta name="google-site-verification" content="" />
-  <link rel="icon" href="{{$base_url}}/storage/app/" type="image/x-icon"/>
-  <link rel="shortcut icon" href="{{$base_url}}/storage/app/" type="image/x-icon"/>
+  <link rel="icon" href="/storage/app/" type="image/x-icon"/>
+  <link rel="shortcut icon" href="/storage/app/" type="image/x-icon"/>
   @if(isset($title) && $title!="" )
   <title>{{ $title }}</title>
 
@@ -27,7 +27,7 @@
     };
     (function(d) {
       var wf = d.createElement('script'), s = d.scripts[0];
-      wf.src = '{{$base_url}}/resources/views/superior/assets/js/webfont.js';
+      wf.src = '/resources/views/superior/assets/js/webfont.js';
       wf.async = true;
       s.parentNode.insertBefore(wf, s);
     })(document);

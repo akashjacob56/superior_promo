@@ -73,11 +73,11 @@
     margin: 0 auto;
   }
   .radios label input[type=radio]:checked+span .address_icon.select_icon {
-    background: url({{$base_url}}/swaas/images/truck_white.png) no-repeat -4px 0px;
+    background: url(/swaas/images/truck_white.png) no-repeat -4px 0px;
   }
  
   .radios label input[type=radio]+span .address_icon.select_icon {
-    background: url({{$base_url}}/swaas/images/truck.png) no-repeat -4px 0px;
+    background: url(/swaas/images/truck.png) no-repeat -4px 0px;
   }
 
   .radios label input[type=radio]+span .address_icon {

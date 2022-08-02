@@ -31,7 +31,7 @@ $language_product="";
 			<nav aria-label="breadcrumb" class="breadcrumb-nav">
 				<div class="container">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="{{$base_url}}{{$language}}"><i class="icon-home"></i></a></li>
+						<li class="breadcrumb-item"><a href="{{$language}}"><i class="icon-home"></i></a></li>
 						<li class="breadcrumb-item active" aria-current="page">Blog</li>
 					</ol>
 				</div><!-- End .container -->
@@ -45,8 +45,8 @@ $language_product="";
 						<div class="col-lg-6">
 						<article class="post">
 							<div class="post-media">
-								<a href="{{$base_url}}/blog/{{$blog->url}}">
-									<img src="{{$base_url}}/storage/app/{{$blog->image}}" alt="Post" style="width: 100%;max-height: 350px; object-fit: cover;">
+								<a href="/blog/{{$blog->url}}">
+									<img src="/storage/app/{{$blog->image}}" alt="Post" style="width: 100%;max-height: 350px; object-fit: cover;">
 								</a>
 							</div><!-- End .post-media -->
 
@@ -57,7 +57,7 @@ $language_product="";
 								</div><!-- End .post-date -->
 
 								<h2 class="post-title">
-									 <a href="{{$base_url}}/blog/{{$blog->url}}">{{$blog->blog_type->blog_type_name}}</a>
+									 <a href="/blog/{{$blog->url}}">{{$blog->blog_type->blog_type_name}}</a>
 								</h2>
 
 								<div class="post-content">
@@ -79,7 +79,7 @@ $language_product="";
                       </p>
                       @endif
 
-									<a href="{{$base_url}}/blog/{{$blog->url}}" class="read-more">Read More <i class="icon-angle-double-right"></i></a>
+									<a href="/blog/{{$blog->url}}" class="read-more">Read More <i class="icon-angle-double-right"></i></a>
 								</div><!-- End .post-content -->
 
 								<div class="post-meta">

@@ -81,12 +81,12 @@ max-width: 450px;
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item"><a href="all">Products</a>
           </li> 
@@ -1105,7 +1105,7 @@ max-width: 450px;
                   <div class="card-block">
                     <div class="form-group {{ $errors->has('product_image') ? ' has-error' : '' }}">
                       <label for="file"  class="col-form-label form-control-label">Product Main Image</label>
-                      <img  src="{{$base_url}}/files/assets/images/preview.png" id="product_image" alt="">
+                      <img  src="/files/assets/images/preview.png" id="product_image" alt="">
                       <label for="file" class="custom-file">
                         <input type="file" name="product_image" class="form-control " accept="image/*" value="{{old('product_image')}}" onchange="document.getElementById('product_image').src = window.URL.createObjectURL(this.files[0])"/>
                         <span class="custom-file-control"></span>
@@ -1125,7 +1125,7 @@ max-width: 450px;
                       <div class="form-group row">
                         <div class="col-md-12 {{ $errors->has('files') ? ' has-error' : '' }}">
                           
-                          <img class="img-fluid" src="{{$base_url}}/files/assets/images/preview.png" id="variant_image_preview" alt="">
+                          <img class="img-fluid" src="/files/assets/images/preview.png" id="variant_image_preview" alt="">
                           <label for="file"  class="col-form-label form-control-label">Multipe Image *</label>
                           <label for="file" class="custom-file">
                            

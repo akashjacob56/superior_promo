@@ -8,7 +8,7 @@
 												@if($order->order_item!="")
 													@if($order->order_item->product!="")
 														<div class="col-2">
-															<img class="product-img" src="{{$base_url}}/storage/app/{{$order->order_item->product->product_image}}">
+															<img class="product-img" src="/storage/app/{{$order->order_item->product->product_image}}">
 														</div>
 													@endif
 												@endif

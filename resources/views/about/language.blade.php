@@ -15,12 +15,12 @@ if($aboutus_translation!=""){
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a> About Us 
@@ -48,7 +48,7 @@ if($aboutus_translation!=""){
                     <button type="submit" name="save"  class="btn btn-primary waves-effect waves-light pull-right">Save</button>
                     
                     
-                    <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                    <a href=""><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                     </button></a>
                     @if($appearance->is_multilanguage==1)
                     <div class="dropdown-primary dropdown pull-right m-r-5">
@@ -94,7 +94,7 @@ if($aboutus_translation!=""){
               <div class=" form-group {{ $errors->has('about_image') ? ' has-error' : '' }}" >
                 <label class="form-control-label" for="usr">Image </label>
                 <div class="slider_img">
-                 <img   src="{{$base_url}}/files/assets/images/preview.png" id="about_image" alt="">
+                 <img   src="/files/assets/images/preview.png" id="about_image" alt="">
                </div>
                <input type="file" class="form-control" name="about_image" value="{{old('about_image')}}" accept="image/*"  onchange="document.getElementById('about_image').src = window.URL.createObjectURL(this.files[0])">
 
@@ -113,7 +113,7 @@ if($aboutus_translation!=""){
                 <button type="submit" name="save"  class="btn btn-primary waves-effect waves-light pull-right">Save</button>
                 
 
-                <a href="{{$base_url}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                <a href=""><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                 </button></a>
                 @if($appearance->is_multilanguage==1)
                 <div class="dropdown-primary dropdown pull-right m-r-5">

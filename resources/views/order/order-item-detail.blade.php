@@ -230,12 +230,12 @@ textbox.text(filesCount + ' files selected');
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a>Order Detail</a>
@@ -339,7 +339,7 @@ textbox.text(filesCount + ' files selected');
 
                                               $.ajax({
                                                         method: "POST",
-                                                        url: "{{$base_url}}/admin/order/order_item/invoice-upload",
+                                                        url: "/admin/order/order_item/invoice-upload",
                                                         dataType: 'json',
                                                         cache: false,
                                                         contentType: false,
@@ -1493,7 +1493,7 @@ textbox.text(filesCount + ' files selected');
                                 }
                                 </style>
                               	@if($order_item->order!="")
-                                <a class="underline_a" href="{{$base_url}}/admin/customer/{{$order_item->order->user_id}}">
+                                <a class="underline_a" href="/admin/customer/{{$order_item->order->user_id}}">
                                   {{$order_item->order->user_id}}
                                 </a>
                                   
@@ -1824,7 +1824,7 @@ textbox.text(filesCount + ' files selected');
                               </div>
                               <div class="col-8">
                                <p>
-                                 <img class="img-thumbnail admin-thumbnail" src="{{$base_url}}/storage/app/{{$order_item->product->product_image}}">
+                                 <img class="img-thumbnail admin-thumbnail" src="/storage/app/{{$order_item->product->product_image}}">
                                </p>
                               </div>
                           </div>
@@ -1836,7 +1836,7 @@ textbox.text(filesCount + ' files selected');
                                 <label class="font-weight-normal">ID</label>
                               </div>
                               <div class="col-8">
-                               <p>Item <a href="{{$base_url}}/admin/product/{{$order_item->product_id}}">#{{$order_item->product_id}}</a></p>
+                               <p>Item <a href="/admin/product/{{$order_item->product_id}}">#{{$order_item->product_id}}</a></p>
                               </div>
                           </div>
                           <!-- Row End -->
@@ -2111,7 +2111,7 @@ textbox.text(filesCount + ' files selected');
    $('#footer-search').DataTable($.extend( {
    	responsive: true,
     "ajax": {
-      url: "{{$base_url}}/admin/order/allOrderItemNotesData?order_item_id={{$order_item->id}}",
+      url: "/admin/order/allOrderItemNotesData?order_item_id={{$order_item->id}}",
       type: "GET",
       contentType: "application/json;charset=UTF-8",
       dataType: "json",
@@ -2169,7 +2169,7 @@ textbox.text(filesCount + ' files selected');
    $('#footer-search-artproofs').DataTable($.extend( {
     responsive: true,
     "ajax": {
-      url: "{{$base_url}}/admin/order/allOrderItemArtProofData?order_item_id={{$order_item->id}}",
+      url: "/admin/order/allOrderItemArtProofData?order_item_id={{$order_item->id}}",
       type: "GET",
       contentType: "application/json;charset=UTF-8",
       dataType: "json",
@@ -2200,7 +2200,7 @@ textbox.text(filesCount + ' files selected');
       "bSortable": false,
       "ilter":false,
       "mRender": function(data, type, row) {
-        return "<a href='{{$base_url}}/storage/app/"+row.path+"' target='_blank'>"+row.path+"</a>";
+        return "<a href='/storage/app/"+row.path+"' target='_blank'>"+row.path+"</a>";
     }
 },
 
@@ -2328,7 +2328,7 @@ textbox.text(filesCount + ' files selected');
 
         $.ajax({
             method: "POST",
-            url: "{{$base_url}}/admin/order/art-proof-management-note",
+            url: "/admin/order/art-proof-management-note",
             dataType: 'json',
             cache: false,
             contentType: false,
@@ -2417,7 +2417,7 @@ textbox.text(filesCount + ' files selected');
 
 $.ajax({
     method: "POST",
-    url: "{{$base_url}}/admin/order/order-notes",
+    url: "/admin/order/order-notes",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -2473,7 +2473,7 @@ $('.btn-stage-section').on('click','button.btn-stage',function (event){
 
    $.ajax({
               type:'POST',
-              url:"{{$base_url}}/admin/order/production-stage/update",
+              url:"/admin/order/production-stage/update",
               data:{'stage_id':stage_id,'order_item_id':order_item_id,'_token':"{{ csrf_token() }}"},
               success:function(data) {
                 
@@ -2568,7 +2568,7 @@ $('.btn-stage-section').on('click','button.btn-stage',function (event){
 
                         $.ajax({
                             method: "POST",
-                            url: "{{$base_url}}/admin/order/order_item/shipp-address/edit",
+                            url: "/admin/order/order_item/shipp-address/edit",
                             dataType: 'json',
                             cache: false,
                             contentType: false,
@@ -2687,7 +2687,7 @@ $('.btn-stage-section').on('click','button.btn-stage',function (event){
 
                         $.ajax({
                             method: "POST",
-                            url: "{{$base_url}}/admin/order/order_item/bill-address/edit",
+                            url: "/admin/order/order_item/bill-address/edit",
                             dataType: 'json',
                             cache: false,
                             contentType: false,
@@ -2765,7 +2765,7 @@ $('.btn-stage-section').on('click','button.btn-stage',function (event){
 
                                $.ajax({
                             method: "POST",
-                            url: "{{$base_url}}/admin/order/order_item/vendor/edit",
+                            url: "/admin/order/order_item/vendor/edit",
                             dataType: 'json',
                             cache: false,
                             contentType: false,
@@ -2860,7 +2860,7 @@ $('.btn-stage-section').on('click','button.btn-stage',function (event){
 
                               $.ajax({
                             method: "POST",
-                            url: "{{$base_url}}/admin/order/order_item/tracking/add",
+                            url: "/admin/order/order_item/tracking/add",
                             dataType: 'json',
                             cache: false,
                             contentType: false,
@@ -2919,7 +2919,7 @@ $('.btn-stage-section').on('click','button.btn-stage',function (event){
 
           $.ajax({
             method: "POST",
-            url: "{{$base_url}}/admin/order/check-order-notes",
+            url: "/admin/order/check-order-notes",
             dataType: 'json',
             cache: false,
             contentType: false,
@@ -2967,7 +2967,7 @@ $('.btn-stage-section').on('click','button.btn-stage',function (event){
 
       $.ajax({
             method: "POST",
-            url: "{{$base_url}}/admin/order/check-payment-not-paid",
+            url: "/admin/order/check-payment-not-paid",
             dataType: 'json',
             cache: false,
             contentType: false,

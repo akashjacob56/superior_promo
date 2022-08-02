@@ -14,14 +14,14 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/dashboard">Dashboard</a>
+            <a href="/dashboard">Dashboard</a>
           </li>
-          <li class="breadcrumb-item"><a href="{{$base_url}}admin/offerblock/all"> offer block </a>
+          <li class="breadcrumb-item"><a href="admin/offerblock/all"> offer block </a>
           </li> 
           <li class="breadcrumb-item">
             <a>Add offer block image </a>
@@ -63,7 +63,7 @@
 
                   <div class="form-group {{ $errors->has('offer_block_image') ? ' has-error' : '' }}">
                     <label class="form-control-label" for="usr">Image *</label>
-                     <img   src="{{$base_url}}/files/assets/images/preview.png" id="offer_image" alt="">
+                     <img   src="/files/assets/images/preview.png" id="offer_image" alt="">
                     <input type="file" class="form-control" name="offer_block_image" value="{{old('offer_block_image')}}" accept="image/*" onchange="document.getElementById('offer_image').src = window.URL.createObjectURL(this.files[0])">
                     @if ($errors->has('offer_block_image'))
                     <span class="help-block">

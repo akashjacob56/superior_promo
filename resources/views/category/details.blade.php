@@ -105,12 +105,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item"><a href="all">Category</a>
           </li> 
@@ -334,7 +334,7 @@
 
                     <div class="form-group">
                       <label for="file"  class="col-form-label form-control-label">Category image (optional)</label>
-                      <img src="{{$base_url}}/storage/app/{{$detail_category->category_image}}" id="category_image" onerror="this.src='{{$base_url}}/files/assets/images/product.png';">
+                      <img src="/storage/app/{{$detail_category->category_image}}" id="category_image" onerror="this.src='/files/assets/images/product.png';">
                       <label for="file" class="custom-file">
                         <input type="file" name="category_image" class="form-control" accept="image/x-png,image/gif,image/jpeg" onchange="document.getElementById('category_image').src = window.URL.createObjectURL(this.files[0])"/>
                         <span class="custom-file-control"></span>
@@ -343,7 +343,7 @@
 
                     <div class="form-group">
                       <label for="file"  class="col-form-label form-control-label">Category Banner image (optional)</label>
-                      <img src="{{$base_url}}/storage/app/{{$detail_category->category_banner_image}}" id="category_banner_image" onerror="this.src='{{$base_url}}/files/assets/images/product.png';">
+                      <img src="/storage/app/{{$detail_category->category_banner_image}}" id="category_banner_image" onerror="this.src='/files/assets/images/product.png';">
                       <label for="file" class="custom-file">
                         <input type="file" name="category_banner_image" class="form-control" accept="image/x-png,image/gif,image/jpeg" onchange="document.getElementById('category_banner_image').src = window.URL.createObjectURL(this.files[0])"/>
                         <span class="custom-file-control"></span>
@@ -414,7 +414,7 @@
                   @endif
                   @endif
 
-                  <a href="{{$base_url}}/admin/categories/all"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                  <a href="/admin/categories/all"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                   </button></a>
 
                  
@@ -660,7 +660,7 @@ $(document).ready(function() {
       "bSortable": false,
       "ilter":false,
       "mRender": function(data, type, row) {
-        return '<img class="img-fluid" src="{{$base_url}}/storage/app/'+row.product_image+'" style="height:50px;width:50px;" onerror=this.src="{{$base_url}}/files/assets/images/product.png";>';
+        return '<img class="img-fluid" src="/storage/app/'+row.product_image+'" style="height:50px;width:50px;" onerror=this.src="/files/assets/images/product.png";>';
       }
     },{ 
       "data":"default_product_translation.product_name"
@@ -858,8 +858,8 @@ $(function() {
 //           //Edit Category Start -----------------------------------------
 //             $('.category_edit_'+item.category_id).on('click',function(){
 //               category_id = item.category_id;
-//               window.location.href = "{{$base_url}}/admin/category/"+category_id;
-//             //   url = "{{$base_url}}/admin/category/"+category_id;
+//               window.location.href = "/admin/category/"+category_id;
+//             //   url = "/admin/category/"+category_id;
 //             //   window.open(url);
 //             });
 //           //Edit Category Start -----------------------------------------
@@ -872,7 +872,7 @@ $(function() {
 //                         //edit child category id Start-----------
 //                         $('.child_category_edit_'+item.child_category_id).on('click',function(){
 //                             var category_id = item.child_category_id;
-//                             url = "{{$base_url}}/admin/category/"+category_id;
+//                             url = "/admin/category/"+category_id;
 //                             window.open(url);
 //                         });
 //                         //edit child category id End----------
@@ -910,7 +910,7 @@ $(function() {
 //                                 $('.sub_child_category_edit_'+item.category.category_id).on('click',function(){
                                   
 //                                     var category_id = item.category.category_id;
-//                                     url = "{{$base_url}}/admin/category/"+category_id;
+//                                     url = "/admin/category/"+category_id;
 //                                     window.open(url);
 //                                 });
 //                               //sub child Categories end--------------------
@@ -979,7 +979,7 @@ $( ".subchild_content" ).draggable();
 
                 // $.ajax({
                 //   type: 'post',
-                //   url: '{{$base_url}}/admin/category/drag-drop',  
+                //   url: '/admin/category/drag-drop',
                 //   data: {"_token": "{{ csrf_token() }}",'child_category_id':child_id,'new_parent_category_id':parent_id,'old_parent_category_id':current_parent_content_id},
                 //   success: function (result){
                     
@@ -1021,7 +1021,7 @@ $( ".subchild_content" ).draggable();
                   if (subchild==null || subchild==undefined || subchild=="") {
                 $.ajax({
                   type: 'post',
-                  url: '{{$base_url}}/admin/category/drag-drop',  
+                  url: '/admin/category/drag-drop',
                   data: {"_token": "{{ csrf_token() }}",'child_category_id':child_id,'new_parent_category_id':parent_id,'old_parent_category_id':current_parent_content_id},
                   success: function (result){
                     location.reload();
@@ -1065,7 +1065,7 @@ $( ".subchild_content" ).draggable();
                   console.log("3"+current_parent_content_id+": "+child_id +": "+parent_id);
                 $.ajax({
                   type: 'post',
-                  url: '{{$base_url}}/admin/category/drag-drop',  
+                  url: '/admin/category/drag-drop',
                   data: {"_token": "{{ csrf_token() }}",'child_category_id':child_id,'new_parent_category_id':parent_id,'old_parent_category_id':current_parent_content_id},
                   success: function (result){
                     location.reload();
@@ -1119,8 +1119,8 @@ $( ".subchild_content" ).draggable();
             $('.category_edit').on('click',function(){
               category_id = $(this).attr('category_id');
               
-            //   url = "{{$base_url}}/admin/category/"+category_id;
-              window.location.href = "{{$base_url}}/admin/category/"+category_id;
+            //   url = "/admin/category/"+category_id;
+              window.location.href = "/admin/category/"+category_id;
             //   window.open(url,'_blank');
             });
           //Edit Category Start -----------------------------------------
@@ -1130,8 +1130,8 @@ $( ".subchild_content" ).draggable();
                             var category_id = $(this).attr('category_id');
                             
 
-                            window.location.href = "{{$base_url}}/admin/category/"+category_id;
-                            // url = "{{$base_url}}/admin/category/"+category_id;
+                            window.location.href = "/admin/category/"+category_id;
+                            // url = "/admin/category/"+category_id;
                             // window.open(url);
                         });
                         //edit child category id End----------
@@ -1165,8 +1165,8 @@ $( ".subchild_content" ).draggable();
                                     var category_id = $(this).attr('category_id');
                                    
 
-                                    window.location.href = "{{$base_url}}/admin/category/"+category_id;
-                                    // url = "{{$base_url}}/admin/category/"+category_id;
+                                    window.location.href = "/admin/category/"+category_id;
+                                    // url = "/admin/category/"+category_id;
                                     // window.open(url);
                                 });
                               //sub child Categories end--------------------

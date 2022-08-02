@@ -7,14 +7,14 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
-          <li class="breadcrumb-item"><a href="{{$base_url}}/admin/customer/{{$customer->id}}">{{$customer->name}} Detail</a>
+          <li class="breadcrumb-item"><a href="/admin/customer/{{$customer->id}}">{{$customer->name}} Detail</a>
           </li> 
           <li class="breadcrumb-item">
             <a>Add Money @if($appearance->is_multilanguage==1)
@@ -33,7 +33,7 @@
     <div class="page-wrapper">
       <div class="page-body">
         <div class="row">
-          <form id="personal-info-form" method="post" action="{{$base_url}}/admin/customer/addWalletMoney/{{$customer->id}}" enctype='multipart/form-data'>
+          <form id="personal-info-form" method="post" action="/admin/customer/addWalletMoney/{{$customer->id}}" enctype='multipart/form-data'>
              <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="col-sm-12">
               <div class="card">
@@ -43,7 +43,7 @@
 
                     <button type="submit" class="btn btn-primary waves-effect waves-light pull-right">Save</button>
 
-                    <a href="{{$base_url}}/admin/customer/{{$customer->id}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                    <a href="/admin/customer/{{$customer->id}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                     </button></a>
                   </span>
                   <span class="text-muted">You can add money to the customer wallet @if($appearance->is_vshopy==1) vshopy @endif admin.</span>
@@ -84,7 +84,7 @@
               <div class="main-footer">
                 <span class="lower-buttons">
                   <button type="submit" class="btn btn-primary waves-effect waves-light pull-right">Save</button>
-                  <a href="{{$base_url}}/admin/customer/{{$customer->id}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                  <a href="/admin/customer/{{$customer->id}}"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                   </button></a>
                 </span>
               </div>

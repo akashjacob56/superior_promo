@@ -58,7 +58,7 @@
                           <div class="row">
                          <div class="col-12">
                             @foreach($imprint->imprint_colors as $imprint_color)
-                              {{$imprint_color->colors->name}}&nbsp;<a href="{{$base_url}}/admin/product/imprint_color_delete/{{$imprint_color->id}}">
+                              {{$imprint_color->colors->name}}&nbsp;<a href="/admin/product/imprint_color_delete/{{$imprint_color->id}}">
                                   <button class="btn btn-danger" type="button"><i class="fa fa-trash"></i></button>
                               </a>&nbsp;&nbsp;&nbsp;&nbsp;
                             @endforeach
@@ -115,7 +115,7 @@
 
                               <div class="col-md-2 {{ $errors->has('count_from') ? ' has-error' : '' }}">
                                   <label class="form-control-label">Actions<br><br><br><br></label>
-                                  <a href="{{$base_url}}/admin/product/imprintProductPriceDelete/{{$imprint_price->id}}">
+                                  <a href="/admin/product/imprintProductPriceDelete/{{$imprint_price->id}}">
                                     <button class="form-control add_imprint_child" type="button"><i class="fa fa-trash"></i></button>
                                   </a>
                               </div>

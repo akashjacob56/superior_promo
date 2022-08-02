@@ -7,12 +7,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a>Reviews </a>
@@ -83,7 +83,7 @@
   'use strict';
   $(document).ready(function() {
     $('#footer-search').DataTable( $.extend({      
-      "ajax": "{{$base_url}}/admin/review/allData", 
+      "ajax": "/admin/review/allData",
       "order": [[ 0, "asc" ]],                     
       "columns": [{
         "data": "product.product_id",

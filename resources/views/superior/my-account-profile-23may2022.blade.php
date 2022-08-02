@@ -19,7 +19,7 @@
 <!-- for summernote -->
 
 
-<script type="text/javascript" src="{{$base_url}}/resources/views/superior/assets/js/notify.min.js"></script>
+<script type="text/javascript" src="/resources/views/superior/assets/js/notify.min.js"></script>
 
 <!-- Smooth Search City name start -->
 <link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
@@ -2242,7 +2242,7 @@ color: #575757;
 
 												$.ajax({
 												    method: "POST",
-												    url: "{{$base_url}}/my-acc/search-order-history",
+												    url: "/my-acc/search-order-history",
 												    dataType: 'json',
 												    cache: false,
 												    contentType: false,
@@ -2378,12 +2378,12 @@ color: #575757;
 																<div class="col-3">
 																	@if($orderitem!="")
 																		@if($orderitem->product!="")
-								                							<img src="{{$base_url}}/storage/app/{{$orderitem->product->product_image}}">
+								                							<img src="/storage/app/{{$orderitem->product->product_image}}">
 								                						@else
-								                							<img src="{{$base_url}}/files/assets/images/product.png">
+								                							<img src="/files/assets/images/product.png">
 								                						@endif
 								                					@else
-								                						<img src="{{$base_url}}/files/assets/images/product.png">
+								                						<img src="/files/assets/images/product.png">
 																	@endif
 
 
@@ -2673,7 +2673,7 @@ color: #575757;
 																</div>
 
 																<div class="col-3">
-																	<a href="{{$base_url}}/storage/app/{{$artproof->path}}" target="_blank">
+																	<a href="/storage/app/{{$artproof->path}}" target="_blank">
 																	<p>
 																		<i class="fa fa-file-pdf-o preview_pdf_class" aria-hidden="true" style=""></i> &nbsp; <span style="color: #68bee5;">Preview PDF</span> 
 																	</p>
@@ -2686,7 +2686,7 @@ color: #575757;
 																		<span class="text-success text-font_weight-500 approved_change_order_history_name_art_proof_{{$artproof->id}} hidden">Approved</span>
 																		<span class="text-danger ext-font_weight-500 delclined_change_order_history_name_art_proof_{{$artproof->id}} hidden">Declined</span>
 																		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span  class="text-right">
-																		<img id="pending_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="{{$base_url}}/resources/views/superior/assets/images/down-collapse.png"></span>
+																		<img id="pending_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="/resources/views/superior/assets/images/down-collapse.png"></span>
 																	</p>
 																</div>
 															</div>
@@ -2733,14 +2733,14 @@ color: #575757;
 																<p><?php echo date("m-d-Y", strtotime($artproof->created_at)); ?></p>
 															</div>
 															<div class="col-3">
-																<a href="{{$base_url}}/storage/app/{{$artproof->path}}" target="_blank">
+																<a href="/storage/app/{{$artproof->path}}" target="_blank">
 																<p>
 																	<i class="fa fa-file-pdf-o preview_pdf_class" aria-hidden="true"></i> &nbsp; <span style="color: #68bee5;">Preview PDF</span> 
 																</p>
 															</a>
 															</div>
 															<div class="col-3">
-																<p class="approved_art_proof_collapse" artproof_id="{{$artproof->id}}"><span class="text-success text-font_weight-500">Approved</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><!-- <i class="fa fa-angle-down" aria-hidden="true"></i> --><img id="approved_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="{{$base_url}}/resources/views/superior/assets/images/down-collapse.png"></span></p>
+																<p class="approved_art_proof_collapse" artproof_id="{{$artproof->id}}"><span class="text-success text-font_weight-500">Approved</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><!-- <i class="fa fa-angle-down" aria-hidden="true"></i> --><img id="approved_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="/resources/views/superior/assets/images/down-collapse.png"></span></p>
 															</div>
 															</div>
 
@@ -2774,14 +2774,14 @@ color: #575757;
 																<p><?php echo date("m-d-Y", strtotime($artproof->created_at)); ?></p>
 															</div>
 															<div class="col-3">
-																<a href="{{$base_url}}/storage/app/{{$artproof->path}}" target="_blank">
+																<a href="/storage/app/{{$artproof->path}}" target="_blank">
 																<p>
 																	<i class="fa fa-file-pdf-o preview_pdf_class" aria-hidden="true" ></i> &nbsp; <span style="color: #68bee5;">Preview PDF</span> 
 																</p>
 															</a>
 															</div>
 															<div class="col-3">
-																<p class="declined_art_proof_collapse" artproof_id="{{$artproof->id}}"><span class="text-danger ext-font_weight-500">Declined</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><img id="declined_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="{{$base_url}}/resources/views/superior/assets/images/down-collapse.png"></span></p>
+																<p class="declined_art_proof_collapse" artproof_id="{{$artproof->id}}"><span class="text-danger ext-font_weight-500">Declined</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-right"><img id="declined_collapse_image_up_down_{{$artproof->id}}" class="d-inline" src="/resources/views/superior/assets/images/down-collapse.png"></span></p>
 															</div>
 															</div>
 
@@ -3037,10 +3037,10 @@ color: #575757;
 																	@if($orderitem!="")
 
 																		@if($orderitem->product!="")
-								                							<img src="{{$base_url}}/storage/app/{{$orderitem->product->product_image}}">
+								                							<img src="/storage/app/{{$orderitem->product->product_image}}">
 								                						@else
 
-								                						<img src="{{$base_url}}/files/assets/images/product.png">
+								                						<img src="/files/assets/images/product.png">
 								                						
 								                						@endif
 								                					@endif
@@ -3417,8 +3417,8 @@ color: #575757;
 
                                     @if($wishlist->product!="")
                                     <figure>
-                                        <a href="{{$base_url}}/product/{{$wishlist->product->product_url}}?pid={{$wishlist->product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" target="_blank">
-                                            <img src="{{$base_url}}/storage/app/{{$wishlist->product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
+                                        <a href="/product/{{$wishlist->product->product_url}}?pid={{$wishlist->product->product_translation->product_id}}&skuid=1&pvid=1&cvid=1" target="_blank">
+                                            <img src="/storage/app/{{$wishlist->product->product_image}}" style="height: 250px;" width="239" height="239" alt="product">
                                         </a>
                                     </figure>
                                     @endif
@@ -3535,7 +3535,7 @@ color: #575757;
 								</div>
 								<!-- <div class="row item-list">
 									<div class="col-2">
-										<img class="product-img" src="{{$base_url}}/assets/images/mgggg 1.png">
+										<img class="product-img" src="/assets/images/mgggg 1.png">
 									</div>
 									<div class="col-3">
 										<p>Item : </p>
@@ -4215,13 +4215,13 @@ color: #575757;
 											<div class="col-3">
 												@if($art_proof->orderitem!="")
 													@if($art_proof->orderitem->product!="")
-													<img src="{{$base_url}}/storage/app/{{$art_proof->orderitem->product->product_image}}" style="display: inline-block;width: 80px;height:80px;">&nbsp;&nbsp;{{$art_proof->orderitem->product->product_id}}
+													<img src="/storage/app/{{$art_proof->orderitem->product->product_image}}" style="display: inline-block;width: 80px;height:80px;">&nbsp;&nbsp;{{$art_proof->orderitem->product->product_id}}
 													@else
-													<img src="{{$base_url}}/files/assets/images/product.png" style="display: inline-block;width: 80px;height:80px;">
+													<img src="/files/assets/images/product.png" style="display: inline-block;width: 80px;height:80px;">
 													@endif
 
 												@else
-													<img src="{{$base_url}}/files/assets/images/product.png" style="display: inline-block;width: 80px;height:80px;">
+													<img src="/files/assets/images/product.png" style="display: inline-block;width: 80px;height:80px;">
 												@endif
 
 
@@ -4241,10 +4241,10 @@ color: #575757;
 											@endif
 											</div>
 											<div class="col-3 text-center">
-												<p class="mt-3"><a class="a_proof_color" href="{{$base_url}}/storage/app/{{$art_proof->path}}" target="_blank"><i class="fas fa-file-pdf"></i>&nbsp;&nbsp;View Atr Proof</a></p>
+												<p class="mt-3"><a class="a_proof_color" href="/storage/app/{{$art_proof->path}}" target="_blank"><i class="fas fa-file-pdf"></i>&nbsp;&nbsp;View Atr Proof</a></p>
 											</div>
 											<div class="col-3 text-right art_proof_div">
-												<p class="mt-3 art_proof_para"><a class="a_proof_color art_proof_download_link" href="{{$base_url}}/downloadArtProof?link={{$art_proof->path}}" art_proof_link="{{$base_url}}/storage/app/">Download <i class="fa fa-download" aria-hidden="true"></i></a></p>
+												<p class="mt-3 art_proof_para"><a class="a_proof_color art_proof_download_link" href="/downloadArtProof?link={{$art_proof->path}}" art_proof_link="/storage/app/">Download <i class="fa fa-download" aria-hidden="true"></i></a></p>
 											</div>
 										</div>
 									<!-- row end -->
@@ -4342,7 +4342,7 @@ color: #575757;
 
 										<div class="row">
 											<div class="col-3">
-												<img src="{{$base_url}}/files/assets/images/product.png" style="display: inline-block;width: 80px;height:80px;">&nbsp;&nbsp;#62555
+												<img src="/files/assets/images/product.png" style="display: inline-block;width: 80px;height:80px;">&nbsp;&nbsp;#62555
 											</div>
 											<div class="col-3 text-center">
 												<p class="mt-3">Silicone Earbud Case With Carabiner</p>
@@ -5580,7 +5580,7 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    url: "{{$base_url}}/my-acc/bill-address/add",
+    url: "/my-acc/bill-address/add",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -5662,7 +5662,7 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    url: "{{$base_url}}/my-acc/shipp-address/add",
+    url: "/my-acc/shipp-address/add",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -5826,7 +5826,7 @@ $('#shipp-address-append').on('click','.edit_address_para a.remove_shipping_addr
 	form_data.append("_token", "{{csrf_token()}}");
 	$.ajax({
     method: "POST",
-    url: "{{$base_url}}/my-acc/shipp-address/delete",
+    url: "/my-acc/shipp-address/delete",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -5858,7 +5858,7 @@ $('#shipp-address-append').on('click','.edit_address_para a.make_default_shippin
 	form_data.append("_token", "{{csrf_token()}}");
 	$.ajax({
     method: "POST",
-    url: "{{$base_url}}/my-acc/shipp-address/make-default",
+    url: "/my-acc/shipp-address/make-default",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -5901,7 +5901,7 @@ $('#bill-address-append').on('click','.edit_address_para a.remove_bill_address',
 
 	$.ajax({
     method: "POST",
-    url: "{{$base_url}}/my-acc/bill-address/delete",
+    url: "/my-acc/bill-address/delete",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -5991,8 +5991,8 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    // url: "{{$base_url}}/checkout-edit-address",
-    url: "{{$base_url}}/my-acc/shipp-address/edit",
+    // url: "/checkout-edit-address",
+    url: "/my-acc/shipp-address/edit",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -6169,8 +6169,8 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    // url: "{{$base_url}}/checkout/edit/billing/address",
-    url: "{{$base_url}}/my-acc/bill-address/edit",
+    // url: "/checkout/edit/billing/address",
+    url: "/my-acc/bill-address/edit",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -6242,7 +6242,7 @@ else{
 											});
 											$.ajax({
 											    method: "POST",
-											    url: "{{$base_url}}/my-acc/art-proof/approved",
+											    url: "/my-acc/art-proof/approved",
 											    dataType: 'json',
 											    cache: false,
 											    contentType: false,
@@ -6288,7 +6288,7 @@ else{
 											});
 											$.ajax({
 											    method: "POST",
-											    url: "{{$base_url}}/my-acc/art-proof/declined",
+											    url: "/my-acc/art-proof/declined",
 											    dataType: 'json',
 											    cache: false,
 											    contentType: false,
@@ -6323,7 +6323,7 @@ else{
           							var product_id = $(this).attr('id');
             $.ajax({
               type: 'post',
-              url:'{{$base_url}}/wishlist/add',
+              url:'/wishlist/add',
               data:{"_token": "{{ csrf_token() }}",'product_id':product_id},
               success: function (result){
                 if(result!=""){
@@ -6440,7 +6440,7 @@ else{
 
 												$.ajax({
 											              type: 'post',
-											              url:'{{$base_url}}/my-acc/reorder-request/exactly-same-content-change-no',
+											              url:'/my-acc/reorder-request/exactly-same-content-change-no',
 											              data:{"_token": "{{ csrf_token() }}",'product_id':product_id,'order_id':order_id},
 											              success: function(data){
 											              	console.log('order_id');
@@ -6503,7 +6503,7 @@ else{
 
 													 $.ajax({
 							                              type: 'post',
-							                              url:'{{$base_url}}/reorder-request/reorder',
+							                              url:'/reorder-request/reorder',
 							                              data:{"_token": "{{ csrf_token() }}",'reorder_requests':reorder_requests},
 							                              success: function (data){					                        
 							                                document.getElementById("reorder_append_items").innerHTML=data.data.data;
@@ -6656,7 +6656,7 @@ $.ajaxSetup
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
     $.ajax({
     method: "POST",
-    url: "{{$base_url}}/my-acc/shipp-address/add",
+    url: "/my-acc/shipp-address/add",
     dataType: 'json',
     cache: false,
     contentType: false,
@@ -6814,7 +6814,7 @@ else{
 												alert(fname);
 											    $.ajax({
 											    method: "POST",
-											    url: "{{$base_url}}/my-acc/bill-address/add",
+											    url: "/my-acc/bill-address/add",
 											    dataType: 'json',
 											    cache: false,
 											    contentType: false,
@@ -6851,7 +6851,7 @@ $(document).ready(function(){
         var quantity=$(this).val();
 
 $.ajax({
-    url:"{{$base_url}}/matched-quantity",
+    url:"/matched-quantity",
     type:'POST',
     data:{'product_id':product_id,'quantity':quantity,_token:'{{csrf_token()}}'},
     success:function(data){
@@ -7125,7 +7125,7 @@ error: function (xhr, textStatus, errorThrown){
 
 
         	$.ajax({
-			    url:"{{$base_url}}/my-acc/profile/contact-info",
+			    url:"/my-acc/profile/contact-info",
 			    type:'POST',
 			    data:{'name':name,'contact_number':phone_number,'_token':'{{csrf_token()}}'},
 			    // data:{'name':name,'contact_number':phone_number,'fax':fax,'_token':'{{csrf_token()}}'},
@@ -7162,7 +7162,7 @@ error: function (xhr, textStatus, errorThrown){
                 }
 
                 $.ajax({
-			    url:"{{$base_url}}/my-acc/profile/update-email",
+			    url:"/my-acc/profile/update-email",
 			    type:'POST',
 			    data:{'email':email,'_token':'{{csrf_token()}}'},
 			    success:function(data){
@@ -7241,7 +7241,7 @@ error: function (xhr, textStatus, errorThrown){
 
 
     $.ajax({
-			    url:"{{$base_url}}/my-acc/profile/change-password",
+			    url:"/my-acc/profile/change-password",
 			    type:'POST',
 			    data:{'password':password,'_token':'{{csrf_token()}}'},
 			    success:function(data){
@@ -7323,10 +7323,10 @@ error: function (xhr, textStatus, errorThrown){
 																		var artproof_id = $(this).attr('artproof_id');
 																		
 																		if($('#pending_artproof_div_'+artproof_id).hasClass("hidden")){
-																			$('#pending_collapse_image_up_down_'+artproof_id).attr('src', '{{$base_url}}/resources/views/superior/assets/images/up-collapse.png');
+																			$('#pending_collapse_image_up_down_'+artproof_id).attr('src', '/resources/views/superior/assets/images/up-collapse.png');
 																			$('#pending_artproof_div_'+artproof_id).removeClass('hidden');
 																		}else{
-																			$('#pending_collapse_image_up_down_'+artproof_id).attr('src', '{{$base_url}}/resources/views/superior/assets/images/down-collapse.png');
+																			$('#pending_collapse_image_up_down_'+artproof_id).attr('src', '/resources/views/superior/assets/images/down-collapse.png');
 																			$('#pending_artproof_div_'+artproof_id).addClass('hidden');
 																		}
         															});
@@ -7338,10 +7338,10 @@ error: function (xhr, textStatus, errorThrown){
 
 																		var art_proof_id = $(this).attr('artproof_id');
 																		if($('#approved_artproof_div_'+art_proof_id).hasClass("hidden")){
-																			$('#approved_collapse_image_up_down_'+art_proof_id).attr('src', '{{$base_url}}/resources/views/superior/assets/images/up-collapse.png');
+																			$('#approved_collapse_image_up_down_'+art_proof_id).attr('src', '/resources/views/superior/assets/images/up-collapse.png');
 																			$('#approved_artproof_div_'+art_proof_id).removeClass('hidden');
 																		}else{
-																			$('#approved_collapse_image_up_down_'+art_proof_id).attr('src', '{{$base_url}}/resources/views/superior/assets/images/down-collapse.png');
+																			$('#approved_collapse_image_up_down_'+art_proof_id).attr('src', '/resources/views/superior/assets/images/down-collapse.png');
 																			$('#approved_artproof_div_'+art_proof_id).addClass('hidden');
 																		}
         															});
@@ -7361,10 +7361,10 @@ error: function (xhr, textStatus, errorThrown){
         															$('.declined_art_proof_collapse').on('click',function(){
         																var artproof_id = $(this).attr('artproof_id');
 																		if($('#delined_art_proof_div_'+artproof_id).hasClass("hidden")){							
-																			$('#declined_collapse_image_up_down_'+artproof_id).attr('src', '{{$base_url}}/resources/views/superior/assets/images/up-collapse.png');
+																			$('#declined_collapse_image_up_down_'+artproof_id).attr('src', '/resources/views/superior/assets/images/up-collapse.png');
 																			$('#delined_art_proof_div_'+artproof_id).removeClass('hidden');
 																		}else{
-																			$('#declined_collapse_image_up_down_'+artproof_id).attr('src', '{{$base_url}}/resources/views/superior/assets/images/down-collapse.png');
+																			$('#declined_collapse_image_up_down_'+artproof_id).attr('src', '/resources/views/superior/assets/images/down-collapse.png');
 																			$('#delined_art_proof_div_'+artproof_id).addClass('hidden');
 																		}
         															});
@@ -7556,7 +7556,7 @@ error: function (xhr, textStatus, errorThrown){
 
         $.ajax({
             method: "POST",
-            url: "{{$base_url}}/reorder",
+            url: "/reorder",
             dataType: 'json',
             cache: false,
             contentType: false,
@@ -7564,7 +7564,7 @@ error: function (xhr, textStatus, errorThrown){
             data: form_data,
             success: function(data){
         	var order_id = data['order_id'];
-    		window.location.href="{{$base_url}}/success?order_id="+order_id;
+    		window.location.href="/success?order_id="+order_id;
     },
     error: function(result){
 
@@ -7656,7 +7656,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 				form_data.append("_token", "{{csrf_token()}}");
 				$.ajax({
 				        method: "POST",
-				        url: "{{$base_url}}/imprint-option-select",
+				        url: "/imprint-option-select",
 				        dataType: 'json',
 				        cache: false,
 				        contentType: false,
@@ -7724,7 +7724,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 			var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'order_id':order_id,'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -7756,7 +7756,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 			var country_id = 35;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'order_id':order_id,'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -7794,7 +7794,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 			var country_id = 35;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'order_id':order_id,'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -7825,7 +7825,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 			var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'order_id':order_id,'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -7866,7 +7866,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 											var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'order_id':order_id,'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -7896,7 +7896,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 											var country_id = 35;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'order_id':order_id,'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -7933,7 +7933,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 											var country_id = 35;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'order_id':order_id,'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -7965,7 +7965,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 											var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'order_id':order_id,'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -8008,7 +8008,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
                                     					var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -8040,7 +8040,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 
                                     				$.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -8076,7 +8076,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
                                     				var country_id = 35;
                                     				$.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -8111,7 +8111,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
                                     				var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result['states'];
@@ -8152,7 +8152,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 													var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8184,7 +8184,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 
                                     				$.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {   
 													               var state=result["states"];
@@ -8221,7 +8221,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 
                                     				$.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {   
 													               var state=result["states"];
@@ -8253,7 +8253,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 														var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8294,7 +8294,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 													var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8325,7 +8325,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 
                                     				$.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8361,7 +8361,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 
                                     				$.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8392,7 +8392,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 													var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8435,7 +8435,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 									var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8467,7 +8467,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 
                                     				$.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8504,7 +8504,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 
                                     				$.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8537,7 +8537,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 									var country_id = 190;
                                     				 $.ajax({
 													            type: "post",
-													            url: "{{$base_url}}/getall-country",
+													            url: "/getall-country",
 													            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 													            success: function (result) {    
 													               var state=result["states"];
@@ -8586,7 +8586,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 											});
 											$.ajax({
 											    method: "POST",
-											    url: "{{$base_url}}/my-acc/art-proof/approved",
+											    url: "/my-acc/art-proof/approved",
 											    dataType: 'json',
 											    cache: false,
 											    contentType: false,
@@ -8634,7 +8634,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
 											});
 											$.ajax({
 											    method: "POST",
-											    url: "{{$base_url}}/my-acc/art-proof/declined",
+											    url: "/my-acc/art-proof/declined",
 											    dataType: 'json',
 											    cache: false,
 											    contentType: false,
@@ -8964,7 +8964,7 @@ $('.reorder_append_items').on('click','.ASAP_date_format',function(){
         $(document).ready(function(){
             $('.header_search_button').on('click',function(){
                 var search = $('.header_search_input').val();
-                window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
+                window.location.href = "/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
             });
         });
 					</script>

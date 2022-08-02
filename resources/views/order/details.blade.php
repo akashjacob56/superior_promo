@@ -219,12 +219,12 @@ textbox.text(filesCount + ' files selected');
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a>Order Detail</a>
@@ -571,7 +571,7 @@ textbox.text(filesCount + ' files selected');
    $('#footer-search').DataTable($.extend( {
    	responsive: true,
     "ajax": {
-      url: "{{$base_url}}/admin/order/allItemsData?order_id={{$order->id}}",
+      url: "/admin/order/allItemsData?order_id={{$order->id}}",
       type: "GET",
       contentType: "application/json;charset=UTF-8",
       dataType: "json",
@@ -595,7 +595,7 @@ textbox.text(filesCount + ' files selected');
       "bSortable": false,
       "ilter":false,
       "mRender": function(data, type, row) {
-        return "<p class='d-inline-block'>"+row.product.product_translation.product_name+"</p>&nbsp;&nbsp;&nbsp;<img class='img-fluid admin-thumbnail d-inline-block' src='{{$base_url}}/storage/app/"+row.product.product_image+"'/>&nbsp;&nbsp;&nbsp; <p class='d-inline-block'>(Item #"+row.product.product_id+")</p>";
+        return "<p class='d-inline-block'>"+row.product.product_translation.product_name+"</p>&nbsp;&nbsp;&nbsp;<img class='img-fluid admin-thumbnail d-inline-block' src='/storage/app/"+row.product.product_image+"'/>&nbsp;&nbsp;&nbsp; <p class='d-inline-block'>(Item #"+row.product.product_id+")</p>";
     }
 },
 
@@ -614,7 +614,7 @@ textbox.text(filesCount + ' files selected');
       "ilter":false,
       "mRender": function(data, type, row) {
        
-        return '<a href="{{$base_url}}/admin/product/'+row.product_id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button"><i class="voyager-edit"></i>Edit</button></a>';
+        return '<a href="/admin/product/'+row.product_id+'"><button class="btn btn-primary waves-effect waves-light js-programmatic-disable data-table-button"><i class="voyager-edit"></i>Edit</button></a>';
         
       }
     }

@@ -156,7 +156,7 @@ Route::post('/my-acc/art-proof/declined','PublicController@postMyAccArtProofDecl
 Route::get('shipdelivery','PublicController@ShipDilevery');
 /* mahesh end 12jan2022*/
 
-Route::get('/','PublicController@index');
+Route::get('/','PublicController@index')->name('home');
 Route::post('/wishlist/add','PublicController@postAddWishlist');
 
 Route::post('pr/review', 'PublicController@postProductReview');
@@ -772,17 +772,17 @@ Route::get('/product_apparel_delete/{id}',['middleware' => 'auth','uses' => 'Pro
 
 //Section
 Route::group(['prefix' => 'section'], function(){
-	Route::get('add', ['middleware' => 'auth','uses' => 'SectionController@getAddSection']);
-	Route::post('add', ['middleware' => 'auth','uses' => 'SectionController@postAddSection']);
-	Route::get('all', ['middleware' => 'auth','uses' => 'SectionController@getAllSections']);
-	Route::get('allData', ['middleware' => 'auth','uses' => 'SectionController@getAllSectionData']);
-	Route::post('addSectionProduct',['middleware'=>'auth','uses'=>'SectionController@postAddSectionProduct']);
-	Route::post('removeSectionProduct',['middleware'=>'auth','uses'=>'SectionController@postRemoveSectionProduct']);
-	Route::get('allSectionProductData', ['middleware' => 'auth','uses' => 'SectionController@getAllSectionProductData']);
+//	Route::get('add', ['middleware' => 'auth','uses' => 'SectionController@getAddSection']);
+//	Route::post('add', ['middleware' => 'auth','uses' => 'SectionController@postAddSection']);
+//	Route::get('all', ['middleware' => 'auth','uses' => 'SectionController@getAllSections']);
+//	Route::get('allData', ['middleware' => 'auth','uses' => 'SectionController@getAllSectionData']);
+//	Route::post('addSectionProduct',['middleware'=>'auth','uses'=>'SectionController@postAddSectionProduct']);
+//	Route::post('removeSectionProduct',['middleware'=>'auth','uses'=>'SectionController@postRemoveSectionProduct']);
+//	Route::get('allSectionProductData', ['middleware' => 'auth','uses' => 'SectionController@getAllSectionProductData']);
 
 
-	Route::get('{id}', ['middleware' => 'auth', 'uses' => 'SectionController@getSection']);
-	Route::post('{id}', ['middleware' => 'auth', 'uses' => 'SectionController@postSection']);
+//	Route::get('{id}', ['middleware' => 'auth', 'uses' => 'SectionController@getSection']);
+//	Route::post('{id}', ['middleware' => 'auth', 'uses' => 'SectionController@postSection']);
 
 });
 
@@ -800,26 +800,26 @@ Route::get('deleteImage/{id},{product_id}', ['middleware' => 'auth','uses' => 'P
 
 	//notification
 Route::group(['prefix' => 'notification'], function(){
-	Route::get('add', ['middleware' => 'auth','uses' => 'NotificationController@getAddNotification']);
-	Route::post('add', ['middleware' => 'auth','uses' => 'NotificationController@postAddNotification']);
-	Route::get('all', ['middleware' => 'auth','uses' => 'NotificationController@getAllNotification']);
-	Route::get('allData', ['middleware' => 'auth','uses' => 'NotificationController@getAllNotificationData']);
-	Route::get('{id}', ['middleware' => 'auth','uses' => 'NotificationController@getNotification']);
-	Route::post('{id}', ['middleware' => 'auth','uses' => 'NotificationController@postNotification']);
-	Route::get('{id}', ['middleware' => 'auth','uses' => 'NotificationController@getNotification']);
-	Route::get('send/{id}', ['middleware' => 'auth','uses' => 'NotificationController@sendNotification']);
+//	Route::get('add', ['middleware' => 'auth','uses' => 'NotificationController@getAddNotification']);
+//	Route::post('add', ['middleware' => 'auth','uses' => 'NotificationController@postAddNotification']);
+//	Route::get('all', ['middleware' => 'auth','uses' => 'NotificationController@getAllNotification']);
+//	Route::get('allData', ['middleware' => 'auth','uses' => 'NotificationController@getAllNotificationData']);
+//	Route::get('{id}', ['middleware' => 'auth','uses' => 'NotificationController@getNotification']);
+//	Route::post('{id}', ['middleware' => 'auth','uses' => 'NotificationController@postNotification']);
+//	Route::get('{id}', ['middleware' => 'auth','uses' => 'NotificationController@getNotification']);
+//	Route::get('send/{id}', ['middleware' => 'auth','uses' => 'NotificationController@sendNotification']);
 
 });
 	
 	//Permissions
 Route::group(['prefix' => 'permission'], function(){
 
-	Route::get('add', ['middleware' => 'auth','uses' => 'PermissionController@getAddPermission']);
-	Route::post('add', ['middleware' => 'auth','uses' => 'PermissionController@postAddPermission']);
-	Route::get('all', ['middleware' => 'auth','uses' => 'PermissionController@getAllPermission']);
-	Route::get('allData', ['middleware' => 'auth','uses' => 'PermissionController@getAllPermissionData']);
-	Route::get('{id}', ['middleware' => 'auth','uses' => 'PermissionController@getPermission']);
-	Route::post('{id}', ['middleware' => 'auth','uses' => 'PermissionController@postPermission']);
+//	Route::get('add', ['middleware' => 'auth','uses' => 'PermissionController@getAddPermission']);
+//	Route::post('add', ['middleware' => 'auth','uses' => 'PermissionController@postAddPermission']);
+//	Route::get('all', ['middleware' => 'auth','uses' => 'PermissionController@getAllPermission']);
+//	Route::get('allData', ['middleware' => 'auth','uses' => 'PermissionController@getAllPermissionData']);
+//	Route::get('{id}', ['middleware' => 'auth','uses' => 'PermissionController@getPermission']);
+//	Route::post('{id}', ['middleware' => 'auth','uses' => 'PermissionController@postPermission']);
 });
 	
 
@@ -845,8 +845,8 @@ Route::post('admin/changeQuantity',['middleware'=> 'auth', 'uses' => 'OrderContr
 Route::post('admin/makeOrder',['middleware'=> 'auth', 'uses' => 'OrderController@makeOrder']);
 
 //myprofile
-Route::get('profile', ['middleware' => 'auth','uses' => 'ProfileController@getMyProfile']);
-Route::post('profile', ['middleware' => 'auth','uses' => 'ProfileController@PostMyProfile']);
+//Route::get('profile', ['middleware' => 'auth','uses' => 'ProfileController@getMyProfile']);
+//Route::post('profile', ['middleware' => 'auth','uses' => 'ProfileController@PostMyProfile']);
 
 //Change Password
 Route::get('/changePassword', ['middleware' => 'auth', 'uses' => 'HomeController@getChangePassword']);

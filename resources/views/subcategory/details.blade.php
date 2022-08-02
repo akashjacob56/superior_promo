@@ -27,12 +27,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item"><a href="all">Sub Category</a>
           </li> 
@@ -133,7 +133,7 @@
 
                      <div class="form-group">
                       <label for="file"  class="col-form-label form-control-label">Category Banner image (optional)</label>
-                      <img src="{{$base_url}}/storage/app/{{$category->category_banner_image}}" id="category_banner_image" onerror="this.src='{{$base_url}}/files/assets/images/product.png';">
+                      <img src="/storage/app/{{$category->category_banner_image}}" id="category_banner_image" onerror="this.src='/files/assets/images/product.png';">
                       <label for="file" class="custom-file">
                         <input type="file" name="category_banner_image" class="form-control" accept="image/x-png,image/gif,image/jpeg" onchange="document.getElementById('category_banner_image').src = window.URL.createObjectURL(this.files[0])"/>
                         <span class="custom-file-control"></span>
@@ -307,7 +307,7 @@ $(document).ready(function() {
       "bSortable": false,
       "ilter":false,
       "mRender": function(data, type, row) {
-        return '<img class="img-fluid" src="{{$base_url}}/storage/app/'+row.product_image+'" style="height:50px;width:50px;" onerror=this.src="{{$base_url}}/files/assets/images/product.png";>';
+        return '<img class="img-fluid" src="/storage/app/'+row.product_image+'" style="height:50px;width:50px;" onerror=this.src="/files/assets/images/product.png";>';
       }
     },{ 
       "data":"default_product_translation.product_name"

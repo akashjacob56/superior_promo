@@ -31,12 +31,12 @@ left: 630px !important;
 <div class="col-md-8">
 <ul class="breadcrumb">
 <li class="breadcrumb-item">
-<a href="{{$base_url}}">
+<a href="">
 <i class="feather icon-home"></i>
 </a>
 </li>
 <li class="breadcrumb-item">
-<a href="{{$base_url}}/admin/home">Admin</a>
+<a href="/admin/home">Admin</a>
 </li>
 <li class="breadcrumb-item"><a href="all">Customers</a>
 </li> 
@@ -61,12 +61,12 @@ left: 630px !important;
 <div class="col-lg-12">
 <div class="cover-profile">
 <div class="profile-bg-img">
-<img class="profile-bg-img img-fluid" src="{{$base_url}}/files/assets/images/bg-img1.jpg" alt="bg-img">
+<img class="profile-bg-img img-fluid" src="/files/assets/images/bg-img1.jpg" alt="bg-img">
 <div class="card-block user-info">
 	<div class="col-md-12">
 		<div class="media-left">
 			<a href="#" class="profile-image">
-				<img class="user-img img-radius" src="{{$base_url}}/files/assets/images/user.png" alt="user-img" style="height: 90px !important;width: 90px !important;">
+				<img class="user-img img-radius" src="/files/assets/images/user.png" alt="user-img" style="height: 90px !important;width: 90px !important;">
 			</a>
 		</div>
 		<div class="media-body row">
@@ -1387,8 +1387,8 @@ headers : {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
 $.ajax({
 method: "POST",
-// url: "{{$base_url}}/checkout-edit-address",
-url: "{{$base_url}}/my-acc/shipp-address/edit",
+// url: "/checkout-edit-address",
+url: "/my-acc/shipp-address/edit",
 dataType:'json',
 cache: false,
 contentType: false,
@@ -1448,7 +1448,7 @@ form_data.append('customer_id',customer_id);
 form_data.append("_token", "{{csrf_token()}}");
 $.ajax({
 method: "POST",
-url: "{{$base_url}}/my-acc/shipp-address/make-default",
+url: "/my-acc/shipp-address/make-default",
 dataType: 'json',
 cache: false,
 contentType: false,
@@ -1483,7 +1483,7 @@ form_data.append('customer_id',customer_id);
 form_data.append("_token", "{{csrf_token()}}");
 $.ajax({
 method: "POST",
-url: "{{$base_url}}/my-acc/shipp-address/delete",
+url: "/my-acc/shipp-address/delete",
 dataType: 'json',
 cache: false,
 contentType: false,
@@ -1614,7 +1614,7 @@ headers : {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
 $.ajax({
 method: "POST",
-url: "{{$base_url}}/my-acc/shipp-address/add",
+url: "/my-acc/shipp-address/add",
 dataType: 'json',
 cache: false,
 contentType: false,
@@ -1764,8 +1764,8 @@ headers : {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
 $.ajax({
 method: "POST",
-// url: "{{$base_url}}/checkout/edit/billing/address",
-url: "{{$base_url}}/my-acc/bill-address/edit",
+// url: "/checkout/edit/billing/address",
+url: "/my-acc/bill-address/edit",
 dataType: 'json',
 cache: false,
 contentType: false,
@@ -1816,7 +1816,7 @@ form_data.append( "_token", "{{ csrf_token() }}");
 
 $.ajax({
 method: "POST",
-url: "{{$base_url}}/my-acc/bill-address/delete",
+url: "/my-acc/bill-address/delete",
 dataType: 'json',
 cache: false,
 contentType: false,
@@ -1920,7 +1920,7 @@ headers : {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
 if(fname!==""&&lname!==""&& Country!==""&&add1!==""&&city!==""&& state!==""&&zipcode!==""){
 $.ajax({
 method: "POST",
-url: "{{$base_url}}/my-acc/bill-address/add",
+url: "/my-acc/bill-address/add",
 dataType: 'json',
 cache: false,
 contentType: false,
@@ -2113,7 +2113,7 @@ $('.united_state_checkbox_all_state_append').on('click',function(){
 
     				$.ajax({
 					            type: "post",
-					            url: "{{$base_url}}/getall-country",
+					            url: "/getall-country",
 					            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 					            success: function (result) {    
 					               var state=result['states'];
@@ -2184,7 +2184,7 @@ var country_id = 35;
 
     				$.ajax({
 					            type: "post",
-					            url: "{{$base_url}}/getall-country",
+					            url: "/getall-country",
 					            data: {'country_id':country_id,"_token":"{{ csrf_token()}}"},
 					            success: function (result) {    
 					               var state=result['states'];

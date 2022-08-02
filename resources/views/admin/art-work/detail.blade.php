@@ -17,14 +17,14 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
-          <li class="breadcrumb-item"><a href="{{$base_url}}/admin/artwork/all">Art Work</a>
+          <li class="breadcrumb-item"><a href="/admin/artwork/all">Art Work</a>
           </li> 
           <li class="breadcrumb-item">
             <a>Art Work details
@@ -114,7 +114,7 @@
                   <div class="form-group {{$errors->has('path')?' has-error':'' }}">
                     <label class="form-control-label">Art Path</label><br>
                     <!-- <input type="text" name="customer_note" value="{{$artproof->customer_note}}" class="form-control thresold-i" placeholder="Enter Customer Note"> -->
-                    <a href="{{$base_url}}/storage/app/{{$artproof->path}}" class="all-button-div"><img src="http://localhost/superiorpromos.com/storage/app/preview.png" style="width:100px;height:50px;"></a>
+                    <a href="/storage/app/{{$artproof->path}}" class="all-button-div"><img src="http://localhost/superiorpromos.com/storage/app/preview.png" style="width:100px;height:50px;"></a>
                   </div>
 
                 </div>

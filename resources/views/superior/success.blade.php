@@ -893,7 +893,7 @@ height: 40px;
 
                       <div class="row">
                         <div class="col-12">
-                          <p class="confirmation_email_text">A confirmation email was sent to devid.itinfonity@gmail.com and fill order details are available in <a class="my-account-profile-link" href="{{$base_url}}/my-account-profile">My Account</a> Section</p>
+                          <p class="confirmation_email_text">A confirmation email was sent to devid.itinfonity@gmail.com and fill order details are available in <a class="my-account-profile-link" href="/my-account-profile">My Account</a> Section</p>
                         </div>
                       </div>
 
@@ -925,7 +925,7 @@ height: 40px;
 
                   <div class="col-2">
                     <div class="print-btn-div text-right noPrint" id="print_btn_hide">
-                      <button class="print-btn" id="print-btn" onclick="printDiv()"><img class="d-inline-block" src="{{$base_url}}/resources/views/superior/assets/images/print-icon.png" style="width:30px;height: 30px;">&nbsp;&nbsp;<span style="">Print PDF</span></button>
+                      <button class="print-btn" id="print-btn" onclick="printDiv()"><img class="d-inline-block" src="/resources/views/superior/assets/images/print-icon.png" style="width:30px;height: 30px;">&nbsp;&nbsp;<span style="">Print PDF</span></button>
                     </div>
                       
                   </div>
@@ -1061,7 +1061,7 @@ height: 40px;
          <p>Starred(*) Fields are required.</p>
         <div class="row pt-3 pl-5">
             <div class="account-content">
-                <form method="post" action="{{$base_url}}/order/shipp/edit/{{$order->id}}">
+                <form method="post" action="/order/shipp/edit/{{$order->id}}">
                       @csrf
                       <!-- <div class="form-group mb-2">
                         <label for="acc-text" class="form-lbl">Country<span class="required">*</span></label>
@@ -1213,7 +1213,7 @@ height: 40px;
          <p>Starred(*) Fields are required.</p>
         <div class="row  pt-3 pl-5">
             <div class="account-content">
-                <form method="POST" action="{{$base_url}}/order/bill/edit/{{$order->id}}">
+                <form method="POST" action="/order/bill/edit/{{$order->id}}">
                       @csrf
                       <!-- <div class="form-group mb-2">
                         <label for="acc-text" class="form-lbl">Country<span class="required">*</span></label>
@@ -1402,7 +1402,7 @@ height: 40px;
                         <div class="col-2">
                          
                             @if($orderitem->product!="")
-                              <img class="item-image" src="{{$base_url}}/storage/app/{{$orderitem->product->product_image}}" style="width: 100px;height: 100px;">
+                              <img class="item-image" src="/storage/app/{{$orderitem->product->product_image}}" style="width: 100px;height: 100px;">
                             @endif
                      
                       </div>
@@ -1460,7 +1460,7 @@ height: 40px;
              
               <div class="row mb-4 total-order-shopping">
                 <div class="col-3">
-                  <a href="{{$base_url}}/shop" id="continue_shopping_button_anchor">
+                  <a href="/shop" id="continue_shopping_button_anchor">
                     <button class="continue-shopping-btn" id="">Continue Shopping</button>
                   </a>
                 </div>
@@ -1867,7 +1867,7 @@ function uploadFile(target){
         $(document).ready(function(){
             $('.header_search_button').on('click',function(){
                 var search = $('.header_search_input').val();
-                window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
+                window.location.href = "/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
             });
         });
     </script>

@@ -25,12 +25,12 @@
             <div class="col-md-12">
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="{{$base_url}}">
+                        <a href="">
                             <i class="feather icon-home"></i>
                         </a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="{{$base_url}}/admin/home">Admin</a>
+                        <a href="/admin/home">Admin</a>
                     </li>
                     <li class="breadcrumb-item"><a href="all">Discount code</a>
                     </li> 
@@ -90,7 +90,7 @@
                                         <label class="form-control-label" for="usr">Current Image</label>
                                         <div class="col-md-12 p-0">
                                           <center>
-                                            <img id="coupon_imgs" class="img-fluid" src="{{$base_url}}/storage/app/{{$discount->image}}" style="height:150px;width:350px;">
+                                            <img id="coupon_imgs" class="img-fluid" src="/storage/app/{{$discount->image}}" style="height:150px;width:350px;">
                                         </center>       
                                     </div>         
                                 </div> 
@@ -264,7 +264,7 @@
 
                                         @if($customer->customer!="")
                                         <tr id="{{$customer->discount_customer_apply_id}}" class="{{$customer->customer_id}}">
-                                            <td>ID</td><td><div class="d-inline-block align-middle"><img src="{{$base_url}}/files/assets/images/user.png" class="img-radius img-40 align-top m-r-15"></td><td>{{$customer->customer->name}}</td><td><button type="button" id="{{$customer->discount_customer_apply_id}}" class="m-b-10 delete_applies_to_item btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
+                                            <td>ID</td><td><div class="d-inline-block align-middle"><img src="/files/assets/images/user.png" class="img-radius img-40 align-top m-r-15"></td><td>{{$customer->customer->name}}</td><td><button type="button" id="{{$customer->discount_customer_apply_id}}" class="m-b-10 delete_applies_to_item btn btn-danger"><i class="fa fa-trash-o"></i></button></td>
                                             </tr>
                                             @endif
                                             @endforeach
@@ -651,7 +651,7 @@ $('#category_id').keyup(function(){
                 var categories=result.data.data;
                 $("#applies_to_data").empty();
                 $.each(categories, function(index, item){
-                    var category_item='<tr><td><div class="d-inline-block align-middle"><img src="{{$base_url}}/storage/app/'+item.category_image+'" class="img-radius img-40 align-top m-r-15"></td><td>'+item.default_category_translation.category_name+'</td><td class="text-right"><button type="button" id="'+item.category_id+'" class="applies_to_add_button btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
+                    var category_item='<tr><td><div class="d-inline-block align-middle"><img src="/storage/app/'+item.category_image+'" class="img-radius img-40 align-top m-r-15"></td><td>'+item.default_category_translation.category_name+'</td><td class="text-right"><button type="button" id="'+item.category_id+'" class="applies_to_add_button btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
                     $("#applies_to_data").append($(category_item));
                 });
             }else{
@@ -687,7 +687,7 @@ $('#product_id').keyup(function(){
                 var products=result.data.data;
                 $("#applies_to_data2").empty();
                 $.each(products, function(index, item){
-                    var product_item='<tr><td><div class="d-inline-block align-middle"><img src="{{$base_url}}/storage/app/'+item.product_image+'" class="img-radius img-40 align-top m-r-15"></td><td>'+item.default_product_translation.product_name+'</td><td class="text-right"><button type="button" id="'+item.product_id+'" class="applies_to_add_button2 btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
+                    var product_item='<tr><td><div class="d-inline-block align-middle"><img src="/storage/app/'+item.product_image+'" class="img-radius img-40 align-top m-r-15"></td><td>'+item.default_product_translation.product_name+'</td><td class="text-right"><button type="button" id="'+item.product_id+'" class="applies_to_add_button2 btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
                     $("#applies_to_data2").append($(product_item));
                 });
 
@@ -728,7 +728,7 @@ $('#customer_id').keyup(function(){
                 $("#customer_eligibility_data").empty();
                 $.each(customers, function(index, item){
 
-                    var customers_item='<tr><td><div class="d-inline-block align-middle"><img src="{{$base_url}}/files/assets/images/user.png" class="img-radius img-40 align-top m-r-15"></td><td>'+item.name+'</td><td class="text-right"><button type="button" id="'+item.id+'" class="customer_eligibility_add_button btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
+                    var customers_item='<tr><td><div class="d-inline-block align-middle"><img src="/files/assets/images/user.png" class="img-radius img-40 align-top m-r-15"></td><td>'+item.name+'</td><td class="text-right"><button type="button" id="'+item.id+'" class="customer_eligibility_add_button btn btn-success waves-effect waves-light add pull-right">Apply</button></td></tr>';
                     $("#customer_eligibility_data").append($(customers_item));
                 });
 

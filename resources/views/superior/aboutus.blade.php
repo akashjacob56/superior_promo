@@ -133,7 +133,7 @@ color: #FFFFFF;
         <div class="col-md-3 col-b">
              <div class="row pt-5 pb-5">
                  <div class="col-md-12 text-center">
-                     <img class="mx-auto d-block" src="{{$base_url}}/resources/views/superior/assets/images/about1.png"/>
+                     <img class="mx-auto d-block" src="/resources/views/superior/assets/images/about1.png"/>
                  </div>
              </div>
              <div class="row text-center pt-5 pb-5">
@@ -147,7 +147,7 @@ color: #FFFFFF;
         <div class="col-md-3 col-b">
              <div class="row pt-5 pb-5">
                  <div class="col-md-12 text-center">
-                     <img class="mx-auto d-block" src="{{$base_url}}/resources/views/superior/assets/images/about3.png"/>
+                     <img class="mx-auto d-block" src="/resources/views/superior/assets/images/about3.png"/>
                  </div>
              </div>
              <div class="row text-center pt-5 pb-5">
@@ -161,7 +161,7 @@ color: #FFFFFF;
         <div class="col-md-3 col-b">
              <div class="row pt-5 pb-5">
                  <div class="col-md-12 text-center">
-                     <img class="mx-auto d-block" src="{{$base_url}}/resources/views/superior/assets/images/about2.png"/>
+                     <img class="mx-auto d-block" src="/resources/views/superior/assets/images/about2.png"/>
                  </div>
              </div>
              <div class="row text-center pt-5 pb-5">
@@ -175,7 +175,7 @@ color: #FFFFFF;
         <div class="col-md-3 col-b">
              <div class="row pt-5 pb-5">
                  <div class="col-md-12 text-center">
-                     <img class="mx-auto d-block" src="{{$base_url}}/resources/views/superior/assets/images/about4.png"/>
+                     <img class="mx-auto d-block" src="/resources/views/superior/assets/images/about4.png"/>
                  </div>
              </div>
              <div class="row text-center pt-5 pb-5">
@@ -206,7 +206,7 @@ color: #FFFFFF;
 
      
             <div class="row pt-5 pb-5 d-flex align-items-center">
-              <div class="col-md-12 text-center"><a href="{{$base_url}}/shop"><button class="btn-go-shopping" type="button">Go Shopping</button></a></div>  
+              <div class="col-md-12 text-center"><a href="/shop"><button class="btn-go-shopping" type="button">Go Shopping</button></a></div>
             </div>
  
 
@@ -216,7 +216,7 @@ color: #FFFFFF;
         $(document).ready(function(){
             $('.header_search_button').on('click',function(){
                 var search = $('.header_search_input').val();
-                window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
+                window.location.href = "/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
             });
         });
 					</script>

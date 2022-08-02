@@ -7,7 +7,7 @@
 			<div class="col-md-8">
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}">
+						<a href="">
 							<i class="feather icon-home"></i>
 						</a>
 					</li>
@@ -35,7 +35,7 @@
 							<div class="card-block" align="center">
 								<h6 class="f-w-600 f-45 m-b-25">You do not have permission to view this page.</h6>
 								<h4 class="maintainance-subtitle f-24 m-b-25">Unauthorized Access.</h4>
-								<a href="{{$base_url}}/admin/home">
+								<a href="/admin/home">
 									<button type="button" class="btn btn-primary waves-effect waves-light">Home
 									</button>
 								</a>

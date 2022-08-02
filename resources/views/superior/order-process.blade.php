@@ -192,12 +192,12 @@ color: #68BEE5;
                     @if($order_processes!="[]")
                     @foreach($order_processes as $order_process)
                         <div class="col-md-3 main-promotion-col">
-                            <img class="image-order-process-vertical-bar" src="{{$base_url}}/resources/views/superior/assets/images/order-process-vertical-bar.png">
+                            <img class="image-order-process-vertical-bar" src="/resources/views/superior/assets/images/order-process-vertical-bar.png">
                             <div class="promotion-col">
-                                <img class="corner-fol-image" src="{{$base_url}}/resources/views/superior/assets/images/order-process-polygon-1.png">
+                                <img class="corner-fol-image" src="/resources/views/superior/assets/images/order-process-polygon-1.png">
                                 <div class="row amt-row">
                                     <span class="p-amt-txt">
-                                        <img class="ord-process-img" src="{{$base_url}}/storage/app/{{$order_process->order_process_image}}">
+                                        <img class="ord-process-img" src="/storage/app/{{$order_process->order_process_image}}">
                                     </span><!-- <span class="off-txt">off</span> -->
                                 </div>
 
@@ -215,12 +215,12 @@ color: #68BEE5;
                     
 
                 <!-- <div class="col-md-3 main-promotion-col">
-                    <img class="image-order-process-vertical-bar" src="{{$base_url}}/resources/views/superior/assets/images/order-process-vertical-bar.png">
+                    <img class="image-order-process-vertical-bar" src="/resources/views/superior/assets/images/order-process-vertical-bar.png">
                     <div class="promotion-col">
-                        <img class="corner-fol-image" src="{{$base_url}}/resources/views/superior/assets/images/order-process-polygon-1.png">
+                        <img class="corner-fol-image" src="/resources/views/superior/assets/images/order-process-polygon-1.png">
                         <div class="row amt-row">
                             <span class="p-amt-txt">
-                                <img class="ord-process-img" src="{{$base_url}}/resources/views/superior/assets/images/order-process-2.png">
+                                <img class="ord-process-img" src="/resources/views/superior/assets/images/order-process-2.png">
                             </span>
                             
                         </div>
@@ -235,12 +235,12 @@ color: #68BEE5;
 
 <!-- 
                 <div class="col-md-3 main-promotion-col">
-                    <img class="image-order-process-vertical-bar" src="{{$base_url}}/resources/views/superior/assets/images/order-process-vertical-bar.png">
+                    <img class="image-order-process-vertical-bar" src="/resources/views/superior/assets/images/order-process-vertical-bar.png">
                     <div class="promotion-col">
-                        <img class="corner-fol-image" src="{{$base_url}}/resources/views/superior/assets/images/order-process-polygon-1.png">
+                        <img class="corner-fol-image" src="/resources/views/superior/assets/images/order-process-polygon-1.png">
                         <div class="row amt-row">
                             <span class="p-amt-txt">
-                                <img class="ord-process-img" src="{{$base_url}}/resources/views/superior/assets/images/order-process-3.png">
+                                <img class="ord-process-img" src="/resources/views/superior/assets/images/order-process-3.png">
                             </span>
                             
                         </div>
@@ -259,12 +259,12 @@ color: #68BEE5;
 
 
                 <!-- <div class="col-md-3 main-promotion-col">
-                    <img class="image-order-process-vertical-bar" src="{{$base_url}}/resources/views/superior/assets/images/order-process-vertical-bar.png">
+                    <img class="image-order-process-vertical-bar" src="/resources/views/superior/assets/images/order-process-vertical-bar.png">
                     <div class="promotion-col">
-                        <img class="corner-fol-image" src="{{$base_url}}/resources/views/superior/assets/images/order-process-polygon-1.png">
+                        <img class="corner-fol-image" src="/resources/views/superior/assets/images/order-process-polygon-1.png">
                         <div class="row amt-row">
                             <span class="p-amt-txt">
-                                <img class="ord-process-img" src="{{$base_url}}/resources/views/superior/assets/images/order-process-4.png">
+                                <img class="ord-process-img" src="/resources/views/superior/assets/images/order-process-4.png">
                             </span>
                             <
                         </div>
@@ -288,12 +288,12 @@ color: #68BEE5;
  -->
 
                <!--  <div class="col-md-3 main-promotion-col">
-                    <img class="image-order-process-vertical-bar" src="{{$base_url}}/resources/views/superior/assets/images/order-process-vertical-bar.png">
+                    <img class="image-order-process-vertical-bar" src="/resources/views/superior/assets/images/order-process-vertical-bar.png">
                     <div class="promotion-col">
-                        <img class="corner-fol-image" src="{{$base_url}}/resources/views/superior/assets/images/order-process-polygon-1.png">
+                        <img class="corner-fol-image" src="/resources/views/superior/assets/images/order-process-polygon-1.png">
                         <div class="row amt-row">
                             <span class="p-amt-txt">
-                                <img class="ord-process-img" src="{{$base_url}}/resources/views/superior/assets/images/order-process-5.png">
+                                <img class="ord-process-img" src="/resources/views/superior/assets/images/order-process-5.png">
                             </span>
                             
                         </div>
@@ -307,14 +307,14 @@ color: #68BEE5;
 
 
                 <!-- <div class="col-md-3 main-promotion-col">
-                    <img class="image-order-process-vertical-bar" src="{{$base_url}}/resources/views/superior/assets/images/order-process-vertical-bar.png">
+                    <img class="image-order-process-vertical-bar" src="/resources/views/superior/assets/images/order-process-vertical-bar.png">
 
                     <div class="promotion-col">
-                        <img class="corner-fol-image" src="{{$base_url}}/resources/views/superior/assets/images/order-process-polygon-1.png">
+                        <img class="corner-fol-image" src="/resources/views/superior/assets/images/order-process-polygon-1.png">
                         <div class="row amt-row">
                             <span class="p-amt-txt">
 
-                                <img class="ord-process-img" src="{{$base_url}}/resources/views/superior/assets/images/order-process-6.png">
+                                <img class="ord-process-img" src="/resources/views/superior/assets/images/order-process-6.png">
                             </span>
                            
                         </div>
@@ -329,14 +329,14 @@ color: #68BEE5;
 
 
                 <!-- <div class="col-md-3 main-promotion-col">
-                    <img class="image-order-process-vertical-bar" src="{{$base_url}}/resources/views/superior/assets/images/order-process-vertical-bar.png">
+                    <img class="image-order-process-vertical-bar" src="/resources/views/superior/assets/images/order-process-vertical-bar.png">
 
                     <div class="promotion-col">
-                        <img class="corner-fol-image" src="{{$base_url}}/resources/views/superior/assets/images/order-process-polygon-1.png">
+                        <img class="corner-fol-image" src="/resources/views/superior/assets/images/order-process-polygon-1.png">
                         <div class="row amt-row">
                             <span class="p-amt-txt">
 
-                                <img class="ord-process-img" src="{{$base_url}}/resources/views/superior/assets/images/order-process-7.png">
+                                <img class="ord-process-img" src="/resources/views/superior/assets/images/order-process-7.png">
                             </span>
                         </div>
                         <div class="text-conten-promotion text-center">
@@ -349,13 +349,13 @@ color: #68BEE5;
 
 
                 <!-- <div class="col-md-3 main-promotion-col">
-                    <img class="image-order-process-vertical-bar" src="{{$base_url}}/resources/views/superior/assets/images/order-process-vertical-bar.png">
+                    <img class="image-order-process-vertical-bar" src="/resources/views/superior/assets/images/order-process-vertical-bar.png">
                     <div class="promotion-col">
-                        <img class="corner-fol-image" src="{{$base_url}}/resources/views/superior/assets/images/order-process-polygon-1.png">
+                        <img class="corner-fol-image" src="/resources/views/superior/assets/images/order-process-polygon-1.png">
                         <div class="row amt-row">
                             <span class="p-amt-txt">
 
-                                <img class="ord-process-img" src="{{$base_url}}/resources/views/superior/assets/images/order-process-8.png">
+                                <img class="ord-process-img" src="/resources/views/superior/assets/images/order-process-8.png">
                             </span>
                             
                         </div>
@@ -383,7 +383,7 @@ color: #68BEE5;
                 </div> -->
 
             <div class="row pt-5 pb-5 d-flex align-items-center">
-              <div class="col-md-12 text-center"><a href="{{$base_url}}/shop"><button class="btn-go-shopping">Go Shopping</button></a></div>  
+              <div class="col-md-12 text-center"><a href="/shop"><button class="btn-go-shopping">Go Shopping</button></a></div>
             </div>
 
 
@@ -394,7 +394,7 @@ color: #68BEE5;
         $(document).ready(function(){
             $('.header_search_button').on('click',function(){
                 var search = $('.header_search_input').val();
-                window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
+                window.location.href = "/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
             });
         });
 					</script>

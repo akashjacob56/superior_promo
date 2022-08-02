@@ -60,12 +60,12 @@ thead, tbody tr {
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/customer/all">Customers</a>
+            <a href="/admin/customer/all">Customers</a>
           </li>
           <li class="breadcrumb-item">
             <a>{{$customer->name}}</a>
@@ -134,7 +134,7 @@ thead, tbody tr {
                           @foreach($already_carts as $already_cart)
                           <tr id='{{$already_cart->cart_id}}'>
                             <td class="pro-list-img">
-                              <img src="{{$base_url}}/storage/app/{{$already_cart->sku->product->product_image}}" class="img-fluid admin-order-image" alt="tbl">
+                              <img src="/storage/app/{{$already_cart->sku->product->product_image}}" class="img-fluid admin-order-image" alt="tbl">
                             </td>
                             <td class="pro-name" style="overflow: hidden;">
                               <h6>
@@ -284,7 +284,7 @@ thead, tbody tr {
 <div class="modal fade" id="confirm-order" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <form action="{{$base_url}}/admin/makeOrder" method="post">
+      <form action="/admin/makeOrder" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Confirm Order</h5>
@@ -329,7 +329,7 @@ thead, tbody tr {
     product_id=($(this).val());
     $.ajax({
       type: 'post',
-      url: "{{$base_url}}/getProductVariants",
+      url: "/getProductVariants",
       data: {'product_id':product_id},
       success: function (result) {
         $("#sku-data").empty();
@@ -343,7 +343,7 @@ thead, tbody tr {
             variant_option_name=item.child_variant.default_variant_option_translation.variant_option_name;
           }
 
-          var sku_item='<tr><td><div class="d-inline-block align-middle"><img src="{{$base_url}}/storage/app/'+item.product.product_image+'" alt="user image" class="img-radius img-40 align-top m-r-15"><div class="d-inline-block"><h6>'+variant_option_name+'</h6><p class="text-muted m-b-0">'+variant_option_name+'</p></div></div></td><td>'+item.market_price+'</td><td>'+item.my_price+'</td><td><input type="text" class="quantity form-control" name="quantity"></td><td class="text-right"><button type="button" id="'+item.sku_id+'" class="add-to-cart btn btn-success waves-effect waves-light add pull-right">Add to Cart</button></td></tr>';
+          var sku_item='<tr><td><div class="d-inline-block align-middle"><img src="/storage/app/'+item.product.product_image+'" alt="user image" class="img-radius img-40 align-top m-r-15"><div class="d-inline-block"><h6>'+variant_option_name+'</h6><p class="text-muted m-b-0">'+variant_option_name+'</p></div></div></td><td>'+item.market_price+'</td><td>'+item.my_price+'</td><td><input type="text" class="quantity form-control" name="quantity"></td><td class="text-right"><button type="button" id="'+item.sku_id+'" class="add-to-cart btn btn-success waves-effect waves-light add pull-right">Add to Cart</button></td></tr>';
           $("#sku-data").append($(sku_item));
         });
       },
@@ -359,7 +359,7 @@ thead, tbody tr {
     if(quantity>0){
       $.ajax({
         type: 'post',
-        url: "{{$base_url}}/admin/addToCart",
+        url: "/admin/addToCart",
         data: {'customer_id':customer_id,'sku_id':sku_id,'quantity':quantity},
         success: function (result) {
           notify(result.msg);
@@ -382,7 +382,7 @@ thead, tbody tr {
     cart_id=$(this).parent().parent().attr('id');
     $.ajax({
       type: 'post',
-      url: "{{$base_url}}/admin/deleteCartItem",
+      url: "/admin/deleteCartItem",
       data: {'cart_id':cart_id},
       success: function (result) {
         notify(result.msg);
@@ -437,7 +437,7 @@ thead, tbody tr {
         variant_option_name='<span> </span>';
       }
 
-      var cart_item='<tr id='+item.cart_id+'><td class="pro-list-img"><img src="{{$base_url}}/storage/app/'+item.sku.product.product_image+'" class="img-fluid admin-order-image" alt="tbl"></td><td class="pro-name"><h6>'+product_name+'</h6>'+variant_option_name+'<span>'+variant_option_name+'</span></td><td><label class="text-danger">'+item.sku.my_price+'</label></td><td><input type="text" class="form-control quantity-width quantity" name="quantity" value="'+item.quantity+'"></td><td><label class="text-danger">'+item.quantity*item.sku.my_price+'</label></td><td class="gst">'+cgst+'</td><td class="gst">'+sgst+'</td> <td>'+((item.sku.my_price*item.quantity)+(((item.sku.my_price*item.quantity)*item.sku.product.gst.gst)/100))+'</td><td class="action-icon"><button type="button" class="delete_cart btn btn-danger"><i class="fa fa-trash-o"></i></button></td></tr>';
+      var cart_item='<tr id='+item.cart_id+'><td class="pro-list-img"><img src="/storage/app/'+item.sku.product.product_image+'" class="img-fluid admin-order-image" alt="tbl"></td><td class="pro-name"><h6>'+product_name+'</h6>'+variant_option_name+'<span>'+variant_option_name+'</span></td><td><label class="text-danger">'+item.sku.my_price+'</label></td><td><input type="text" class="form-control quantity-width quantity" name="quantity" value="'+item.quantity+'"></td><td><label class="text-danger">'+item.quantity*item.sku.my_price+'</label></td><td class="gst">'+cgst+'</td><td class="gst">'+sgst+'</td> <td>'+((item.sku.my_price*item.quantity)+(((item.sku.my_price*item.quantity)*item.sku.product.gst.gst)/100))+'</td><td class="action-icon"><button type="button" class="delete_cart btn btn-danger"><i class="fa fa-trash-o"></i></button></td></tr>';
       $("#cart-data").append($(cart_item));
 
       total_quantity=parseInt(total_quantity)+parseInt(item.quantity);
@@ -471,7 +471,7 @@ thead, tbody tr {
     if(quantity>0){
       $.ajax({
         type: 'post',
-        url: "{{$base_url}}/admin/changeQuantity",
+        url: "/admin/changeQuantity",
         data: {'cart_id':cart_id,'quantity':quantity,'customer_id':customer_id},
         success: function (result) {
           notify(result.msg);

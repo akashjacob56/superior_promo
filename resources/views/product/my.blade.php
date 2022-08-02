@@ -6,12 +6,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item">
             <a>My Products  </a>
@@ -131,7 +131,7 @@
         "bSortable": false,
         "ilter":false,
         "mRender": function(data, type, row) {
-          return '<img class="img-fluid" src="{{$base_url}}/storage/app/'+row.product_image+'" style="height:50px;width:50px;" onerror=this.src="{{$base_url}}/files/assets/images/product.png";>';
+          return '<img class="img-fluid" src="/storage/app/'+row.product_image+'" style="height:50px;width:50px;" onerror=this.src="/files/assets/images/product.png";>';
         }
       },{
         "mData": "default_product_translation.product_name",
@@ -196,7 +196,7 @@
    
    $.ajax({
     type: 'post',
-    url: "{{$base_url}}/admin/product_inventory",
+    url: "/admin/product_inventory",
     data: {'product_id':product_id},
     success: function (result) {
      
@@ -228,7 +228,7 @@
         product_name=product_name;
       }
 
-      var variant='<tr><td ><img src="{{$base_url}}/storage/app/'+item.product.product_image+'" alt="user image" class="img-radius img-40 align-top m-r-15" onerror=this.src="{{$base_url}}/files/assets/images/product.png"; style="height:40px"></td><td>'+product_name+'</td><td><div class="d-inline-block"><h6>'+variant_option_name+'</h6><p class="text-muted m-b-0">'+variant_option_name+'</p></div></td><td><span class="'+item.sku_id+'">'+item.quantity+'</span></td><td id="'+item.sku_id+'"><input type="number" value="0"  class="form-control '+item.sku_id +' inventory-quantity" style="width:50px; display:inline; margin:5px;"><button class="add btn btn-primary waves-effect waves-light js-programmatic-enable activate data-table-button m-1" >Add</button><button class="set btn btn-primary waves-effect waves-light js-programmatic-enable activate data-table-button m-1" >Set</button></td></tr>';
+      var variant='<tr><td ><img src="/storage/app/'+item.product.product_image+'" alt="user image" class="img-radius img-40 align-top m-r-15" onerror=this.src="/files/assets/images/product.png"; style="height:40px"></td><td>'+product_name+'</td><td><div class="d-inline-block"><h6>'+variant_option_name+'</h6><p class="text-muted m-b-0">'+variant_option_name+'</p></div></td><td><span class="'+item.sku_id+'">'+item.quantity+'</span></td><td id="'+item.sku_id+'"><input type="number" value="0"  class="form-control '+item.sku_id +' inventory-quantity" style="width:50px; display:inline; margin:5px;"><button class="add btn btn-primary waves-effect waves-light js-programmatic-enable activate data-table-button m-1" >Add</button><button class="set btn btn-primary waves-effect waves-light js-programmatic-enable activate data-table-button m-1" >Set</button></td></tr>';
       $('#variant_data').append(variant);
     });
    }else{
@@ -246,7 +246,7 @@
 
     $.ajax({
       type: "POST",
-      url:"{{$base_url}}/admin/inventory/add",
+      url:"/admin/inventory/add",
       data: {quantity: quantity,'sku_id':sku_id},
       success: function(result){
         // notify(result.data.msg);
@@ -277,7 +277,7 @@
   if(is_number){
     $.ajax({
       type: "POST",
-      url: "{{$base_url}}/admin/inventory/set",
+      url: "/admin/inventory/set",
       data: {quantity: quantity,'sku_id':sku_id},
       success: function(result){
 

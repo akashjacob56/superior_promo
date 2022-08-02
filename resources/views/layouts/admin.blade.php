@@ -20,7 +20,7 @@
   <meta name="author" content="vshopy" />
   <!-- Favicon icon -->
   
-  <link rel="icon" href="{{$base_url}}" type="image/x-icon">
+  <link rel="icon" href="" type="image/x-icon">
 
   <link rel="stylesheet" type="text/css" href="{{asset('files/assets/css/custom.css')}}">
 
@@ -140,7 +140,7 @@
 </style>
 <script type="text/javascript">
   allignment="{{$selected_language->alignment}}";
-  baseURL="{{$base_url}}";
+  baseURL="";
   var advance;
   var advance1;
 </script>

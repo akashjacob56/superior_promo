@@ -195,7 +195,7 @@ return [
         
         Laravel\Socialite\SocialiteServiceProvider::class,
         
-        
+        \Illuminate\Database\MigrationServiceProvider::class
     ],
 
     /*

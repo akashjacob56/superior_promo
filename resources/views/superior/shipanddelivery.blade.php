@@ -111,7 +111,7 @@ color: #FFFFFF;
 
 
             <div class="row pt-5 pb-5 d-flex align-items-center">
-              <div class="col-md-12 text-center"><a href="{{$base_url}}/shop"><button class="btn-go-shopping" type="button">Go Shopping</button></a></div>  
+              <div class="col-md-12 text-center"><a href="/shop"><button class="btn-go-shopping" type="button">Go Shopping</button></a></div>
             </div>
 
 </div>
@@ -124,7 +124,7 @@ color: #FFFFFF;
         $(document).ready(function(){
             $('.header_search_button').on('click',function(){
                 var search = $('.header_search_input').val();
-                window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
+                window.location.href = "/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
             });
         });
 					</script>

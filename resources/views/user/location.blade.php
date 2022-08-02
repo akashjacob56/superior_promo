@@ -131,7 +131,7 @@ $(document).ready(function() {
      $("#city_id").html("");
      $.ajax({
         type: "post",
-        url: "{{$base_url}}/getlocations-country",
+        url: "/getlocations-country",
         data: {'country_id':country_id},
         success: function (result) {    
            /* option='<option disabled="true" value="">@lang("order.select_state")</option>';
@@ -158,7 +158,7 @@ $(document).ready(function() {
      $("#city_id").empty();
      $.ajax({
         type: "post",
-        url: "{{$base_url}}/getlocations-state",
+        url: "/getlocations-state",
         data: {'state_id':state_id},
         success: function (result) {
             var cities=result;
@@ -184,7 +184,7 @@ $(document).ready(function() {
          $("#area_id").empty();
          $.ajax({
             type: "post",
-            url: "{{$base_url}}/getlocations-pincode-area",
+            url: "/getlocations-pincode-area",
             data: {'pincode_id':pincode_id},
             success: function (result) {
                 var areas=result;

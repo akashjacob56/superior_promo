@@ -14,7 +14,7 @@
   <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{$base_url}}"><i class="icon-home"></i></a></li>
+        <li class="breadcrumb-item"><a href=""><i class="icon-home"></i></a></li>
         <li class="breadcrumb-item active" aria-current="page">@lang("navigation.policy")</li>
       </ol>
     </div><!-- End .container -->
@@ -52,7 +52,7 @@
         $(document).ready(function(){
             $('.header_search_button').on('click',function(){
                 var search = $('.header_search_input').val();
-                window.location.href = "{{$base_url}}/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
+                window.location.href = "/shop?page=&search="+search+"&cat_id=&category_id=&color_id=&min=&max=&orderby=&pagi_num=&shop_cat_id=";
             });
         });
 					</script>

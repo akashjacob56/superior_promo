@@ -13,12 +13,12 @@
       <div class="col-md-12">
         <ul class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/dashboard">Dashboard</a>
+            <a href="/dashboard">Dashboard</a>
           </li>
           <li class="breadcrumb-item"><a href="all">Banners</a>
           </li> 
@@ -73,7 +73,7 @@
                     <div class=" form-group {{ $errors->has('slider_image') ? ' has-error' : '' }}" >
                       <label class="form-control-label" for="usr">Image *</label>
                       <div class="slider_img">
-                       <img   src="{{$base_url}}/files/assets/images/preview.png" id="slider_image" alt="">
+                       <img   src="/files/assets/images/preview.png" id="slider_image" alt="">
                        </div>
                       <input type="file" class="form-control" name="slider_image" value="{{old('slider_image')}}" accept="image/*"  onchange="document.getElementById('slider_image').src = window.URL.createObjectURL(this.files[0])">
                       

@@ -164,7 +164,7 @@ footer .widget a {
 
 <div class="" style="padding-top: 2rem !important;">
   <div class="container footer-p">
-   <!-- <img src="{{$base_url}}/storage/app/logo.png" alt="Logo" style="width:220px;"> -->
+   <!-- <img src="/storage/app/logo.png" alt="Logo" style="width:220px;"> -->
    <h4 class="txt-f-welcome">Welcome To Superior Promos</h4>
    @php
 
@@ -194,10 +194,10 @@ footer .widget a {
 
           <ul class="links">
            
-           <li><a href="{{$base_url}}/contact">Contact Us</a></li>
-           <li><a href="{{$base_url}}/art-work">Artwork Requirement</a></li>
-           <li><a href="{{$base_url}}/rus-services">Rush Service</a></li>
-           <!-- <li><a href="{{$base_url}}/profile">@lang("navigation.my_account")</a></li> -->
+           <li><a href="/contact">Contact Us</a></li>
+           <li><a href="/art-work">Artwork Requirement</a></li>
+           <li><a href="/rus-services">Rush Service</a></li>
+           <!-- <li><a href="/profile">@lang("navigation.my_account")</a></li> -->
          </ul>
        </div><!-- End .widget -->
      </div><!-- End .col-lg-3 -->
@@ -207,13 +207,13 @@ footer .widget a {
         <h4 class="widget-title">Shopping Help</h4>
 
         <ul class="links">
-         <li><a href="{{$base_url}}/order-process">Order Process</a></li>
-         <li><a href="{{$base_url}}/product-sample">Product Samples</a></li>
-         <li><a href="{{$base_url}}/shipdelivery">Shipping & Delivery</a></li>
-         <li><a href="{{$base_url}}/currunt-promotion">Current Promotion</a></li>
-        <!--  <li><a href="{{$base_url}}/blogs">@lang("navigation.blogs")</a></li>
-         <li><a href="{{$base_url}}/privacy-policy">@lang("navigation.privacy")</a></li>
-         <li><a href="{{$base_url}}/terms-conditions">@lang("navigation.terms_and_conditions")</a></li> -->
+         <li><a href="/order-process">Order Process</a></li>
+         <li><a href="/product-sample">Product Samples</a></li>
+         <li><a href="/shipdelivery">Shipping & Delivery</a></li>
+         <li><a href="/currunt-promotion">Current Promotion</a></li>
+        <!--  <li><a href="/blogs">@lang("navigation.blogs")</a></li>
+         <li><a href="/privacy-policy">@lang("navigation.privacy")</a></li>
+         <li><a href="/terms-conditions">@lang("navigation.terms_and_conditions")</a></li> -->
          
        </ul>
      </div><!-- End .widget -->
@@ -223,10 +223,10 @@ footer .widget a {
       <h4 class="widget-title">Company Info</h4>
 
       <ul class="links">
-       <li><a href="{{$base_url}}/about">About Us</a></li>
-       <li><a href="{{$base_url}}/our-guarantee">Our Guarantee</a></li>
-       <li><a href="{{$base_url}}/privacy-policy">Privacy Policy</a></li>
-       <li><a href="{{$base_url}}/terms-conditions">Terms & Conditions</a></li>
+       <li><a href="/about">About Us</a></li>
+       <li><a href="/our-guarantee">Our Guarantee</a></li>
+       <li><a href="/privacy-policy">Privacy Policy</a></li>
+       <li><a href="/terms-conditions">Terms & Conditions</a></li>
      </ul>
    </div><!-- End .widget -->
  </div><!-- End .col-lg-3 -->
@@ -237,9 +237,9 @@ footer .widget a {
       <h4 class="widget-title">Tools & Resources</h4>
       <ul class="links">
        <li><a href="#">Site Map</a></li>
-       <li><a href="{{$base_url}}/blogs">Promotional Blog</a></li>
+       <li><a href="/blogs">Promotional Blog</a></li>
        <li><a href="#">Case Studies</a></li>
-       <!-- <li><a href="{{$base_url}}/profile">Terms & Conditions</a></li> -->
+       <!-- <li><a href="/profile">Terms & Conditions</a></li> -->
      </ul>
    </div><!-- End .widget -->
  </div><!-- End .col-lg-3 -->
@@ -256,7 +256,7 @@ footer .widget a {
      </div>
 
 <div class="col-md-4">
-   <img src="{{$base_url}}/resources/views/superior/assets/images/card.png" alt="Logo">
+   <img src="/resources/views/superior/assets/images/card.png" alt="Logo">
  </div>
 
 <div class="col-md-3">
@@ -268,17 +268,17 @@ footer .widget a {
    <div class="row">
      <div class="col">
       <a href="https://www.facebook.com/superiorpromos" target="_blank">
-      <img src="{{$base_url}}/resources/views/superior/assets/images/facebook.png" alt="Logo"/>
+      <img src="/resources/views/superior/assets/images/facebook.png" alt="Logo"/>
       </a>
      </div>
     <div class="col">
       <a href="https://www.pinterest.com/promoItem/" target="_blank">
-     <img src="{{$base_url}}/resources/views/superior/assets/images/pinterest.png" alt="Logo"/>
+     <img src="/resources/views/superior/assets/images/pinterest.png" alt="Logo"/>
      </a>
     </div>
      <div class="col">
       <a href="https://twitter.com/superior_promos" target="_blank">
-      <img src="{{$base_url}}/resources/views/superior/assets/images/twitter.png" alt="Logo"/>
+      <img src="/resources/views/superior/assets/images/twitter.png" alt="Logo"/>
       </a>
      </div>
    </div>
@@ -344,7 +344,7 @@ footer .widget a {
       @if(count($category->child_categories)>0)
       <li>
         
-       <a href="{{$base_url}}/collection/{{$category_translation->category->category_url}}" > {{$category_translation->category_name}}</a>
+       <a href="/collection/{{$category_translation->category->category_url}}" > {{$category_translation->category_name}}</a>
        
        <ul>
 
@@ -362,7 +362,7 @@ footer .widget a {
 
        <li>
          
-        <a href="{{$base_url}}/collection/{{$child_category_translation->category->category_url}}">{{$child_category_translation->category_name}}</a>
+        <a href="/collection/{{$child_category_translation->category->category_url}}">{{$child_category_translation->category_name}}</a>
         
         <ul>
          @foreach($child_category->sub_child_categories as $sub_child_category)
@@ -373,14 +373,14 @@ footer .widget a {
        }
        @endphp
        <li> 
-        <a href="{{$base_url}}/collection/{{$sub_child_category->category->category_url}}">{{$sub_child_category_translation->category_name}}</a>
+        <a href="/collection/{{$sub_child_category->category->category_url}}">{{$sub_child_category_translation->category_name}}</a>
       </li>
       @endforeach
     </ul>
   </li>
   @else
   <li>
-    <a href="{{$base_url}}/collection/{{$child_category->category->category_url}}">
+    <a href="/collection/{{$child_category->category->category_url}}">
       {{$child_category_translation->category_name}}
     </a>
   </li>
@@ -391,7 +391,7 @@ footer .widget a {
 @endif
 <li>
 
-  <a href="{{$base_url}}/collection/{{$category->category_url}}">
+  <a href="/collection/{{$category->category_url}}">
     {{$category_translation->category_name}}
   </a>
 
@@ -405,7 +405,7 @@ footer .widget a {
 @if($category_count>4)
 <li>
  
-  <a href="{{$base_url}}/collection">
+  <a href="/collection">
     @lang("navigation.more")
   </a>
   
@@ -431,7 +431,7 @@ $new_section_translation=$new_section->default_section_translation;
 }
 @endphp
 
-<li><a href="{{$base_url}}/products?min=&max=&category_id=&brand=&variant=&section={{$new_section->section_id}}&page=1&sort_by=&keyword=" class="px-4">{{$new_section_translation->section_name}}!<span class="tip tip-new tip-top">New</span></a></li>
+<li><a href="/products?min=&max=&category_id=&brand=&variant=&section={{$new_section->section_id}}&page=1&sort_by=&keyword=" class="px-4">{{$new_section_translation->section_name}}!<span class="tip tip-new tip-top">New</span></a></li>
 @endforeach
 @endif
 
@@ -440,13 +440,13 @@ $new_section_translation=$new_section->default_section_translation;
 
 <ul class="mobile-menu">
  
- <li><a href="{{$base_url}}/about">@lang("navigation.about_us")</a></li>
+ <li><a href="/about">@lang("navigation.about_us")</a></li>
 
- <li><a href="{{$base_url}}/contact">@lang("navigation.contact_us")</a></li>
+ <li><a href="/contact">@lang("navigation.contact_us")</a></li>
 
- <li><a href="{{$base_url}}/faq">@lang("navigation.faq")</a></li>
+ <li><a href="/faq">@lang("navigation.faq")</a></li>
 
- <li><a href="{{$base_url}}/blogs">@lang("navigation.blogs")</a></li>
+ <li><a href="/blogs">@lang("navigation.blogs")</a></li>
 </ul>
 </nav><!-- End .mobile-nav -->
 

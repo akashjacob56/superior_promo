@@ -16,12 +16,12 @@
 			<div class="col-md-8">
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}">
+						<a href="">
 							<i class="feather icon-home"></i>
 						</a>
 					</li>
 					<li class="breadcrumb-item">
-						<a href="{{$base_url}}/admin/home">Admin</a>
+						<a href="/admin/home">Admin</a>
 					</li>
 					<li class="breadcrumb-item"><a href="all-vendor">vendor</a>
 					</li> 
@@ -46,12 +46,12 @@
 					<div class="col-lg-12">
 						<div class="cover-profile">
 							<div class="profile-bg-img">
-								<img class="profile-bg-img img-fluid" src="{{$base_url}}/files/assets/images/bg-img1.jpg" alt="bg-img">
+								<img class="profile-bg-img img-fluid" src="/files/assets/images/bg-img1.jpg" alt="bg-img">
 								<div class="card-block user-info">
 									<div class="col-md-12">
 										<div class="media-left">
 											<a href="#" class="profile-image">
-												<img class="user-img img-radius" src="{{$base_url}}/files/assets/images/user.png" alt="user-img" style="height: 90px !important;width: 90px !important;">
+												<img class="user-img img-radius" src="/files/assets/images/user.png" alt="user-img" style="height: 90px !important;width: 90px !important;">
 											</a>
 										</div>
 										<div class="media-body row">

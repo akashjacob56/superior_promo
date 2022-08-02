@@ -15,12 +15,12 @@ if($term_condition_translation!=""){
       <div class="col-md-12">
         <ul class="breadcrumb">`
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}">
+            <a href="">
               <i class="feather icon-home"></i>
             </a>
           </li>
           <li class="breadcrumb-item">
-            <a href="{{$base_url}}/admin/home">Admin</a>
+            <a href="/admin/home">Admin</a>
           </li>
           <li class="breadcrumb-item"><a href="1">Terms & conditions </a>
           </li> 
@@ -52,7 +52,7 @@ if($term_condition_translation!=""){
                     @if($my_permissions->contains('TERM_CONDITION_UPDATE'))
                     <button type="submit" name="save"  class="btn btn-primary waves-effect waves-light pull-right">Save</button>
                     @endif
-                    <a href="{{$base_url}}/admin/termconditions"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                    <a href="/admin/termconditions"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                     </button></a>
 
                     @if($appearance->is_multilanguage==1)
@@ -105,7 +105,7 @@ if($term_condition_translation!=""){
                   @if($my_permissions->contains('TERM_CONDITION_UPDATE'))
                   <button type="submit" name="save"  class="btn btn-primary waves-effect waves-light pull-right">Save</button>
                   @endif
-                  <a href="{{$base_url}}/admin/termconditions"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
+                  <a href="/admin/termconditions"><button type="button" class="m-r-5 btn btn-default waves-effect waves-light add pull-right">   Cancel
                   </button></a>
 
                   @if($appearance->is_multilanguage==1)

@@ -11,8 +11,8 @@
  
  <div class="main-menu-header">
   <center>
-    <a href="{{$base_url}}">
-      <img class="logo-image" style="height: 60px !important;margin-top: 10px !important;" src="{{$base_url}}/" alt="">
+    <a href="">
+      <img class="logo-image" style="height: 60px !important;margin-top: 10px !important;" src="/" alt="">
     </a>
   </center>
   <div class="user-details">
@@ -47,7 +47,7 @@
       <span class="pcoded-micon">
         <i class="fa fa-circle-thin"></i>
       </span>
-      <span class="pcoded-mtext parent-link" id="{{$base_url}}/collection/{{$category_translation->category->category_url}}/{{$language_code}}">
+      <span class="pcoded-mtext parent-link" id="/collection/{{$category_translation->category->category_url}}/{{$language_code}}">
         {{$category_translation->category_name}}</span>
       </a>
 
@@ -65,7 +65,7 @@
      @if(count($child_category->sub_child_categories)>0)
      <li class="pcoded-hasmenu ">
       <a href="javascript:void(0)" class="waves-effect waves-dark">
-        <span class="pcoded-mtext parent-link" id="{{$base_url}}/collection/{{$child_category_translation->category->category_url}}/{{$language_code}}">{{$child_category_translation->category_name}}</span>
+        <span class="pcoded-mtext parent-link" id="/collection/{{$child_category_translation->category->category_url}}/{{$language_code}}">{{$child_category_translation->category_name}}</span>
       </a>
 
       <ul class="pcoded-submenu">
@@ -83,7 +83,7 @@
 
 
       <li class="">
-        <a href="{{$base_url}}/collection/{{$sub_child_category->category->category_url}}/{{$language_code}}" class="waves-effect waves-dark">
+        <a href="/collection/{{$sub_child_category->category->category_url}}/{{$language_code}}" class="waves-effect waves-dark">
           <span class="pcoded-mtext">{{$sub_child_category_translation->category_name}}</span>
         </a>
       </li>
@@ -94,7 +94,7 @@
   @else
 
   <li class="">
-    <a href="{{$base_url}}/collection/{{$child_category->category->category_url}}/{{$language_code}}" class="waves-effect waves-dark">
+    <a href="/collection/{{$child_category->category->category_url}}/{{$language_code}}" class="waves-effect waves-dark">
       <span class="pcoded-mtext">{{$child_category_translation->category_name}}</span>
     </a>
   </li>
@@ -105,7 +105,7 @@
 </li>
 @else
 <li class="">
-  <a href="{{$base_url}}/collection/{{$category->category_url}}/{{$language_code}}" class="waves-effect waves-dark">
+  <a href="/collection/{{$category->category_url}}/{{$language_code}}" class="waves-effect waves-dark">
     <span class="pcoded-micon">
       <i class="icon-book-open"></i>
     </span>
@@ -116,7 +116,7 @@
 
 @endforeach
 <li class="">
-  <a href="{{$base_url}}/collection/{{$language_code}}" class="waves-effect waves-dark">
+  <a href="/collection/{{$language_code}}" class="waves-effect waves-dark">
     <span class="pcoded-micon">
       <i class="fa fa-ellipsis-h"></i>
     </span>
@@ -128,7 +128,7 @@
 
 
 <li class="">
-  <a href="{{$base_url}}/about" class="waves-effect waves-dark">
+  <a href="/about" class="waves-effect waves-dark">
     <span class="pcoded-micon">
       <i class="icon-people"></i>
     </span>
@@ -137,7 +137,7 @@
 </li>
 
 <li class="">
-  <a href="{{$base_url}}/contact" class="waves-effect waves-dark">
+  <a href="/contact" class="waves-effect waves-dark">
     <span class="pcoded-micon">
       <i class="icon-phone"></i>
     </span>
@@ -147,7 +147,7 @@
 
 
 <li class="">
-  <a href="{{$base_url}}/faq" class="waves-effect waves-dark">
+  <a href="/faq" class="waves-effect waves-dark">
     <span class="pcoded-micon">
       <i class="fa fa-question-circle"></i>
     </span>
